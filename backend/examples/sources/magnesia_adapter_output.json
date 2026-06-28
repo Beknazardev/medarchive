@@ -1,0 +1,86 @@
+{
+  "contract_version": "case1.scraped_price_list.v1",
+  "source": {
+    "id": "magnesia",
+    "name": "Магнезия",
+    "type": "public_price_list",
+    "source_url": "https://pavlodar.magnesia.kz/kt/",
+    "parsed_at": "2026-06-27T18:00:00+05:00",
+    "robots": {
+      "checked_at": "2026-06-27T17:45:00+05:00",
+      "allowed": true,
+      "crawl_delay_seconds": 15,
+      "notes": "Public Magnesia city page. F0 policy rechecked."
+    },
+    "adapter": {
+      "name": "magnesia",
+      "version": "0.1.0",
+      "mode": "deterministic_fixture"
+    }
+  },
+  "clinic": {
+    "external_id": "magnesia_pavlodar",
+    "name": "Магнезия",
+    "legal_name": "ТОО \"Центр МРТ Магнесия Казахстан\"",
+    "city": "Павлодар",
+    "address": "Павлодар, ул. Ермака, 15/2",
+    "phone": null,
+    "website": "https://pavlodar.magnesia.kz",
+    "working_hours": null
+  },
+  "branches": [],
+  "rows": [
+    {
+      "row_id": "magnesia_pavlodar_row_002",
+      "source_url": "https://pavlodar.magnesia.kz/kt/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "КТ головного мозга/костей черепа",
+      "service_category_raw": "КТ и МРТ",
+      "price_raw": "20 000",
+      "price": 20000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "row_code": "1.1",
+      "section": "Область головы",
+      "city": "pavlodar",
+      "has_contrast": false,
+      "weight_qualifier": null,
+      "is_available": true,
+      "raw": {
+        "row_number": 2,
+        "row_code": "1.1",
+        "section": "Область головы",
+        "city": "pavlodar",
+        "has_contrast": false,
+        "weight_qualifier": null,
+        "cells": ["1.1", "КТ головного мозга/костей черепа", "20 000"]
+      }
+    },
+    {
+      "row_id": "magnesia_pavlodar_row_004",
+      "source_url": "https://pavlodar.magnesia.kz/kt/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "КТ головного мозга/костей черепа с внутривенным контрастированием (80 мл, вес от 61 кг до 79 кг)",
+      "service_category_raw": "КТ и МРТ",
+      "price_raw": "37 000",
+      "price": 37000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "row_code": "1.3",
+      "section": "Область головы",
+      "city": "pavlodar",
+      "has_contrast": true,
+      "weight_qualifier": "вес от 61 кг",
+      "is_available": true,
+      "raw": {
+        "row_number": 4,
+        "row_code": "1.3",
+        "section": "Область головы",
+        "city": "pavlodar",
+        "has_contrast": true,
+        "weight_qualifier": "вес от 61 кг",
+        "cells": ["1.3", "КТ головного мозга/костей черепа с внутривенным контрастированием (80 мл, вес от 61 кг до 79 кг)", "37 000"]
+      }
+    }
+  ]
+}

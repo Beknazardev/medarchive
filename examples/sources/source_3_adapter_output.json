@@ -1,0 +1,954 @@
+{
+  "contract_version": "case1.scraped_price_list.v1",
+  "source": {
+    "id": "dtl_dna_shymkent_seed",
+    "name": "DTL DNA Laboratory Shymkent Price Page",
+    "type": "public_price_list",
+    "source_url": "https://shymkent.dnk-test.kz/en/",
+    "retrieved_at": "2026-06-26T08:20:00Z",
+    "parsed_at": "2026-06-26T08:23:00Z",
+    "robots": {
+      "checked_at": "2026-06-26T08:15:00Z",
+      "allowed": true,
+      "crawl_delay_seconds": 10,
+      "notes": "Public DTL DNA test price page. Robots.txt reviewed; deterministic fixture mode performs no live requests."
+    },
+    "adapter": {
+      "name": "dtl_dna_seed_importer",
+      "version": "0.1.0",
+      "mode": "deterministic_fixture"
+    }
+  },
+  "clinic": {
+    "external_id": "dtl_dna_shymkent",
+    "name": "DTL DNA Laboratory Shymkent",
+    "legal_name": null,
+    "city": "Shymkent",
+    "address": "Shymkent public DNA center",
+    "phone": null,
+    "website": "https://shymkent.dnk-test.kz",
+    "working_hours": "Mon-Sat 08:00-17:00"
+  },
+  "branches": [
+    {
+      "external_id": "dtl_dna_shymkent_main",
+      "name": "Shymkent DNA center",
+      "city": "Shymkent",
+      "address": "Shymkent public DNA center",
+      "phone": null,
+      "working_hours": "Mon-Sat 08:00-17:00"
+    }
+  ],
+  "rows": [
+    {
+      "row_id": "source_3_row_001",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-001",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "DNA Paternity Test",
+      "service_category_raw": "Molecular genetics",
+      "price_raw": "39 900 KZT",
+      "price": 39900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 1,
+        "cells": [
+          "Molecular genetics",
+          "DNA Paternity Test",
+          "39 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_002",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-002",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "Legal DNA Paternity Test",
+      "service_category_raw": "Molecular genetics",
+      "price_raw": "119 900 KZT",
+      "price": 119900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 2,
+        "cells": [
+          "Molecular genetics",
+          "Legal DNA Paternity Test",
+          "119 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_003",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-003",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "DNA Kinship Test",
+      "service_category_raw": "Molecular genetics",
+      "price_raw": "49 900 KZT",
+      "price": 49900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 3,
+        "cells": [
+          "Molecular genetics",
+          "DNA Kinship Test",
+          "49 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_004",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-004",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "DNA Maternity Test",
+      "service_category_raw": "Molecular genetics",
+      "price_raw": "39 900 KZT",
+      "price": 39900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 4,
+        "cells": [
+          "Molecular genetics",
+          "DNA Maternity Test",
+          "39 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_005",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-005",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "DNA Sibling Test",
+      "service_category_raw": "Molecular genetics",
+      "price_raw": "49 900 KZT",
+      "price": 49900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 5,
+        "cells": [
+          "Molecular genetics",
+          "DNA Sibling Test",
+          "49 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_006",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-006",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "DNA Grandparentage Test",
+      "service_category_raw": "Molecular genetics",
+      "price_raw": "54 900 KZT",
+      "price": 54900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 6,
+        "cells": [
+          "Molecular genetics",
+          "DNA Grandparentage Test",
+          "54 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_007",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-007",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "DNA Avuncular Test",
+      "service_category_raw": "Molecular genetics",
+      "price_raw": "54 900 KZT",
+      "price": 54900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 7,
+        "cells": [
+          "Molecular genetics",
+          "DNA Avuncular Test",
+          "54 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_008",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-008",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "Y chromosome lineage test",
+      "service_category_raw": "Molecular genetics",
+      "price_raw": "69 900 KZT",
+      "price": 69900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 8,
+        "cells": [
+          "Molecular genetics",
+          "Y chromosome lineage test",
+          "69 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_009",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-009",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "Mitochondrial DNA lineage test",
+      "service_category_raw": "Molecular genetics",
+      "price_raw": "69 900 KZT",
+      "price": 69900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 9,
+        "cells": [
+          "Molecular genetics",
+          "Mitochondrial DNA lineage test",
+          "69 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_010",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-010",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "Prenatal non-invasive paternity screen",
+      "service_category_raw": "Molecular genetics",
+      "price_raw": "249 900 KZT",
+      "price": 249900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 10,
+        "cells": [
+          "Molecular genetics",
+          "Prenatal non-invasive paternity screen",
+          "249 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_011",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-011",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "Carrier screening basic panel",
+      "service_category_raw": "Genetic screening",
+      "price_raw": "89 900 KZT",
+      "price": 89900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 11,
+        "cells": [
+          "Genetic screening",
+          "Carrier screening basic panel",
+          "89 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_012",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-012",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "Carrier screening expanded panel",
+      "service_category_raw": "Genetic screening",
+      "price_raw": "149 900 KZT",
+      "price": 149900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 12,
+        "cells": [
+          "Genetic screening",
+          "Carrier screening expanded panel",
+          "149 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_013",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-013",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "Hereditary thrombophilia panel",
+      "service_category_raw": "Genetic screening",
+      "price_raw": "59 900 KZT",
+      "price": 59900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 13,
+        "cells": [
+          "Genetic screening",
+          "Hereditary thrombophilia panel",
+          "59 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_014",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-014",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "BRCA1 BRCA2 targeted test",
+      "service_category_raw": "Genetic screening",
+      "price_raw": "79 900 KZT",
+      "price": 79900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 14,
+        "cells": [
+          "Genetic screening",
+          "BRCA1 BRCA2 targeted test",
+          "79 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_015",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-015",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "Pharmacogenetics basic panel",
+      "service_category_raw": "Genetic screening",
+      "price_raw": "69 900 KZT",
+      "price": 69900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 15,
+        "cells": [
+          "Genetic screening",
+          "Pharmacogenetics basic panel",
+          "69 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_016",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-016",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "PCR SARS CoV 2",
+      "service_category_raw": "PCR diagnostics",
+      "price_raw": "7 500 KZT",
+      "price": 7500,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 16,
+        "cells": [
+          "PCR diagnostics",
+          "PCR SARS CoV 2",
+          "7 500 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_017",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-017",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "PCR influenza A B",
+      "service_category_raw": "PCR diagnostics",
+      "price_raw": "8 500 KZT",
+      "price": 8500,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 17,
+        "cells": [
+          "PCR diagnostics",
+          "PCR influenza A B",
+          "8 500 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_018",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-018",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "PCR HPV high risk panel",
+      "service_category_raw": "PCR diagnostics",
+      "price_raw": "16 900 KZT",
+      "price": 16900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 18,
+        "cells": [
+          "PCR diagnostics",
+          "PCR HPV high risk panel",
+          "16 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_019",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-019",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "PCR tuberculosis complex",
+      "service_category_raw": "PCR diagnostics",
+      "price_raw": "14 900 KZT",
+      "price": 14900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 19,
+        "cells": [
+          "PCR diagnostics",
+          "PCR tuberculosis complex",
+          "14 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_020",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-020",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "PCR cytomegalovirus",
+      "service_category_raw": "PCR diagnostics",
+      "price_raw": "9 900 KZT",
+      "price": 9900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 20,
+        "cells": [
+          "PCR diagnostics",
+          "PCR cytomegalovirus",
+          "9 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_021",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-021",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "PCR Epstein Barr virus",
+      "service_category_raw": "PCR diagnostics",
+      "price_raw": "9 900 KZT",
+      "price": 9900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 21,
+        "cells": [
+          "PCR diagnostics",
+          "PCR Epstein Barr virus",
+          "9 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_022",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-022",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "PCR herpes simplex virus 1 2",
+      "service_category_raw": "PCR diagnostics",
+      "price_raw": "9 900 KZT",
+      "price": 9900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 22,
+        "cells": [
+          "PCR diagnostics",
+          "PCR herpes simplex virus 1 2",
+          "9 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_023",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-023",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "PCR chlamydia trachomatis",
+      "service_category_raw": "PCR diagnostics",
+      "price_raw": "6 500 KZT",
+      "price": 6500,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 23,
+        "cells": [
+          "PCR diagnostics",
+          "PCR chlamydia trachomatis",
+          "6 500 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_024",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-024",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "PCR mycoplasma genitalium",
+      "service_category_raw": "PCR diagnostics",
+      "price_raw": "6 900 KZT",
+      "price": 6900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 24,
+        "cells": [
+          "PCR diagnostics",
+          "PCR mycoplasma genitalium",
+          "6 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_025",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-025",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "PCR ureaplasma species",
+      "service_category_raw": "PCR diagnostics",
+      "price_raw": "6 900 KZT",
+      "price": 6900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 25,
+        "cells": [
+          "PCR diagnostics",
+          "PCR ureaplasma species",
+          "6 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_026",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-026",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "Buccal swab collection",
+      "service_category_raw": "Laboratory",
+      "price_raw": "2 000 KZT",
+      "price": 2000,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": 10,
+      "duration_days": null,
+      "duration_raw": "10 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 26,
+        "cells": [
+          "Laboratory",
+          "Buccal swab collection",
+          "2 000 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_027",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-027",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "Blood sample collection",
+      "service_category_raw": "Laboratory",
+      "price_raw": "2 500 KZT",
+      "price": 2500,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": 10,
+      "duration_days": null,
+      "duration_raw": "10 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 27,
+        "cells": [
+          "Laboratory",
+          "Blood sample collection",
+          "2 500 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_028",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-028",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "DNA extraction from sample",
+      "service_category_raw": "Laboratory",
+      "price_raw": "12 000 KZT",
+      "price": 12000,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 28,
+        "cells": [
+          "Laboratory",
+          "DNA extraction from sample",
+          "12 000 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_029",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-029",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "Sample storage 30 days",
+      "service_category_raw": "Laboratory",
+      "price_raw": "5 000 KZT",
+      "price": 5000,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 29,
+        "cells": [
+          "Laboratory",
+          "Sample storage 30 days",
+          "5 000 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_030",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-030",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "Genetic counselor consultation",
+      "service_category_raw": "Consultation",
+      "price_raw": "15 000 KZT",
+      "price": 15000,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": 30,
+      "duration_days": null,
+      "duration_raw": "30 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 30,
+        "cells": [
+          "Consultation",
+          "Genetic counselor consultation",
+          "15 000 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_031",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-031",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "Genetic counselor repeat consultation",
+      "service_category_raw": "Consultation",
+      "price_raw": "10 000 KZT",
+      "price": 10000,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": 20,
+      "duration_days": null,
+      "duration_raw": "20 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 31,
+        "cells": [
+          "Consultation",
+          "Genetic counselor repeat consultation",
+          "10 000 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_032",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-032",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "Express DNA profile",
+      "service_category_raw": "Molecular genetics",
+      "price_raw": "89 900 KZT",
+      "price": 89900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 32,
+        "cells": [
+          "Molecular genetics",
+          "Express DNA profile",
+          "89 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_033",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-033",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "Standard DNA profile",
+      "service_category_raw": "Molecular genetics",
+      "price_raw": "59 900 KZT",
+      "price": 59900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 33,
+        "cells": [
+          "Molecular genetics",
+          "Standard DNA profile",
+          "59 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_034",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-034",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "Additional participant DNA test",
+      "service_category_raw": "Molecular genetics",
+      "price_raw": "29 900 KZT",
+      "price": 29900,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 34,
+        "cells": [
+          "Molecular genetics",
+          "Additional participant DNA test",
+          "29 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_3_row_035",
+      "branch_external_id": "dtl_dna_shymkent_main",
+      "source_url": "https://shymkent.dnk-test.kz/en/#fixture-row-035",
+      "parsed_at": "2026-06-26T08:23:00Z",
+      "service_name_raw": "Court-ready DNA report duplicate",
+      "service_category_raw": "Molecular genetics",
+      "price_raw": "15 000 KZT",
+      "price": 15000,
+      "currency": "KZT",
+      "updated_at": "2026-06-20",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 35,
+        "cells": [
+          "Molecular genetics",
+          "Court-ready DNA report duplicate",
+          "15 000 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    }
+  ]
+}

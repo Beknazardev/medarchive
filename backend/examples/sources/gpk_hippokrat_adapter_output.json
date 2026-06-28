@@ -1,0 +1,82 @@
+{
+  "contract_version": "case1.scraped_price_list.v1",
+  "source": {
+    "id": "gpk_hippokrat",
+    "name": "Гиппократ",
+    "type": "public_price_list",
+    "source_url": "https://gpk.kz/%D0%BF%D1%80%D0%B0%D0%B9%D1%81-%D0%BB%D0%B8%D1%81%D1%82",
+    "parsed_at": "2026-06-27T18:00:00+05:00",
+    "robots": {
+      "checked_at": "2026-06-27T17:45:00+05:00",
+      "allowed": true,
+      "crawl_delay_seconds": 15,
+      "notes": "Public GPK Hippokrat price list. F0 policy rechecked."
+    },
+    "adapter": {
+      "name": "gpk_hippokrat",
+      "version": "0.1.0",
+      "mode": "deterministic_fixture"
+    }
+  },
+  "clinic": {
+    "external_id": "gpk_hippokrat",
+    "name": "Гиппократ",
+    "legal_name": "ООО \"Лечебно-диагностический центр Гиппократ\"",
+    "city": "Костанай",
+    "address": "г.Костанай, ул. 1 Мая, 151, корпус 7",
+    "phone": null,
+    "website": "https://gpk.kz",
+    "working_hours": "ПН-ПТ: 8:00-15:00, СБ: 8:00-12:00"
+  },
+  "branches": [],
+  "rows": [
+    {
+      "row_id": "gpk_hippokrat_row_003",
+      "source_url": "https://gpk.kz/%D0%BF%D1%80%D0%B0%D0%B9%D1%81-%D0%BB%D0%B8%D1%81%D1%82",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Первичный прием (консультация) врача специалиста уролог",
+      "service_category_raw": "Поликлинический врачебный прием",
+      "price_raw": "7000",
+      "price": 7000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "row_code": "",
+      "parent_service": "Первичный прием (консультация) врача специалиста",
+      "section": "Поликлинический врачебный прием",
+      "section_number": "1",
+      "is_available": true,
+      "raw": {
+        "row_number": 3,
+        "row_code": "",
+        "parent_service": "Первичный прием (консультация) врача специалиста",
+        "section": "Поликлинический врачебный прием",
+        "section_number": "1",
+        "cells": ["", "уролог", "7000"]
+      }
+    },
+    {
+      "row_id": "gpk_hippokrat_row_040",
+      "source_url": "https://gpk.kz/%D0%BF%D1%80%D0%B0%D0%B9%D1%81-%D0%BB%D0%B8%D1%81%D1%82",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Общий анализ крови",
+      "service_category_raw": "Лаборатория",
+      "price_raw": "1300",
+      "price": 1300,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "row_code": "1",
+      "parent_service": "",
+      "section": "Лаборатория",
+      "section_number": "2",
+      "is_available": true,
+      "raw": {
+        "row_number": 40,
+        "row_code": "1",
+        "parent_service": "",
+        "section": "Лаборатория",
+        "section_number": "2",
+        "cells": ["1", "Общий анализ крови", "1300"]
+      }
+    }
+  ]
+}

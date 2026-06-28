@@ -1,0 +1,106 @@
+{
+  "contract_version": "case1.scraped_price_list.v1",
+  "source": {
+    "id": "bmcudp",
+    "name": "БМЦ УДП РК",
+    "type": "public_price_list",
+    "source_url": "https://bmcudp.kz/ru/services/tsena-dlya-grazhdan-respubliki-kazakhstan/kt-i-mrt/12811",
+    "parsed_at": "2026-06-27T18:00:00+05:00",
+    "robots": {
+      "checked_at": "2026-06-27T17:45:00+05:00",
+      "allowed": true,
+      "crawl_delay_seconds": 10,
+      "notes": "Public BMCUDP tariff page. F0 policy rechecked."
+    },
+    "adapter": {
+      "name": "bmcudp",
+      "version": "0.1.0",
+      "mode": "deterministic_fixture"
+    }
+  },
+  "clinic": {
+    "external_id": "bmcudp",
+    "name": "БМЦ УДП РК",
+    "legal_name": "Больница Медицинского центра УДП РК",
+    "city": "Астана",
+    "address": null,
+    "phone": null,
+    "website": "https://bmcudp.kz",
+    "working_hours": null
+  },
+  "branches": [],
+  "rows": [
+    {
+      "row_id": "bmcudp_row_003",
+      "source_url": "https://bmcudp.kz/ru/services/tsena-dlya-grazhdan-respubliki-kazakhstan/kt-i-mrt/12811",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Виртуальная КТ-колоноскопия без контраста",
+      "service_category_raw": "КТ и МРТ",
+      "price_raw": "57 750",
+      "price": 57750,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "row_code": "836",
+      "unit": "1 исследование",
+      "section": "Брюшной отдел",
+      "tariff_audience": "rk_citizens",
+      "is_available": true,
+      "raw": {
+        "row_number": 3,
+        "row_code": "836",
+        "unit": "1 исследование",
+        "section": "Брюшной отдел",
+        "tariff_audience": "rk_citizens",
+        "cells": ["836", "Виртуальная КТ-колоноскопия без контраста", "1 исследование", "57 750"]
+      }
+    },
+    {
+      "row_id": "bmcudp_row_011",
+      "source_url": "https://bmcudp.kz/ru/services/tsena-dlya-grazhdan-respubliki-kazakhstan/kt-i-mrt/12811",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "КТ головного мозга без контраста",
+      "service_category_raw": "КТ и МРТ",
+      "price_raw": "26 250",
+      "price": 26250,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "row_code": "867",
+      "unit": "1 исследование",
+      "section": "МСКТ - Головной мозг",
+      "tariff_audience": "rk_citizens",
+      "is_available": true,
+      "raw": {
+        "row_number": 11,
+        "row_code": "867",
+        "unit": "1 исследование",
+        "section": "МСКТ - Головной мозг",
+        "tariff_audience": "rk_citizens",
+        "cells": ["867", "КТ головного мозга без контраста", "1 исследование", "26 250"]
+      }
+    },
+    {
+      "row_id": "bmcudp_row_016",
+      "source_url": "https://bmcudp.kz/ru/services/tsena-dlya-grazhdan-respubliki-kazakhstan/kt-i-mrt/12811",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Низкодозовая компьютерная томография легких",
+      "service_category_raw": "КТ и МРТ",
+      "price_raw": "21 000",
+      "price": 21000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "row_code": "882",
+      "unit": "1 исследование",
+      "section": "МСКТ - Грудной сегмент",
+      "tariff_audience": "rk_citizens",
+      "is_available": true,
+      "raw": {
+        "row_number": 16,
+        "row_code": "882",
+        "unit": "1 исследование",
+        "section": "МСКТ - Грудной сегмент",
+        "tariff_audience": "rk_citizens",
+        "cells": ["882", "Низкодозовая компьютерная томография легких", "1 исследование", "21 000"]
+      }
+    }
+  ]
+}

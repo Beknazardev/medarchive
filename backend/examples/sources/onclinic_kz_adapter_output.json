@@ -1,0 +1,354 @@
+{
+  "contract_version": "case1.scraped_price_list.v1",
+  "source": {
+    "id": "onclinic_kz",
+    "name": "OnClinic",
+    "type": "public_price_list",
+    "source_url": "https://onclinic.kz/price/",
+    "parsed_at": "2026-06-27T18:00:00+05:00",
+    "robots": {
+      "checked_at": "2026-06-27T17:45:00+05:00",
+      "allowed": true,
+      "crawl_delay_seconds": 10,
+      "notes": "Public OnClinic price list page. F0 policy rechecked."
+    },
+    "adapter": {
+      "name": "onclinic_kz",
+      "version": "0.1.0",
+      "mode": "deterministic_fixture"
+    }
+  },
+  "clinic": {
+    "external_id": "onclinic_kz",
+    "name": "OnClinic",
+    "legal_name": null,
+    "city": "Астана",
+    "address": null,
+    "phone": null,
+    "website": "https://onclinic.kz",
+    "working_hours": null
+  },
+  "branches": [],
+  "rows": [
+    {
+      "row_id": "onclinic_kz_row_001",
+      "source_url": "https://onclinic.kz/price/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Приём терапевта (первая консультация)",
+      "service_category_raw": "Консультации",
+      "price_raw": "8 000",
+      "price": 8000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 1,
+        "cells": ["Приём терапевта (первая консультация)", "8 000"]
+      }
+    },
+    {
+      "row_id": "onclinic_kz_row_002",
+      "source_url": "https://onclinic.kz/price/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Приём терапевта (повторная консультация)",
+      "service_category_raw": "Консультации",
+      "price_raw": "5 000",
+      "price": 5000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 2,
+        "cells": ["Приём терапевта (повторная консультация)", "5 000"]
+      }
+    },
+    {
+      "row_id": "onclinic_kz_row_003",
+      "source_url": "https://onclinic.kz/price/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Приём кардиолога",
+      "service_category_raw": "Консультации",
+      "price_raw": "10 000",
+      "price": 10000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 3,
+        "cells": ["Приём кардиолога", "10 000"]
+      }
+    },
+    {
+      "row_id": "onclinic_kz_row_004",
+      "source_url": "https://onclinic.kz/price/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Приём невролога",
+      "service_category_raw": "Консультации",
+      "price_raw": "9 000",
+      "price": 9000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 4,
+        "cells": ["Приём невролога", "9 000"]
+      }
+    },
+    {
+      "row_id": "onclinic_kz_row_005",
+      "source_url": "https://onclinic.kz/price/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Приём хирурга",
+      "service_category_raw": "Консультации",
+      "price_raw": "9 000",
+      "price": 9000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 5,
+        "cells": ["Приём хирурга", "9 000"]
+      }
+    },
+    {
+      "row_id": "onclinic_kz_row_006",
+      "source_url": "https://onclinic.kz/price/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "УЗИ органов брюшной полости",
+      "service_category_raw": "Диагностика",
+      "price_raw": "12 000",
+      "price": 12000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 6,
+        "cells": ["УЗИ органов брюшной полости", "12 000"]
+      }
+    },
+    {
+      "row_id": "onclinic_kz_row_007",
+      "source_url": "https://onclinic.kz/price/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "УЗИ почек",
+      "service_category_raw": "Диагностика",
+      "price_raw": "8 000",
+      "price": 8000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 7,
+        "cells": ["УЗИ почек", "8 000"]
+      }
+    },
+    {
+      "row_id": "onclinic_kz_row_008",
+      "source_url": "https://onclinic.kz/price/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "УЗИ щитовидной железы",
+      "service_category_raw": "Диагностика",
+      "price_raw": "8 500",
+      "price": 8500,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 8,
+        "cells": ["УЗИ щитовидной железы", "8 500"]
+      }
+    },
+    {
+      "row_id": "onclinic_kz_row_009",
+      "source_url": "https://onclinic.kz/price/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "ЭКГ (электрокардиография)",
+      "service_category_raw": "Диагностика",
+      "price_raw": "3 000",
+      "price": 3000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 9,
+        "cells": ["ЭКГ (электрокардиография)", "3 000"]
+      }
+    },
+    {
+      "row_id": "onclinic_kz_row_010",
+      "source_url": "https://onclinic.kz/price/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Рентген грудной клетки",
+      "service_category_raw": "Диагностика",
+      "price_raw": "4 500",
+      "price": 4500,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 10,
+        "cells": ["Рентген грудной клетки", "4 500"]
+      }
+    },
+    {
+      "row_id": "onclinic_kz_row_011",
+      "source_url": "https://onclinic.kz/price/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "МРТ головного мозга",
+      "service_category_raw": "Диагностика",
+      "price_raw": "35 000",
+      "price": 35000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 11,
+        "cells": ["МРТ головного мозга", "35 000"]
+      }
+    },
+    {
+      "row_id": "onclinic_kz_row_012",
+      "source_url": "https://onclinic.kz/price/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "МРТ позвоночника (1 отдел)",
+      "service_category_raw": "Диагностика",
+      "price_raw": "30 000",
+      "price": 30000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 12,
+        "cells": ["МРТ позвоночника (1 отдел)", "30 000"]
+      }
+    },
+    {
+      "row_id": "onclinic_kz_row_013",
+      "source_url": "https://onclinic.kz/price/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "КТ головного мозга",
+      "service_category_raw": "Диагностика",
+      "price_raw": "25 000",
+      "price": 25000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 13,
+        "cells": ["КТ головного мозга", "25 000"]
+      }
+    },
+    {
+      "row_id": "onclinic_kz_row_014",
+      "source_url": "https://onclinic.kz/price/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Общий анализ крови",
+      "service_category_raw": "Анализы",
+      "price_raw": "1 500",
+      "price": 1500,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 14,
+        "cells": ["Общий анализ крови", "1 500"]
+      }
+    },
+    {
+      "row_id": "onclinic_kz_row_015",
+      "source_url": "https://onclinic.kz/price/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Общий анализ мочи",
+      "service_category_raw": "Анализы",
+      "price_raw": "1 000",
+      "price": 1000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 15,
+        "cells": ["Общий анализ мочи", "1 000"]
+      }
+    },
+    {
+      "row_id": "onclinic_kz_row_016",
+      "source_url": "https://onclinic.kz/price/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Биохимический анализ крови (расширенный)",
+      "service_category_raw": "Анализы",
+      "price_raw": "5 500",
+      "price": 5500,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 16,
+        "cells": ["Биохимический анализ крови (расширенный)", "5 500"]
+      }
+    },
+    {
+      "row_id": "onclinic_kz_row_017",
+      "source_url": "https://onclinic.kz/price/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Внутривенная инъекция",
+      "service_category_raw": "Процедуры",
+      "price_raw": "1 500",
+      "price": 1500,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 17,
+        "cells": ["Внутривенная инъекция", "1 500"]
+      }
+    },
+    {
+      "row_id": "onclinic_kz_row_018",
+      "source_url": "https://onclinic.kz/price/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Внутримышечная инъекция",
+      "service_category_raw": "Процедуры",
+      "price_raw": "1 000",
+      "price": 1000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 18,
+        "cells": ["Внутримышечная инъекция", "1 000"]
+      }
+    },
+    {
+      "row_id": "onclinic_kz_row_019",
+      "source_url": "https://onclinic.kz/price/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Капельница (инфузия)",
+      "service_category_raw": "Процедуры",
+      "price_raw": "5 000",
+      "price": 5000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 19,
+        "cells": ["Капельница (инфузия)", "5 000"]
+      }
+    },
+    {
+      "row_id": "onclinic_kz_row_020",
+      "source_url": "https://onclinic.kz/price/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Перевязка",
+      "service_category_raw": "Процедуры",
+      "price_raw": "2 000",
+      "price": 2000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 20,
+        "cells": ["Перевязка", "2 000"]
+      }
+    }
+  ]
+}

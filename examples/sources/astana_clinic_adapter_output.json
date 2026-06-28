@@ -1,0 +1,58 @@
+{
+  "contract_version": "case1.scraped_price_list.v1",
+  "source": {
+    "id": "astana_clinic",
+    "name": "Astana Clinic",
+    "type": "public_price_list",
+    "source_url": "https://www.astanaclinic.kz/index.php/ru/p-tsient-m/prejskurant-tsen-po-platnym-uslugam/1335-otdelenie-interventsionnoj-kardiologii-i-aritmologii",
+    "parsed_at": "2026-06-27T18:00:00+05:00",
+    "robots": {
+      "checked_at": "2026-06-27T17:45:00+05:00",
+      "allowed": true,
+      "crawl_delay_seconds": 10,
+      "notes": "Public Astana Clinic price page. F0 policy rechecked."
+    },
+    "adapter": {
+      "name": "astana_clinic",
+      "version": "0.1.0",
+      "mode": "deterministic_fixture"
+    }
+  },
+  "clinic": {
+    "external_id": "astana_clinic",
+    "name": "Astana Clinic",
+    "legal_name": null,
+    "city": "Астана",
+    "address": null,
+    "phone": null,
+    "website": "https://www.astanaclinic.kz",
+    "working_hours": null
+  },
+  "branches": [],
+  "rows": [
+    {
+      "row_id": "astana_clinic_row_002",
+      "source_url": "https://www.astanaclinic.kz/index.php/ru/p-tsient-m/prejskurant-tsen-po-platnym-uslugam/1335-otdelenie-interventsionnoj-kardiologii-i-aritmologii",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Консультация кардиолога первичная",
+      "service_category_raw": "Консультативные приемы",
+      "price_raw": "8 000",
+      "price": 8000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "row_code": "1",
+      "unit": "1 визит",
+      "section": "Консультативные приемы",
+      "tariff_audience": "rk_citizens",
+      "is_available": true,
+      "raw": {
+        "row_number": 2,
+        "row_code": "1",
+        "unit": "1 визит",
+        "section": "Консультативные приемы",
+        "tariff_audience": "rk_citizens",
+        "cells": ["1", "Консультация кардиолога первичная", "1 визит", "8 000", "15 000"]
+      }
+    }
+  ]
+}

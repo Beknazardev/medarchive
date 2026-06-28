@@ -1,0 +1,4 @@
+Service,Price,Currency
+MRT head,15000,KZT
+CT body,12000,KZT
+Ultrasound,5000,KZT

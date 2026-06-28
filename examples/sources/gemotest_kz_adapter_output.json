@@ -1,0 +1,109 @@
+{
+  "contract_version": "case1.scraped_price_list.v1",
+  "source": {
+    "id": "gemotest_kz",
+    "name": "Гемотест",
+    "type": "public_price_list",
+    "source_url": "https://gemotest.kz/almaty/catalog/",
+    "parsed_at": "2026-06-27T18:00:00+05:00",
+    "robots": {
+      "checked_at": "2026-06-27T17:45:00+05:00",
+      "allowed": true,
+      "crawl_delay_seconds": 10,
+      "notes": "Public Gemotest catalog page. F0 policy rechecked."
+    },
+    "adapter": {
+      "name": "gemotest_kz",
+      "version": "0.1.0",
+      "mode": "deterministic_fixture"
+    }
+  },
+  "clinic": {
+    "external_id": "gemotest_kz",
+    "name": "Гемотест",
+    "legal_name": "ООО «Лаборатория Гемотест»",
+    "city": "Алматы",
+    "address": null,
+    "phone": null,
+    "website": "https://gemotest.kz",
+    "working_hours": null
+  },
+  "branches": [],
+  "rows": [
+    {
+      "row_id": "gemotest_kz_row_001",
+      "source_url": "https://gemotest.kz/almaty/catalog/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Общий анализ мочи",
+      "service_category_raw": "Лабораторные исследования",
+      "price_raw": "1 450 ₸",
+      "price": 1450,
+      "biomaterial_fee": 1090,
+      "biomaterial_fee_raw": "+1 090 ₸",
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1 день",
+      "service_code": "9.1.",
+      "specimen": "Моча",
+      "discount_raw": null,
+      "is_available": true,
+      "raw": {
+        "row_number": 1,
+        "code": "9.1.",
+        "specimen": "Моча",
+        "name_raw": "Общий анализ мочи"
+      }
+    },
+    {
+      "row_id": "gemotest_kz_row_002",
+      "source_url": "https://gemotest.kz/almaty/catalog/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Витамин D и ферритин",
+      "service_category_raw": "Лабораторные исследования",
+      "price_raw": "3 790 ₸",
+      "price": 3790,
+      "biomaterial_fee": 0,
+      "biomaterial_fee_raw": null,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1 день",
+      "service_code": "33.744.",
+      "specimen": "Вен. кровь",
+      "discount_raw": "Скидка 59%",
+      "is_available": true,
+      "raw": {
+        "row_number": 2,
+        "code": "33.744.",
+        "specimen": "Вен. кровь",
+        "name_raw": "Витамин D и ферритин"
+      }
+    },
+    {
+      "row_id": "gemotest_kz_row_003",
+      "source_url": "https://gemotest.kz/almaty/catalog/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Общий анализ крови с лейкоцитарной формулой и СОЭ",
+      "service_category_raw": "Лабораторные исследования",
+      "price_raw": "1 550 ₸",
+      "price": 1550,
+      "biomaterial_fee": 1090,
+      "biomaterial_fee_raw": "+1 090 ₸",
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1 день",
+      "service_code": "3.9.1.",
+      "specimen": "Вен. кровь",
+      "discount_raw": null,
+      "is_available": true,
+      "raw": {
+        "row_number": 3,
+        "code": "3.9.1.",
+        "specimen": "Вен. кровь",
+        "name_raw": "Общий анализ крови с лейкоцитарной формулой и СОЭ"
+      }
+    }
+  ]
+}

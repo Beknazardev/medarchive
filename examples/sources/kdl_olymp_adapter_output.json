@@ -1,0 +1,124 @@
+{
+  "contract_version": "case1.scraped_price_list.v1",
+  "source": {
+    "id": "kdl_olymp",
+    "name": "КДЛ ОЛИМП",
+    "type": "public_price_list",
+    "source_url": "https://www.kdlolymp.kz/pricelist/almaty",
+    "parsed_at": "2026-06-27T17:45:00+05:00",
+    "robots": {
+      "checked_at": "2026-06-27T17:45:00+05:00",
+      "allowed": true,
+      "crawl_delay_seconds": 10,
+      "notes": "Public KDL Olymp price list page. F0 policy rechecked."
+    },
+    "adapter": {
+      "name": "kdl_olymp",
+      "version": "0.1.0",
+      "mode": "deterministic_fixture"
+    }
+  },
+  "clinic": {
+    "external_id": "kdl_olymp",
+    "name": "КДЛ ОЛИМП",
+    "legal_name": null,
+    "city": "Алматы",
+    "address": null,
+    "phone": null,
+    "website": "https://www.kdlolymp.kz",
+    "working_hours": null
+  },
+  "branches": [],
+  "rows": [
+    {
+      "row_id": "kdl_olymp_row_001",
+      "source_url": "https://www.kdlolymp.kz/pricelist/almaty",
+      "parsed_at": "2026-06-27T17:45:00+05:00",
+      "service_name_raw": "Общий анализ крови (ОАК) с лейкоцитарной формулой",
+      "service_category_raw": "Лабораторные исследования",
+      "price_raw": "1 450",
+      "price": 1450,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1",
+      "is_available": true,
+      "raw": {
+        "row_number": 1,
+        "cells": ["1", "Общий анализ крови (ОАК) с лейкоцитарной формулой", "1", "1 450"]
+      }
+    },
+    {
+      "row_id": "kdl_olymp_row_002",
+      "source_url": "https://www.kdlolymp.kz/pricelist/almaty",
+      "parsed_at": "2026-06-27T17:45:00+05:00",
+      "service_name_raw": "Общий анализ мочи (ОАМ)",
+      "service_category_raw": "Лабораторные исследования",
+      "price_raw": "1 050",
+      "price": 1050,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1",
+      "is_available": true,
+      "raw": {
+        "row_number": 2,
+        "cells": ["2", "Общий анализ мочи (ОАМ)", "1", "1 050"]
+      }
+    },
+    {
+      "row_id": "kdl_olymp_row_003",
+      "source_url": "https://www.kdlolymp.kz/pricelist/almaty",
+      "parsed_at": "2026-06-27T17:45:00+05:00",
+      "service_name_raw": "Глюкоза (кровь)",
+      "service_category_raw": "Лабораторные исследования",
+      "price_raw": "750",
+      "price": 750,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1",
+      "is_available": true,
+      "raw": {
+        "row_number": 3,
+        "cells": ["3", "Глюкоза (кровь)", "1", "750"]
+      }
+    },
+    {
+      "row_id": "kdl_olymp_row_004",
+      "source_url": "https://www.kdlolymp.kz/pricelist/almaty",
+      "parsed_at": "2026-06-27T17:45:00+05:00",
+      "service_name_raw": "Холестерин общий",
+      "service_category_raw": "Лабораторные исследования",
+      "price_raw": "900",
+      "price": 900,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1",
+      "is_available": true,
+      "raw": {
+        "row_number": 4,
+        "cells": ["4", "Холестерин общий", "1", "900"]
+      }
+    },
+    {
+      "row_id": "kdl_olymp_row_005",
+      "source_url": "https://www.kdlolymp.kz/pricelist/almaty",
+      "parsed_at": "2026-06-27T17:45:00+05:00",
+      "service_name_raw": "Креатинин",
+      "service_category_raw": "Лабораторные исследования",
+      "price_raw": "900",
+      "price": 900,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1",
+      "is_available": true,
+      "raw": {
+        "row_number": 5,
+        "cells": ["5", "Креатинин", "1", "900"]
+      }
+    }
+  ]
+}

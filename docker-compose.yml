@@ -1,0 +1,64 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: aggregator
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d aggregator"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+    command: >
+      sh -c "alembic upgrade head &&
+      python -m app.scripts.run_all_fixtures &&
+      uvicorn app.main:app --host 0.0.0.0 --port 8000"
+    environment:
+      PROJECT_NAME: "Medical Services Price Aggregator Kazakhstan"
+      APP_VERSION: "0.1.0"
+      API_V1_PREFIX: "/api/v1"
+      DATABASE_URL: "postgresql+psycopg://postgres:postgres@postgres:5432/aggregator"
+      BACKEND_CORS_ORIGINS: "http://localhost:3000"
+      IMPORT_API_KEY: "example-secret"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/data:ro
+      - ./examples:/examples:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=5)",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  frontend:
+    build:
+      context: ./frontend
+    environment:
+      NEXT_PUBLIC_API_BASE_URL: "http://localhost:8000"
+    ports:
+      - "3000:3000"
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  postgres_data:

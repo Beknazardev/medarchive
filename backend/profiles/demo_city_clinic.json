@@ -1,0 +1,51 @@
+{
+  "profile_id": "demo_city_clinic",
+  "profile_version": "1.0.0",
+  "source_id": "city_clinic_document",
+  "approved_hosts": ["example-clinic.kz"],
+  "approved_paths": ["/prices/"],
+  "document": {
+    "expected_format": "html",
+    "min_tables": 1,
+    "max_tables": 10,
+    "min_text_length": 100,
+    "scan_detection": true,
+    "tariff_audience": "rk_citizens",
+    "required_text_patterns": ["₸", "тенге"],
+    "forbidden_text_patterns": ["cito", "акция"]
+  },
+  "clinic": {
+    "external_id": "demo_city_clinic",
+    "name": "Демо Городская Поликлиника",
+    "legal_name": null,
+    "city": "Астана",
+    "address": "ул. Примерная, 10",
+    "phone": null,
+    "website": "https://example-clinic.kz",
+    "working_hours": "ПН-ПТ: 8:00-17:00"
+  },
+  "table_selection": {
+    "index": 0,
+    "min_rows": 3
+  },
+  "columns": {
+    "service_name": 1,
+    "price": 2,
+    "code": 0,
+    "unit": null,
+    "category": null,
+    "section": null
+  },
+  "validation": {
+    "min_rows": 3,
+    "max_rows": 1000,
+    "min_price": 100,
+    "max_price": 5000000,
+    "required_columns": [1, 2],
+    "header_aliases": {}
+  },
+  "publication_mode": "dry_run",
+  "reviewer": "test_reviewer",
+  "reviewed_at": "2026-06-27T00:00:00Z",
+  "notes": "Demo profile for testing"
+}

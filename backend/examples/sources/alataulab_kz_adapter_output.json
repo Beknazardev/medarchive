@@ -1,0 +1,394 @@
+{
+  "contract_version": "case1.scraped_price_list.v1",
+  "source": {
+    "id": "alataulab_kz",
+    "name": "AlatauLab",
+    "type": "public_price_list",
+    "source_url": "https://alataulab.kz/ru/almaty/analyzes/",
+    "parsed_at": "2026-06-27T18:00:00+05:00",
+    "robots": {
+      "checked_at": "2026-06-27T17:45:00+05:00",
+      "allowed": true,
+      "crawl_delay_seconds": 10,
+      "notes": "Public AlatauLab price list page. F0 policy rechecked."
+    },
+    "adapter": {
+      "name": "alataulab_kz",
+      "version": "0.1.0",
+      "mode": "deterministic_fixture"
+    }
+  },
+  "clinic": {
+    "external_id": "alataulab_kz",
+    "name": "AlatauLab",
+    "legal_name": null,
+    "city": "Алматы",
+    "address": null,
+    "phone": null,
+    "website": "https://alataulab.kz",
+    "working_hours": null
+  },
+  "branches": [],
+  "rows": [
+    {
+      "row_id": "alataulab_kz_row_001",
+      "source_url": "https://alataulab.kz/ru/almaty/analyzes/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Общий анализ крови (ОАК) с лейкоцитарной формулой",
+      "service_category_raw": "Клинические анализы",
+      "price_raw": "1 450",
+      "price": 1450,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1",
+      "is_available": true,
+      "raw": {
+        "row_number": 1,
+        "cells": ["1", "Общий анализ крови (ОАК) с лейкоцитарной формулой", "1", "1 450"]
+      }
+    },
+    {
+      "row_id": "alataulab_kz_row_002",
+      "source_url": "https://alataulab.kz/ru/almaty/analyzes/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Общий анализ мочи",
+      "service_category_raw": "Клинические анализы",
+      "price_raw": "950",
+      "price": 950,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1",
+      "is_available": true,
+      "raw": {
+        "row_number": 2,
+        "cells": ["2", "Общий анализ мочи", "1", "950"]
+      }
+    },
+    {
+      "row_id": "alataulab_kz_row_003",
+      "source_url": "https://alataulab.kz/ru/almaty/analyzes/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Глюкоза крови",
+      "service_category_raw": "Биохимические анализы",
+      "price_raw": "650",
+      "price": 650,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1",
+      "is_available": true,
+      "raw": {
+        "row_number": 3,
+        "cells": ["3", "Глюкоза крови", "1", "650"]
+      }
+    },
+    {
+      "row_id": "alataulab_kz_row_004",
+      "source_url": "https://alataulab.kz/ru/almaty/analyzes/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Холестерин общий",
+      "service_category_raw": "Биохимические анализы",
+      "price_raw": "750",
+      "price": 750,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1",
+      "is_available": true,
+      "raw": {
+        "row_number": 4,
+        "cells": ["4", "Холестерин общий", "1", "750"]
+      }
+    },
+    {
+      "row_id": "alataulab_kz_row_005",
+      "source_url": "https://alataulab.kz/ru/almaty/analyzes/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Креатинин",
+      "service_category_raw": "Биохимические анализы",
+      "price_raw": "700",
+      "price": 700,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1",
+      "is_available": true,
+      "raw": {
+        "row_number": 5,
+        "cells": ["5", "Креатинин", "1", "700"]
+      }
+    },
+    {
+      "row_id": "alataulab_kz_row_006",
+      "source_url": "https://alataulab.kz/ru/almaty/analyzes/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Мочевина",
+      "service_category_raw": "Биохимические анализы",
+      "price_raw": "650",
+      "price": 650,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1",
+      "is_available": true,
+      "raw": {
+        "row_number": 6,
+        "cells": ["6", "Мочевина", "1", "650"]
+      }
+    },
+    {
+      "row_id": "alataulab_kz_row_007",
+      "source_url": "https://alataulab.kz/ru/almaty/analyzes/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Билирубин общий",
+      "service_category_raw": "Биохимические анализы",
+      "price_raw": "750",
+      "price": 750,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1",
+      "is_available": true,
+      "raw": {
+        "row_number": 7,
+        "cells": ["7", "Билирубин общий", "1", "750"]
+      }
+    },
+    {
+      "row_id": "alataulab_kz_row_008",
+      "source_url": "https://alataulab.kz/ru/almaty/analyzes/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "АЛТ (аланинаминотрансфераза)",
+      "service_category_raw": "Биохимические анализы",
+      "price_raw": "850",
+      "price": 850,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1",
+      "is_available": true,
+      "raw": {
+        "row_number": 8,
+        "cells": ["8", "АЛТ (аланинаминотрансфераза)", "1", "850"]
+      }
+    },
+    {
+      "row_id": "alataulab_kz_row_009",
+      "source_url": "https://alataulab.kz/ru/almaty/analyzes/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "АСТ (аспартатаминотрансфераза)",
+      "service_category_raw": "Биохимические анализы",
+      "price_raw": "850",
+      "price": 850,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1",
+      "is_available": true,
+      "raw": {
+        "row_number": 9,
+        "cells": ["9", "АСТ (аспартатаминотрансфераза)", "1", "850"]
+      }
+    },
+    {
+      "row_id": "alataulab_kz_row_010",
+      "source_url": "https://alataulab.kz/ru/almaty/analyzes/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "ТТГ (тиреотропный гормон)",
+      "service_category_raw": "Гормоны",
+      "price_raw": "2 200",
+      "price": 2200,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 2,
+      "duration_raw": "2",
+      "is_available": true,
+      "raw": {
+        "row_number": 10,
+        "cells": ["10", "ТТГ (тиреотропный гормон)", "2", "2 200"]
+      }
+    },
+    {
+      "row_id": "alataulab_kz_row_011",
+      "source_url": "https://alataulab.kz/ru/almaty/analyzes/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Т3 свободный",
+      "service_category_raw": "Гормоны",
+      "price_raw": "1 800",
+      "price": 1800,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 2,
+      "duration_raw": "2",
+      "is_available": true,
+      "raw": {
+        "row_number": 11,
+        "cells": ["11", "Т3 свободный", "2", "1 800"]
+      }
+    },
+    {
+      "row_id": "alataulab_kz_row_012",
+      "source_url": "https://alataulab.kz/ru/almaty/analyzes/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Т4 свободный",
+      "service_category_raw": "Гормоны",
+      "price_raw": "1 800",
+      "price": 1800,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 2,
+      "duration_raw": "2",
+      "is_available": true,
+      "raw": {
+        "row_number": 12,
+        "cells": ["12", "Т4 свободный", "2", "1 800"]
+      }
+    },
+    {
+      "row_id": "alataulab_kz_row_013",
+      "source_url": "https://alataulab.kz/ru/almaty/analyzes/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Ферритин",
+      "service_category_raw": "Гормоны",
+      "price_raw": "2 500",
+      "price": 2500,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 2,
+      "duration_raw": "2",
+      "is_available": true,
+      "raw": {
+        "row_number": 13,
+        "cells": ["13", "Ферритин", "2", "2 500"]
+      }
+    },
+    {
+      "row_id": "alataulab_kz_row_014",
+      "source_url": "https://alataulab.kz/ru/almaty/analyzes/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Витамин D (25-OH)",
+      "service_category_raw": "Витамины",
+      "price_raw": "5 500",
+      "price": 5500,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 3,
+      "duration_raw": "3",
+      "is_available": true,
+      "raw": {
+        "row_number": 14,
+        "cells": ["14", "Витамин D (25-OH)", "3", "5 500"]
+      }
+    },
+    {
+      "row_id": "alataulab_kz_row_015",
+      "source_url": "https://alataulab.kz/ru/almaty/analyzes/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "С-реактивный белок (СРБ)",
+      "service_category_raw": "Иммунология",
+      "price_raw": "1 200",
+      "price": 1200,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1",
+      "is_available": true,
+      "raw": {
+        "row_number": 15,
+        "cells": ["15", "С-реактивный белок (СРБ)", "1", "1 200"]
+      }
+    },
+    {
+      "row_id": "alataulab_kz_row_016",
+      "source_url": "https://alataulab.kz/ru/almaty/analyzes/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Коагулограмма (расширенная)",
+      "service_category_raw": "Коагулограмма",
+      "price_raw": "2 800",
+      "price": 2800,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1",
+      "is_available": true,
+      "raw": {
+        "row_number": 16,
+        "cells": ["16", "Коагулограмма (расширенная)", "1", "2 800"]
+      }
+    },
+    {
+      "row_id": "alataulab_kz_row_017",
+      "source_url": "https://alataulab.kz/ru/almaty/analyzes/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "ПЦР COVID-19 (РНК вируса)",
+      "service_category_raw": "ПЦР",
+      "price_raw": "6 500",
+      "price": 6500,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1",
+      "is_available": true,
+      "raw": {
+        "row_number": 17,
+        "cells": ["17", "ПЦР COVID-19 (РНК вируса)", "1", "6 500"]
+      }
+    },
+    {
+      "row_id": "alataulab_kz_row_018",
+      "source_url": "https://alataulab.kz/ru/almaty/analyzes/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "ПЦР грипп A/B",
+      "service_category_raw": "ПЦР",
+      "price_raw": "4 500",
+      "price": 4500,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1",
+      "is_available": true,
+      "raw": {
+        "row_number": 18,
+        "cells": ["18", "ПЦР грипп A/B", "1", "4 500"]
+      }
+    },
+    {
+      "row_id": "alataulab_kz_row_019",
+      "source_url": "https://alataulab.kz/ru/almaty/analyzes/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Группа крови + Rh-фактор",
+      "service_category_raw": "Клинические анализы",
+      "price_raw": "1 800",
+      "price": 1800,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 1,
+      "duration_raw": "1",
+      "is_available": true,
+      "raw": {
+        "row_number": 19,
+        "cells": ["19", "Группа крови + Rh-фактор", "1", "1 800"]
+      }
+    },
+    {
+      "row_id": "alataulab_kz_row_020",
+      "source_url": "https://alataulab.kz/ru/almaty/analyzes/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Гликированный гемоглобин (HbA1c)",
+      "service_category_raw": "Биохимические анализы",
+      "price_raw": "3 200",
+      "price": 3200,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "duration_days": 2,
+      "duration_raw": "2",
+      "is_available": true,
+      "raw": {
+        "row_number": 20,
+        "cells": ["20", "Гликированный гемоглобин (HbA1c)", "2", "3 200"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,4630 @@
+
+
+
+
+Ниже готовый набор Markdown-файлов для Codex.
+
+# File: docs/codex/00-project-context.md
+
+```md
+# Project Context
+
+## Название проекта
+
+Агрегатор и система сравнения цен на медицинские услуги в Казахстане.
+
+## Краткое описание
+
+Проект — веб-сервис, где пользователь может найти медицинскую услугу, сравнить цены между клиниками, посмотреть адреса, контакты, город, категорию услуги и выбрать наиболее удобный вариант.
+
+Примеры запросов пользователя:
+
+- `МРТ головы`
+- `УЗИ сердца`
+- `прием терапевта`
+- `анализ крови`
+- `КТ грудной клетки`
+
+Backend должен принимать данные о клиниках, филиалах, услугах и ценах через REST JSON API. Это нужно, чтобы в будущем можно было подключать разные источники данных:
+
+- парсеры прайсов клиник;
+- ручные загрузки;
+- партнерские API;
+- внешние медицинские справочники;
+- интеграции с клиниками.
+
+## Проблема рынка
+
+В Казахстане пользователю сложно быстро сравнить цены на медицинские услуги между клиниками.
+
+Типичные проблемы:
+
+1. Цены разбросаны по сайтам клиник.
+2. Прайсы часто представлены в PDF, Excel, HTML-таблицах или изображениях.
+3. Названия услуг отличаются между клиниками.
+4. Пользователь не понимает, где дешевле, где ближе, где удобнее.
+5. Нет единого API-формата для загрузки и обновления медицинских цен.
+6. Медицинские организации обновляют прайсы вручную и нерегулярно.
+
+## Целевая аудитория
+
+### Основной пользователь
+
+Пациент или обычный человек, который хочет:
+
+- найти медицинскую услугу;
+- сравнить цены;
+- выбрать город;
+- посмотреть клиники;
+- увидеть адрес и телефон;
+- быстро понять диапазон цен.
+
+### Вторичные пользователи
+
+Администраторы проекта:
+
+- загружают данные;
+- проверяют импорт;
+- смотрят ошибки;
+- управляют клиниками, услугами и категориями.
+
+### Поставщики данных
+
+Поставщиками данных могут быть:
+
+- клиники-партнеры;
+- парсеры сайтов клиник;
+- внутренние операторы;
+- внешние сервисы;
+- Excel/PDF parser service;
+- партнерские медицинские платформы.
+
+## Зачем нужен агрегатор
+
+Агрегатор нужен, чтобы:
+
+1. собрать цены медицинских услуг в одном месте;
+2. упростить поиск клиник;
+3. дать пользователю прозрачное сравнение цен;
+4. снизить время выбора медицинской услуги;
+5. создать единую базу медицинских услуг и цен;
+6. упростить подключение новых источников данных.
+
+## Почему важна JSON-интеграция
+
+JSON API — ключевая часть проекта.
+
+Он нужен, чтобы backend мог принимать данные из разных источников в едином формате.
+
+Источники могут быть разными:
+
+- parser service;
+- clinic partner API;
+- manual admin upload;
+- CSV/XLSX converter;
+- external integration;
+- future AI parser.
+
+Но внутри основного backend данные должны приходить в стандартизированном JSON-формате.
+
+Главная идея:
+
+```text
+Любой источник данных
+        ↓
+Единый JSON contract
+        ↓
+Backend validation
+        ↓
+Normalization
+        ↓
+Database
+        ↓
+Search and price comparison frontend
+```
+
+## Два трека проекта
+
+Проект можно разделить на два независимых, но связанных трека.
+
+### Трек 1: сервис приема и обработки данных
+
+Цель: сделать backend, который удобно принимает, валидирует, нормализует и сохраняет данные о клиниках, услугах и ценах.
+
+Фокус:
+
+- JSON API;
+- validation;
+- normalization;
+- deduplication;
+- price update logic;
+- price history;
+- import batches;
+- import errors;
+- source tracking.
+
+Этот трек можно представить как:
+
+```text
+Data Ingestion Platform for Medical Prices
+```
+
+Он должен быть полезен даже без пользовательского frontend, потому что другие сервисы смогут подключаться через API.
+
+### Трек 2: пользовательский агрегатор и сравнение цен
+
+Цель: сделать сайт, где пользователь ищет услугу и сравнивает цены.
+
+Фокус:
+
+- быстрый поиск;
+- удобный frontend;
+- фильтры;
+- карточки клиник;
+- карточки услуг;
+- сравнение цен;
+- сортировка по цене и городу;
+- понятный UX.
+
+Этот трек можно представить как:
+
+```text
+Medical Services Price Comparison Aggregator
+```
+
+## Как треки соединяются
+
+Трек 1 поставляет чистые нормализованные данные.
+
+Трек 2 использует эти данные для поиска и отображения пользователю.
+
+```text
+Parser / Clinic API / Manual Upload
+        ↓
+POST /api/v1/import/prices
+        ↓
+Import Service
+        ↓
+Normalization Service
+        ↓
+PostgreSQL
+        ↓
+Search API / Compare API
+        ↓
+Frontend Aggregator
+```
+
+## Основной продуктовый акцент
+
+На MVP важно доказать:
+
+1. Backend умеет принимать данные через удобный JSON.
+2. Данные валидируются и сохраняются в PostgreSQL.
+3. Дубликаты не создаются.
+4. Цены обновляются корректно.
+5. История цен сохраняется.
+6. Пользователь может искать услуги.
+7. Пользователь может сравнивать цены между клиниками.
+8. Frontend простой, быстрый и понятный.
+9. Архитектура готова к подключению отдельного parser service.
+```
+
+# File: docs/codex/01-product-requirements.md
+
+```md
+# Product Requirements
+
+## Цель продукта
+
+Создать веб-сервис для поиска и сравнения цен на медицинские услуги в Казахстане с удобным backend API для приема данных через JSON.
+
+## Основные пользовательские сценарии
+
+### Сценарий 1: поиск медицинской услуги
+
+Пользователь открывает сайт и вводит запрос:
+
+```text
+МРТ головного мозга
+```
+
+Система должна:
+
+1. найти подходящие услуги;
+2. показать список клиник;
+3. показать цену;
+4. показать город;
+5. показать адрес;
+6. дать возможность отсортировать по цене;
+7. дать возможность открыть карточку клиники или услуги.
+
+### Сценарий 2: сравнение цен
+
+Пользователь выбирает услугу и хочет сравнить цены.
+
+Система должна показать:
+
+- клинику;
+- филиал;
+- город;
+- адрес;
+- цену;
+- дату обновления цены;
+- источник данных;
+- минимальную, максимальную и среднюю цену по выборке.
+
+### Сценарий 3: просмотр карточки клиники
+
+Пользователь открывает клинику.
+
+Система должна показать:
+
+- название клиники;
+- город;
+- адреса филиалов;
+- телефон;
+- сайт;
+- список доступных услуг;
+- цены;
+- дату последнего обновления.
+
+### Сценарий 4: просмотр карточки услуги
+
+Пользователь открывает услугу.
+
+Система должна показать:
+
+- название услуги;
+- нормализованное название;
+- категорию;
+- список клиник, где есть услуга;
+- цены;
+- диапазон цен;
+- дату последнего обновления.
+
+### Сценарий 5: импорт данных через JSON
+
+Администратор, parser service или clinic partner отправляет JSON на endpoint:
+
+```http
+POST /api/v1/import/prices
+```
+
+Система должна:
+
+1. принять JSON;
+2. провалидировать структуру;
+3. создать или обновить clinic;
+4. создать или обновить branch;
+5. создать или обновить service;
+6. нормализовать название услуги;
+7. создать или обновить актуальную цену;
+8. записать историю цены;
+9. сохранить import batch;
+10. вернуть результат импорта.
+
+## Функциональные требования
+
+## 1. Поиск услуг
+
+Система должна поддерживать поиск по:
+
+- оригинальному названию услуги;
+- нормализованному названию;
+- категории;
+- названию клиники;
+- городу.
+
+На MVP используется PostgreSQL full-text search и `ILIKE`.
+
+Минимальные параметры:
+
+```http
+GET /api/v1/services/search?q=мрт&city=Astana&category=МРТ&min_price=10000&max_price=50000
+```
+
+Система должна возвращать:
+
+- список найденных услуг;
+- цены;
+- клиники;
+- город;
+- адрес;
+- дату обновления;
+- pagination metadata.
+
+## 2. Просмотр клиник
+
+Система должна иметь список клиник:
+
+```http
+GET /api/v1/clinics
+```
+
+Фильтры:
+
+- city;
+- category;
+- service query;
+- has_prices;
+- limit;
+- offset.
+
+Карточка клиники:
+
+```http
+GET /api/v1/clinics/{id}
+```
+
+Должна содержать:
+
+- clinic info;
+- branches;
+- services;
+- prices;
+- last updated date.
+
+## 3. Сравнение цен
+
+Endpoint:
+
+```http
+GET /api/v1/prices/compare?service_id=1&city=Astana
+```
+
+Должен вернуть:
+
+- список клиник с ценами;
+- min price;
+- max price;
+- average price;
+- count;
+- currency;
+- last updated date.
+
+Сортировки:
+
+- price asc;
+- price desc;
+- updated_at desc;
+- clinic name asc.
+
+## 4. Фильтры
+
+Frontend и backend должны поддерживать фильтры:
+
+- city;
+- price range;
+- category;
+- clinic;
+- service query;
+- currency;
+- only active prices.
+
+## 5. Карточка услуги
+
+Карточка услуги должна показывать:
+
+- service id;
+- original names;
+- normalized name;
+- category;
+- related clinic prices;
+- price range;
+- available cities.
+
+## 6. Карточка клиники
+
+Карточка клиники должна показывать:
+
+- clinic name;
+- description;
+- city;
+- branches;
+- contacts;
+- website;
+- services and prices;
+- import source info;
+- last updated date.
+
+## 7. Импорт данных через JSON
+
+Backend должен принимать один JSON payload, содержащий:
+
+- source;
+- clinic;
+- optional branch;
+- services array.
+
+Каждая услуга должна иметь:
+
+- name;
+- category;
+- price;
+- currency;
+- updated_at.
+
+## 8. Нормализация названий услуг
+
+На MVP нормализация должна быть rule-based.
+
+Примеры:
+
+```text
+"МРТ головного мозга"
+"МРТ головы"
+"Магнитно-резонансная томография головного мозга"
+```
+
+могут быть связаны с одним `normalized_service`.
+
+На MVP допустимо:
+
+- lowercase;
+- trim;
+- удаление лишних пробелов;
+- ручное сопоставление через таблицу `normalized_services`;
+- простая token-based normalization;
+- alias matching.
+
+Не делать сложный ML на MVP.
+
+## 9. История обновления цен
+
+При каждом импорте цены нужно проверять:
+
+- есть ли такая clinic + branch + service;
+- изменилась ли цена;
+- изменилась ли валюта;
+- изменилась ли дата обновления.
+
+Если цена изменилась:
+
+1. обновить `clinic_service_prices`;
+2. добавить запись в `price_history`.
+
+Если цена не изменилась:
+
+1. не создавать дубликат;
+2. обновить `last_seen_at`;
+3. записать import batch statistics.
+
+## 10. Минимальная админская часть
+
+На MVP нужна минимальная admin/import page.
+
+Функции:
+
+- textarea для вставки JSON;
+- кнопка `Import`;
+- вывод результата;
+- список последних import batches;
+- список ошибок импорта.
+
+Полная админка с ролями, модерацией и сложным управлением — после MVP.
+
+## Нефункциональные требования
+
+## Производительность
+
+На MVP:
+
+- поиск должен отвечать до 500 ms на небольших данных;
+- import endpoint должен обрабатывать минимум 100 services в одном payload;
+- pagination обязательна для списков.
+
+## Надежность
+
+- Некорректный JSON не должен ломать приложение.
+- Ошибки в отдельных services должны сохраняться в `import_errors`.
+- Import batch должен иметь status: `success`, `partial_success`, `failed`.
+
+## Масштабируемость
+
+Архитектура должна позволять позже добавить:
+
+- parser service;
+- background jobs;
+- queue;
+- Elasticsearch/OpenSearch;
+- partner authentication;
+- moderation workflow.
+
+## Безопасность MVP
+
+На MVP:
+
+- admin endpoints можно защитить простым API key или basic auth;
+- публичные search endpoints открытые;
+- import endpoint должен быть защищен API key;
+- нельзя логировать секреты.
+```
+
+# File: docs/codex/02-mvp-scope.md
+
+```md
+# MVP Scope
+
+## Цель MVP
+
+Сделать рабочий продукт, который доказывает две ключевые возможности:
+
+1. Backend принимает и нормализует данные о клиниках, услугах и ценах через JSON.
+2. Пользователь может искать медицинскую услугу и сравнивать цены между клиниками.
+
+## MVP включает
+
+## 1. Backend
+
+### JSON import endpoint
+
+Обязательный endpoint:
+
+```http
+POST /api/v1/import/prices
+```
+
+Функции:
+
+- принять JSON;
+- валидировать clinic;
+- валидировать services;
+- создать clinic;
+- создать branch;
+- создать category;
+- создать service;
+- создать normalized_service;
+- создать или обновить price;
+- сохранить price_history;
+- сохранить import_batch;
+- сохранить import_errors.
+
+### Search API
+
+Endpoint:
+
+```http
+GET /api/v1/services/search
+```
+
+Функции:
+
+- поиск по названию;
+- фильтр по городу;
+- фильтр по категории;
+- фильтр по цене;
+- pagination.
+
+### Comparison API
+
+Endpoint:
+
+```http
+GET /api/v1/prices/compare
+```
+
+Функции:
+
+- сравнить цены по service_id или query;
+- сортировка по цене;
+- min/max/average price.
+
+### Clinics API
+
+Endpoints:
+
+```http
+GET /api/v1/clinics
+GET /api/v1/clinics/{id}
+```
+
+### Categories and cities API
+
+Endpoints:
+
+```http
+GET /api/v1/categories
+GET /api/v1/cities
+```
+
+## 2. Database
+
+Минимальные таблицы:
+
+- users;
+- clinics;
+- clinic_branches;
+- service_categories;
+- services;
+- normalized_services;
+- clinic_service_prices;
+- price_history;
+- import_batches;
+- import_errors;
+- data_sources.
+
+## 3. Frontend
+
+Страницы MVP:
+
+- home page;
+- search page;
+- results page;
+- service details page;
+- clinic details page;
+- price comparison page;
+- admin import page.
+
+## 4. Admin/import page
+
+Минимальный интерфейс:
+
+- textarea для JSON;
+- import button;
+- result panel;
+- latest import batches;
+- errors list.
+
+## 5. Docker Compose
+
+Проект должен запускаться через:
+
+```bash
+docker compose up --build
+```
+
+Минимальные сервисы:
+
+- frontend;
+- backend;
+- postgres.
+
+## После MVP
+
+Функции после MVP:
+
+1. Полноценная админ-панель.
+2. Авторизация с ролями.
+3. Elasticsearch/OpenSearch.
+4. Parser service для PDF/Excel/HTML прайсов.
+5. Background jobs через Celery/RQ.
+6. Partner portal.
+7. Moderation workflow.
+8. Advanced service normalization.
+9. ML/LLM matching названий услуг.
+10. Геопоиск по координатам.
+11. Рейтинги клиник.
+12. Отзывы пользователей.
+13. Онлайн-запись.
+14. Интеграция с CRM клиник.
+15. API keys для партнеров.
+16. Rate limiting.
+17. Audit logs.
+
+## Не делать сейчас
+
+Не включать в MVP:
+
+- онлайн-запись к врачу;
+- оплату;
+- личный кабинет пациента;
+- мобильное приложение;
+- сложный ML;
+- LLM normalization pipeline;
+- Elasticsearch, если PostgreSQL search достаточно;
+- отзывы и рейтинги пользователей;
+- карты;
+- SMS/WhatsApp уведомления;
+- медицинские рекомендации;
+- хранение медицинских данных пациента;
+- интеграцию с eGov;
+- сложную BI-аналитику;
+- multi-tenant partner dashboard.
+
+## MVP success criteria
+
+MVP считается успешным, если:
+
+1. Можно импортировать JSON с клиникой и услугами.
+2. Данные появляются в PostgreSQL.
+3. Повторный импорт не создает дубликаты.
+4. Изменение цены обновляет актуальную цену.
+5. История цены сохраняется.
+6. Пользователь может найти услугу.
+7. Пользователь может сравнить цены.
+8. Frontend показывает реальные данные из API.
+9. Проект запускается через Docker Compose.
+10. README объясняет запуск и основные endpoints.
+```
+
+# File: docs/codex/03-architecture.md
+
+```md
+# Architecture
+
+## Общий подход
+
+Проект строится как modular monolith на MVP.
+
+Причина:
+
+- быстрее разработка;
+- проще поддерживать;
+- меньше инфраструктуры;
+- легче показать MVP;
+- в будущем можно вынести parser service отдельно.
+
+## Основные компоненты
+
+```text
+Frontend: Next.js + TypeScript + Tailwind CSS + shadcn/ui
+Backend: FastAPI + Python + Pydantic
+Database: PostgreSQL
+ORM: SQLAlchemy
+Migrations: Alembic
+Search: PostgreSQL full-text search + ILIKE
+Integration: REST JSON API
+DevOps: Docker Compose
+```
+
+## Текстовая схема архитектуры
+
+```text
+                   ┌────────────────────────────┐
+                   │        User Browser         │
+                   └─────────────┬──────────────┘
+                                 │
+                                 │ HTTP
+                                 ↓
+                   ┌────────────────────────────┐
+                   │        Next.js Frontend     │
+                   │ search, compare, admin UI   │
+                   └─────────────┬──────────────┘
+                                 │
+                                 │ REST JSON
+                                 ↓
+                   ┌────────────────────────────┐
+                   │        FastAPI Backend      │
+                   ├────────────────────────────┤
+                   │ API Routers                 │
+                   │ Import Service              │
+                   │ Validation Layer            │
+                   │ Normalization Service       │
+                   │ Search Service              │
+                   │ Price Comparison Service    │
+                   │ CRUD Services               │
+                   └─────────────┬──────────────┘
+                                 │
+                                 │ SQLAlchemy
+                                 ↓
+                   ┌────────────────────────────┐
+                   │        PostgreSQL           │
+                   │ clinics, services, prices   │
+                   │ price_history, imports      │
+                   └────────────────────────────┘
+
+
+Future:
+
+┌────────────────────────────┐
+│ Parser Service              │
+│ PDF/XLSX/HTML parsers        │
+└─────────────┬──────────────┘
+              │
+              │ POST /api/v1/import/prices
+              ↓
+┌────────────────────────────┐
+│ FastAPI Backend              │
+└────────────────────────────┘
+```
+
+## Frontend
+
+Frontend отвечает за:
+
+- пользовательский поиск;
+- отображение результатов;
+- фильтры;
+- сравнение цен;
+- карточки клиник;
+- карточки услуг;
+- минимальную страницу импорта JSON.
+
+Frontend не должен содержать бизнес-логику нормализации или deduplication.
+
+## Backend
+
+Backend отвечает за:
+
+- REST API;
+- validation;
+- import logic;
+- normalization;
+- deduplication;
+- price update;
+- price history;
+- search;
+- comparison;
+- CRUD.
+
+## Database
+
+PostgreSQL хранит:
+
+- clinics;
+- branches;
+- services;
+- normalized services;
+- categories;
+- current prices;
+- price history;
+- import batches;
+- import errors;
+- data sources;
+- users.
+
+## JSON ingestion layer
+
+JSON ingestion layer — слой, который принимает данные из внешних источников.
+
+Основные задачи:
+
+1. validate payload;
+2. detect source;
+3. upsert clinic;
+4. upsert branch;
+5. upsert category;
+6. upsert service;
+7. normalize service name;
+8. upsert price;
+9. write price history;
+10. write import result.
+
+## Search layer
+
+На MVP:
+
+- PostgreSQL full-text search;
+- `ILIKE`;
+- indexes;
+- pagination.
+
+После MVP:
+
+- Elasticsearch;
+- OpenSearch;
+- synonyms;
+- typo tolerance;
+- weighted ranking.
+
+## Normalization layer
+
+На MVP:
+
+- lowercase;
+- trim;
+- remove duplicate spaces;
+- normalize common abbreviations;
+- use `normalized_services`;
+- simple alias matching.
+
+Пример:
+
+```text
+"МРТ головы" → "мрт головного мозга"
+"УЗИ сердца" → "узи сердца"
+"приём терапевта" → "прием терапевта"
+```
+
+## Admin/import interface
+
+Минимальная админка нужна только для:
+
+- вставки JSON;
+- запуска импорта;
+- просмотра результата;
+- просмотра последних import batches;
+- просмотра ошибок.
+
+## Future parser service
+
+Parser service должен быть отдельным сервисом после MVP.
+
+Он будет:
+
+1. получать прайс клиники;
+2. парсить PDF/XLSX/HTML;
+3. приводить данные к JSON contract;
+4. отправлять данные в основной backend:
+
+```http
+POST /api/v1/import/prices
+```
+
+Важно: основной backend не должен зависеть от parser service.
+
+Parser service — внешний источник данных.
+```
+
+# File: docs/codex/04-backend-spec.md
+
+```md
+# Backend Specification
+
+## Backend stack
+
+- FastAPI
+- Python
+- Pydantic
+- SQLAlchemy
+- Alembic
+- PostgreSQL
+- Pytest
+
+## Предлагаемая структура backend
+
+```text
+backend/
+  app/
+    main.py
+    core/
+      config.py
+      database.py
+      security.py
+      logging.py
+    api/
+      v1/
+        router.py
+        endpoints/
+          import_prices.py
+          services.py
+          clinics.py
+          prices.py
+          categories.py
+          cities.py
+          admin.py
+    models/
+      user.py
+      clinic.py
+      branch.py
+      service.py
+      price.py
+      import_batch.py
+      data_source.py
+    schemas/
+      import_prices.py
+      service.py
+      clinic.py
+      price.py
+      common.py
+    services/
+      import_service.py
+      normalization_service.py
+      search_service.py
+      price_comparison_service.py
+      clinic_service.py
+      service_catalog_service.py
+    repositories/
+      clinic_repository.py
+      service_repository.py
+      price_repository.py
+      import_repository.py
+    utils/
+      text.py
+      pagination.py
+      errors.py
+    tests/
+      unit/
+      api/
+      integration/
+```
+
+## Основные backend modules
+
+## 1. API routers
+
+API routers принимают HTTP-запросы и вызывают service layer.
+
+Routers не должны содержать сложную бизнес-логику.
+
+Примеры:
+
+- `import_prices.py`
+- `services.py`
+- `clinics.py`
+- `prices.py`
+- `categories.py`
+- `cities.py`
+
+## 2. Import Service
+
+Файл:
+
+```text
+app/services/import_service.py
+```
+
+Ответственность:
+
+- принять validated Pydantic schema;
+- создать `import_batch`;
+- найти или создать `data_source`;
+- upsert clinic;
+- upsert branch;
+- process services;
+- collect errors;
+- update import batch status;
+- return import result.
+
+Основной метод:
+
+```python
+class ImportService:
+    def import_prices(self, payload: ImportPricesRequest) -> ImportPricesResult:
+        ...
+```
+
+## 3. Normalization Service
+
+Файл:
+
+```text
+app/services/normalization_service.py
+```
+
+Ответственность:
+
+- нормализовать текст;
+- сопоставить service с normalized_service;
+- создать normalized_service, если нет подходящего;
+- использовать aliases.
+
+Минимальная логика:
+
+```python
+def normalize_service_name(name: str) -> str:
+    name = name.lower().strip()
+    name = replace_common_chars(name)
+    name = remove_extra_spaces(name)
+    name = normalize_medical_terms(name)
+    return name
+```
+
+## 4. Search Service
+
+Файл:
+
+```text
+app/services/search_service.py
+```
+
+Ответственность:
+
+- поиск услуг;
+- фильтрация;
+- сортировка;
+- pagination;
+- возврат DTO для frontend.
+
+Поддерживаемые фильтры:
+
+- q;
+- city;
+- category_id;
+- category;
+- clinic_id;
+- min_price;
+- max_price;
+- limit;
+- offset;
+- sort.
+
+## 5. Price Comparison Service
+
+Файл:
+
+```text
+app/services/price_comparison_service.py
+```
+
+Ответственность:
+
+- сравнить цены по service_id или normalized_service_id;
+- вернуть список clinic prices;
+- посчитать min/max/average;
+- отсортировать.
+
+## 6. CRUD services
+
+Минимально нужны:
+
+- ClinicService;
+- ServiceCatalogService;
+- PriceService;
+- CategoryService.
+
+## Валидация входящих данных
+
+Валидация выполняется через Pydantic schemas.
+
+Основные правила:
+
+- `source` required;
+- `clinic.external_id` required;
+- `clinic.name` required;
+- `clinic.city` required;
+- `services` required, non-empty array;
+- `service.name` required;
+- `service.category` required;
+- `service.price` required, must be >= 0;
+- `service.currency` required, default `KZT`;
+- `service.updated_at` required or fallback to current date.
+
+## Deduplication logic
+
+## Clinic deduplication
+
+Clinic считается той же, если совпадает:
+
+1. `source_id + clinic.external_id`, если external_id есть;
+2. иначе normalized clinic name + city.
+
+## Branch deduplication
+
+Branch считается тем же, если совпадает:
+
+1. `clinic_id + branch.external_id`;
+2. иначе `clinic_id + normalized address`.
+
+Если branch не передан, backend создает default branch.
+
+## Service deduplication
+
+Service считается тем же, если совпадает:
+
+1. `source_id + service.external_id`;
+2. иначе `normalized_service_id + original normalized name`.
+
+## Price deduplication
+
+Current price уникальна по:
+
+```text
+clinic_id + branch_id + service_id + currency
+```
+
+Если цена изменилась:
+
+- update `clinic_service_prices.price`;
+- update `clinic_service_prices.updated_at`;
+- insert into `price_history`.
+
+Если цена не изменилась:
+
+- update `clinic_service_prices.last_seen_at`;
+- do not insert duplicate price history unless configured.
+
+## Обработка ошибок
+
+Import должен поддерживать partial success.
+
+Пример:
+
+- clinic valid;
+- 10 services received;
+- 8 imported;
+- 2 failed validation.
+
+Тогда:
+
+```text
+import_batch.status = partial_success
+```
+
+Ошибки сохраняются в `import_errors`.
+
+## Типы ошибок
+
+- validation_error;
+- duplicate_error;
+- database_error;
+- normalization_error;
+- unknown_error.
+
+## API error format
+
+```json
+{
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "Invalid request body",
+    "details": [
+      {
+        "field": "services[0].price",
+        "message": "Price must be greater than or equal to 0"
+      }
+    ]
+  }
+}
+```
+
+## Логирование
+
+Логировать:
+
+- import batch id;
+- source;
+- number of services;
+- success count;
+- error count;
+- duration.
+
+Не логировать:
+
+- API keys;
+- secret tokens;
+- sensitive personal information.
+
+## Authentication MVP
+
+На MVP:
+
+- public endpoints открытые;
+- import endpoint защищен API key через header:
+
+```http
+X-API-Key: example-secret
+```
+
+Позже можно заменить на полноценные partner API keys.
+```
+
+# File: docs/codex/05-frontend-spec.md
+
+```md
+# Frontend Specification
+
+## Frontend stack
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- React Hook Form optional
+- Zod optional for client-side validation
+
+## UX/UI стиль
+
+Стиль проекта:
+
+- минималистичный;
+- белый фон;
+- чистая типографика;
+- быстрый интерфейс;
+- аккуратные таблицы;
+- фильтры сверху или слева;
+- карточки клиник и услуг;
+- понятные CTA;
+- без визуального шума.
+
+## Основные страницы
+
+## 1. Home page
+
+Route:
+
+```text
+/
+```
+
+Назначение:
+
+- объяснить суть сервиса;
+- дать быстрый поиск услуги;
+- показать популярные категории;
+- показать популярные города.
+
+Блоки:
+
+- hero section;
+- search input;
+- category chips;
+- city selector;
+- CTA `Найти услугу`.
+
+## 2. Search page
+
+Route:
+
+```text
+/search
+```
+
+Query example:
+
+```text
+/search?q=мрт&city=Astana
+```
+
+Функции:
+
+- search input;
+- фильтр города;
+- фильтр категории;
+- фильтр цены;
+- сортировка;
+- список результатов;
+- loading state;
+- empty state;
+- error state.
+
+## 3. Results page
+
+Можно объединить с `/search`.
+
+Карточка результата должна показывать:
+
+- service name;
+- normalized service name;
+- clinic name;
+- city;
+- address;
+- price;
+- currency;
+- updated_at;
+- button `Сравнить`;
+- button `Открыть клинику`.
+
+## 4. Price comparison page
+
+Route:
+
+```text
+/compare?serviceId=1&city=Astana
+```
+
+Функции:
+
+- таблица сравнения;
+- сортировка по цене;
+- min/max/average price block;
+- фильтр по городу;
+- ссылки на клиники.
+
+Таблица:
+
+| Clinic | Branch | City | Price | Updated |
+|---|---|---|---|---|
+
+## 5. Clinic page
+
+Route:
+
+```text
+/clinics/[id]
+```
+
+Показывает:
+
+- clinic name;
+- city;
+- contacts;
+- branches;
+- services table;
+- prices;
+- updated_at.
+
+## 6. Service page
+
+Route:
+
+```text
+/services/[id]
+```
+
+Показывает:
+
+- service name;
+- normalized name;
+- category;
+- price range;
+- clinics list;
+- compare table.
+
+## 7. Admin import page
+
+Route:
+
+```text
+/admin/import
+```
+
+MVP functionality:
+
+- JSON textarea;
+- example JSON button;
+- validate/import button;
+- response result;
+- import batch summary;
+- error list.
+
+На MVP можно сделать простую защиту:
+
+- скрытая страница;
+- API key вводится в input;
+- API key сохраняется только в memory state, не в localStorage.
+
+## Components
+
+Предлагаемые компоненты:
+
+```text
+components/
+  layout/
+    Header.tsx
+    Footer.tsx
+    Container.tsx
+  search/
+    SearchBar.tsx
+    SearchFilters.tsx
+    SearchResults.tsx
+    ResultCard.tsx
+  compare/
+    PriceCompareTable.tsx
+    PriceStats.tsx
+  clinic/
+    ClinicCard.tsx
+    ClinicDetails.tsx
+  service/
+    ServiceCard.tsx
+    ServiceDetails.tsx
+  admin/
+    JsonImportForm.tsx
+    ImportResultPanel.tsx
+    ImportErrorsTable.tsx
+  ui/
+    shadcn components
+```
+
+## API client
+
+Создать API client:
+
+```text
+lib/api.ts
+```
+
+Пример функций:
+
+```ts
+export async function searchServices(params: SearchParams): Promise<SearchResponse>
+export async function getService(id: string): Promise<ServiceDetails>
+export async function getClinics(params: ClinicParams): Promise<ClinicsResponse>
+export async function getClinic(id: string): Promise<ClinicDetails>
+export async function comparePrices(params: CompareParams): Promise<CompareResponse>
+export async function importPrices(payload: ImportPayload, apiKey: string): Promise<ImportResult>
+```
+
+## State handling
+
+На MVP достаточно:
+
+- server components where possible;
+- client components for filters;
+- useState/useEffect for admin import;
+- URL query params for search filters.
+
+Не добавлять Redux/Zustand без необходимости.
+
+## Loading states
+
+Каждая страница должна иметь:
+
+- loading state;
+- error state;
+- empty state.
+
+## Empty state examples
+
+Search empty:
+
+```text
+Ничего не найдено. Попробуйте изменить запрос или выбрать другой город.
+```
+
+Compare empty:
+
+```text
+По этой услуге пока нет цен для выбранного города.
+```
+
+Import empty:
+
+```text
+Вставьте JSON с клиникой и услугами для импорта.
+```
+
+## Frontend constraints
+
+- Не добавлять онлайн-запись.
+- Не добавлять оплату.
+- Не добавлять личный кабинет пациента.
+- Не добавлять сложную авторизацию.
+- Не хранить медицинские данные пациента.
+- Не делать мобильное приложение.
+```
+
+# File: docs/codex/06-api-spec.md
+
+```md
+# API Specification
+
+## Base URL
+
+```text
+/api/v1
+```
+
+## Common response conventions
+
+## Success response
+
+```json
+{
+  "data": {},
+  "meta": {}
+}
+```
+
+## Error response
+
+```json
+{
+  "error": {
+    "code": "ERROR_CODE",
+    "message": "Human readable message",
+    "details": []
+  }
+}
+```
+
+## Pagination params
+
+Common query params:
+
+```text
+limit: number, default 20, max 100
+offset: number, default 0
+```
+
+Common pagination response:
+
+```json
+{
+  "meta": {
+    "limit": 20,
+    "offset": 0,
+    "total": 125
+  }
+}
+```
+
+# 1. POST /api/v1/import/prices
+
+## Назначение
+
+Импортировать данные о клинике, филиале, услугах и ценах через JSON.
+
+## Headers
+
+```http
+Content-Type: application/json
+X-API-Key: your-api-key
+```
+
+## Request body
+
+```json
+{
+  "source": "clinic_partner_api",
+  "clinic": {
+    "external_id": "clinic_001",
+    "name": "Example Clinic",
+    "city": "Astana",
+    "address": "Example street 10",
+    "phone": "+77001234567",
+    "website": "https://example.kz"
+  },
+  "branch": {
+    "external_id": "branch_001",
+    "name": "Main branch",
+    "city": "Astana",
+    "address": "Example street 10",
+    "phone": "+77001234567"
+  },
+  "services": [
+    {
+      "external_id": "srv_001",
+      "name": "МРТ головного мозга",
+      "category": "МРТ",
+      "price": 25000,
+      "currency": "KZT",
+      "updated_at": "2026-06-17"
+    }
+  ]
+}
+```
+
+## Response example
+
+```json
+{
+  "data": {
+    "batch_id": 1,
+    "status": "success",
+    "source": "clinic_partner_api",
+    "clinic_id": 1,
+    "branch_id": 1,
+    "received_count": 1,
+    "created_count": 1,
+    "updated_count": 0,
+    "unchanged_count": 0,
+    "error_count": 0,
+    "errors": []
+  }
+}
+```
+
+## Errors
+
+### 400 VALIDATION_ERROR
+
+```json
+{
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "Invalid import payload",
+    "details": [
+      {
+        "field": "services[0].price",
+        "message": "Price must be greater than or equal to 0"
+      }
+    ]
+  }
+}
+```
+
+### 401 UNAUTHORIZED
+
+```json
+{
+  "error": {
+    "code": "UNAUTHORIZED",
+    "message": "Invalid or missing API key",
+    "details": []
+  }
+}
+```
+
+# 2. GET /api/v1/services/search
+
+## Назначение
+
+Искать медицинские услуги и цены.
+
+## Query params
+
+```text
+q: string, required
+city: string, optional
+category: string, optional
+clinic_id: integer, optional
+min_price: number, optional
+max_price: number, optional
+sort: price_asc | price_desc | updated_desc | relevance
+limit: number, optional
+offset: number, optional
+```
+
+## Request example
+
+```http
+GET /api/v1/services/search?q=мрт&city=Astana&sort=price_asc
+```
+
+## Response example
+
+```json
+{
+  "data": [
+    {
+      "service_id": 1,
+      "service_name": "МРТ головного мозга",
+      "normalized_service_id": 1,
+      "normalized_service_name": "мрт головного мозга",
+      "category": "МРТ",
+      "clinic": {
+        "id": 1,
+        "name": "Example Clinic"
+      },
+      "branch": {
+        "id": 1,
+        "address": "Example street 10",
+        "city": "Astana"
+      },
+      "price": {
+        "amount": 25000,
+        "currency": "KZT",
+        "updated_at": "2026-06-17"
+      }
+    }
+  ],
+  "meta": {
+    "limit": 20,
+    "offset": 0,
+    "total": 1
+  }
+}
+```
+
+## Errors
+
+### 400 INVALID_QUERY
+
+```json
+{
+  "error": {
+    "code": "INVALID_QUERY",
+    "message": "Search query is required",
+    "details": []
+  }
+}
+```
+
+# 3. GET /api/v1/services/{id}
+
+## Назначение
+
+Получить детальную информацию об услуге.
+
+## Path params
+
+```text
+id: integer
+```
+
+## Response example
+
+```json
+{
+  "data": {
+    "id": 1,
+    "name": "МРТ головного мозга",
+    "normalized_service": {
+      "id": 1,
+      "name": "мрт головного мозга"
+    },
+    "category": {
+      "id": 1,
+      "name": "МРТ"
+    },
+    "prices": [
+      {
+        "clinic_id": 1,
+        "clinic_name": "Example Clinic",
+        "branch_id": 1,
+        "city": "Astana",
+        "address": "Example street 10",
+        "amount": 25000,
+        "currency": "KZT",
+        "updated_at": "2026-06-17"
+      }
+    ],
+    "stats": {
+      "min_price": 25000,
+      "max_price": 25000,
+      "average_price": 25000,
+      "count": 1
+    }
+  }
+}
+```
+
+## Errors
+
+### 404 SERVICE_NOT_FOUND
+
+```json
+{
+  "error": {
+    "code": "SERVICE_NOT_FOUND",
+    "message": "Service not found",
+    "details": []
+  }
+}
+```
+
+# 4. GET /api/v1/clinics
+
+## Назначение
+
+Получить список клиник.
+
+## Query params
+
+```text
+city: string, optional
+q: string, optional
+category: string, optional
+limit: number, optional
+offset: number, optional
+```
+
+## Response example
+
+```json
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Example Clinic",
+      "city": "Astana",
+      "phone": "+77001234567",
+      "website": "https://example.kz",
+      "branches_count": 1,
+      "services_count": 25,
+      "last_updated_at": "2026-06-17"
+    }
+  ],
+  "meta": {
+    "limit": 20,
+    "offset": 0,
+    "total": 1
+  }
+}
+```
+
+# 5. GET /api/v1/clinics/{id}
+
+## Назначение
+
+Получить карточку клиники.
+
+## Response example
+
+```json
+{
+  "data": {
+    "id": 1,
+    "name": "Example Clinic",
+    "city": "Astana",
+    "phone": "+77001234567",
+    "website": "https://example.kz",
+    "branches": [
+      {
+        "id": 1,
+        "name": "Main branch",
+        "city": "Astana",
+        "address": "Example street 10",
+        "phone": "+77001234567"
+      }
+    ],
+    "services": [
+      {
+        "service_id": 1,
+        "name": "МРТ головного мозга",
+        "category": "МРТ",
+        "price": 25000,
+        "currency": "KZT",
+        "updated_at": "2026-06-17"
+      }
+    ]
+  }
+}
+```
+
+# 6. GET /api/v1/prices/compare
+
+## Назначение
+
+Сравнить цены на услугу между клиниками.
+
+## Query params
+
+```text
+service_id: integer, optional
+normalized_service_id: integer, optional
+q: string, optional
+city: string, optional
+category: string, optional
+sort: price_asc | price_desc | updated_desc
+```
+
+Минимум один параметр должен быть передан:
+
+- service_id;
+- normalized_service_id;
+- q.
+
+## Response example
+
+```json
+{
+  "data": {
+    "query": {
+      "service_id": 1,
+      "city": "Astana"
+    },
+    "stats": {
+      "min_price": 20000,
+      "max_price": 35000,
+      "average_price": 27500,
+      "count": 2,
+      "currency": "KZT"
+    },
+    "items": [
+      {
+        "clinic_id": 1,
+        "clinic_name": "Clinic A",
+        "branch_id": 1,
+        "city": "Astana",
+        "address": "Street 1",
+        "service_id": 1,
+        "service_name": "МРТ головного мозга",
+        "price": 20000,
+        "currency": "KZT",
+        "updated_at": "2026-06-17"
+      },
+      {
+        "clinic_id": 2,
+        "clinic_name": "Clinic B",
+        "branch_id": 2,
+        "city": "Astana",
+        "address": "Street 2",
+        "service_id": 2,
+        "service_name": "МРТ головы",
+        "price": 35000,
+        "currency": "KZT",
+        "updated_at": "2026-06-15"
+      }
+    ]
+  }
+}
+```
+
+## Errors
+
+### 400 MISSING_COMPARE_TARGET
+
+```json
+{
+  "error": {
+    "code": "MISSING_COMPARE_TARGET",
+    "message": "service_id, normalized_service_id or q is required",
+    "details": []
+  }
+}
+```
+
+# 7. GET /api/v1/categories
+
+## Назначение
+
+Получить список категорий услуг.
+
+## Response example
+
+```json
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "МРТ",
+      "slug": "mrt",
+      "services_count": 15
+    },
+    {
+      "id": 2,
+      "name": "УЗИ",
+      "slug": "uzi",
+      "services_count": 40
+    }
+  ]
+}
+```
+
+# 8. GET /api/v1/cities
+
+## Назначение
+
+Получить список городов, где есть клиники или цены.
+
+## Response example
+
+```json
+{
+  "data": [
+    {
+      "name": "Astana",
+      "clinics_count": 10,
+      "services_count": 120
+    },
+    {
+      "name": "Almaty",
+      "clinics_count": 20,
+      "services_count": 250
+    }
+  ]
+}
+```
+```
+
+# File: docs/codex/07-json-integration.md
+
+```md
+# JSON Integration
+
+## Цель JSON integration
+
+JSON integration — главный контракт между основным backend и внешними источниками данных.
+
+Любой источник должен приводить данные к этому формату и отправлять их в:
+
+```http
+POST /api/v1/import/prices
+```
+
+## Основной пример JSON
+
+```json
+{
+  "source": "clinic_partner_api",
+  "clinic": {
+    "external_id": "clinic_001",
+    "name": "Example Clinic",
+    "city": "Astana",
+    "address": "Example street 10",
+    "phone": "+77001234567"
+  },
+  "services": [
+    {
+      "external_id": "srv_001",
+      "name": "МРТ головного мозга",
+      "category": "МРТ",
+      "price": 25000,
+      "currency": "KZT",
+      "updated_at": "2026-06-17"
+    }
+  ]
+}
+```
+
+## Расширенный пример JSON
+
+```json
+{
+  "source": "clinic_partner_api",
+  "source_batch_id": "batch_2026_06_17_001",
+  "clinic": {
+    "external_id": "clinic_001",
+    "name": "Example Clinic",
+    "legal_name": "Example Clinic LLP",
+    "city": "Astana",
+    "address": "Example street 10",
+    "phone": "+77001234567",
+    "website": "https://example.kz"
+  },
+  "branch": {
+    "external_id": "branch_001",
+    "name": "Main branch",
+    "city": "Astana",
+    "address": "Example street 10",
+    "phone": "+77001234567",
+    "latitude": 51.128,
+    "longitude": 71.430
+  },
+  "services": [
+    {
+      "external_id": "srv_001",
+      "name": "МРТ головного мозга",
+      "category": "МРТ",
+      "description": "Магнитно-резонансная томография головного мозга",
+      "price": 25000,
+      "currency": "KZT",
+      "updated_at": "2026-06-17",
+      "duration_minutes": 30,
+      "is_available": true
+    },
+    {
+      "external_id": "srv_002",
+      "name": "УЗИ сердца",
+      "category": "УЗИ",
+      "price": 12000,
+      "currency": "KZT",
+      "updated_at": "2026-06-17"
+    }
+  ]
+}
+```
+
+## Root fields
+
+| Field | Type | Required | Description |
+|---|---|---:|---|
+| source | string | yes | Название источника данных |
+| source_batch_id | string | no | Внешний batch id |
+| clinic | object | yes | Данные клиники |
+| branch | object | no | Данные филиала |
+| services | array | yes | Список услуг и цен |
+
+## Clinic fields
+
+| Field | Type | Required | Description |
+|---|---|---:|---|
+| external_id | string | yes | ID клиники во внешнем источнике |
+| name | string | yes | Название клиники |
+| legal_name | string | no | Юридическое название |
+| city | string | yes | Город |
+| address | string | no | Адрес главного филиала |
+| phone | string | no | Телефон |
+| website | string | no | Сайт |
+
+## Branch fields
+
+| Field | Type | Required | Description |
+|---|---|---:|---|
+| external_id | string | no | ID филиала во внешнем источнике |
+| name | string | no | Название филиала |
+| city | string | no | Город филиала |
+| address | string | no | Адрес |
+| phone | string | no | Телефон филиала |
+| latitude | number | no | Широта |
+| longitude | number | no | Долгота |
+
+Если `branch` не передан, backend должен создать default branch на основе clinic city/address.
+
+## Service fields
+
+| Field | Type | Required | Description |
+|---|---|---:|---|
+| external_id | string | no | ID услуги во внешнем источнике |
+| name | string | yes | Название услуги |
+| category | string | yes | Категория |
+| description | string | no | Описание |
+| price | number | yes | Цена |
+| currency | string | yes | Валюта, на MVP `KZT` |
+| updated_at | string/date | yes | Дата обновления цены |
+| duration_minutes | integer | no | Длительность услуги |
+| is_available | boolean | no | Доступна ли услуга |
+
+## Правила валидации
+
+## Root validation
+
+- `source` must be non-empty string.
+- `clinic` is required.
+- `services` must be non-empty array.
+- Max services per payload on MVP: 1000.
+
+## Clinic validation
+
+- `clinic.external_id` required.
+- `clinic.name` required.
+- `clinic.city` required.
+- `clinic.phone` optional.
+- `clinic.website` must be valid URL if provided.
+
+## Service validation
+
+- `service.name` required.
+- `service.category` required.
+- `service.price` must be number >= 0.
+- `service.currency` required.
+- `service.currency` should be `KZT` on MVP.
+- `service.updated_at` must be valid ISO date: `YYYY-MM-DD`.
+
+## Deduplication rules
+
+## Clinic
+
+Primary match:
+
+```text
+data_source.id + clinic.external_id
+```
+
+Fallback match:
+
+```text
+normalized(clinic.name) + normalized(clinic.city)
+```
+
+## Branch
+
+Primary match:
+
+```text
+clinic.id + branch.external_id
+```
+
+Fallback match:
+
+```text
+clinic.id + normalized(branch.address)
+```
+
+If branch is missing:
+
+```text
+clinic.id + default branch
+```
+
+## Category
+
+Match by:
+
+```text
+normalized(category.name)
+```
+
+Example:
+
+```text
+"МРТ" == "мрт"
+"УЗИ" == "узи"
+```
+
+## Service
+
+Primary match:
+
+```text
+data_source.id + service.external_id
+```
+
+Fallback match:
+
+```text
+normalized_service.id + normalized(service.name)
+```
+
+## Price
+
+Match current price by:
+
+```text
+clinic_id + branch_id + service_id + currency
+```
+
+## Price update logic
+
+Если price не существует:
+
+1. create `clinic_service_prices`;
+2. create `price_history` with change_type = `created`.
+
+Если price существует и amount изменился:
+
+1. update current price;
+2. set previous amount;
+3. create `price_history` with change_type = `updated`.
+
+Если price существует и amount не изменился:
+
+1. update `last_seen_at`;
+2. do not create duplicate `price_history`;
+3. increment `unchanged_count`.
+
+## Price history
+
+`price_history` должна хранить:
+
+- clinic_service_price_id;
+- old_price;
+- new_price;
+- currency;
+- changed_at;
+- source_id;
+- import_batch_id;
+- change_type.
+
+## Import result
+
+Backend должен вернуть summary.
+
+## Successful response
+
+```json
+{
+  "data": {
+    "batch_id": 100,
+    "status": "success",
+    "source": "clinic_partner_api",
+    "clinic_id": 1,
+    "branch_id": 1,
+    "received_count": 2,
+    "created_count": 2,
+    "updated_count": 0,
+    "unchanged_count": 0,
+    "error_count": 0,
+    "errors": []
+  }
+}
+```
+
+## Partial success response
+
+```json
+{
+  "data": {
+    "batch_id": 101,
+    "status": "partial_success",
+    "source": "clinic_partner_api",
+    "clinic_id": 1,
+    "branch_id": 1,
+    "received_count": 3,
+    "created_count": 1,
+    "updated_count": 1,
+    "unchanged_count": 0,
+    "error_count": 1,
+    "errors": [
+      {
+        "index": 2,
+        "external_id": "srv_bad",
+        "code": "INVALID_PRICE",
+        "message": "Price must be greater than or equal to 0",
+        "field": "services[2].price"
+      }
+    ]
+  }
+}
+```
+
+## Failed response
+
+```json
+{
+  "error": {
+    "code": "IMPORT_FAILED",
+    "message": "Import payload could not be processed",
+    "details": [
+      {
+        "field": "clinic.name",
+        "message": "Clinic name is required"
+      }
+    ]
+  }
+}
+```
+
+## Требования к parser service в будущем
+
+Parser service должен возвращать данные только в этом формате.
+
+Он не должен напрямую писать в PostgreSQL.
+
+Правильный flow:
+
+```text
+PDF/XLSX/HTML price
+        ↓
+Parser Service
+        ↓
+Standard JSON
+        ↓
+POST /api/v1/import/prices
+        ↓
+Main Backend
+```
+```
+
+# File: docs/codex/08-database-schema.md
+
+```md
+# Database Schema
+
+## Database
+
+PostgreSQL.
+
+## Naming conventions
+
+- table names: snake_case plural;
+- columns: snake_case;
+- primary key: `id`;
+- timestamps: `created_at`, `updated_at`;
+- soft delete optional after MVP.
+
+# 1. users
+
+## Purpose
+
+Хранит пользователей админской части.
+
+## Fields
+
+| Field | Type | Description |
+|---|---|---|
+| id | bigserial pk | Primary key |
+| email | varchar(255), unique | Email |
+| password_hash | text | Password hash |
+| role | varchar(50) | `admin`, `user` |
+| is_active | boolean | Active status |
+| created_at | timestamptz | Created time |
+| updated_at | timestamptz | Updated time |
+
+## Indexes
+
+- unique index on `email`;
+- index on `role`.
+
+# 2. data_sources
+
+## Purpose
+
+Хранит источники данных.
+
+Examples:
+
+- `manual_admin`;
+- `clinic_partner_api`;
+- `parser_service`.
+
+## Fields
+
+| Field | Type | Description |
+|---|---|---|
+| id | bigserial pk | Primary key |
+| name | varchar(255), unique | Source name |
+| type | varchar(100) | `manual`, `partner_api`, `parser`, `external` |
+| is_active | boolean | Active status |
+| created_at | timestamptz | Created time |
+| updated_at | timestamptz | Updated time |
+
+## Indexes
+
+- unique index on `name`;
+- index on `type`.
+
+# 3. clinics
+
+## Purpose
+
+Хранит клиники.
+
+## Fields
+
+| Field | Type | Description |
+|---|---|---|
+| id | bigserial pk | Primary key |
+| data_source_id | bigint fk data_sources.id | Source |
+| external_id | varchar(255) | External clinic id |
+| name | varchar(255) | Clinic name |
+| normalized_name | varchar(255) | Normalized clinic name |
+| legal_name | varchar(255), nullable | Legal name |
+| city | varchar(100) | Main city |
+| phone | varchar(100), nullable | Phone |
+| website | text, nullable | Website |
+| is_active | boolean | Active status |
+| created_at | timestamptz | Created time |
+| updated_at | timestamptz | Updated time |
+
+## Relations
+
+- clinics belongs to data_sources;
+- clinics has many clinic_branches;
+- clinics has many clinic_service_prices.
+
+## Indexes
+
+- unique index on `(data_source_id, external_id)`;
+- index on `normalized_name`;
+- index on `city`;
+- full-text index on `name`.
+
+# 4. clinic_branches
+
+## Purpose
+
+Хранит филиалы клиник.
+
+## Fields
+
+| Field | Type | Description |
+|---|---|---|
+| id | bigserial pk | Primary key |
+| clinic_id | bigint fk clinics.id | Clinic |
+| external_id | varchar(255), nullable | External branch id |
+| name | varchar(255), nullable | Branch name |
+| city | varchar(100) | City |
+| address | text | Address |
+| normalized_address | text | Normalized address |
+| phone | varchar(100), nullable | Branch phone |
+| latitude | numeric(10, 7), nullable | Latitude |
+| longitude | numeric(10, 7), nullable | Longitude |
+| is_default | boolean | Default branch |
+| is_active | boolean | Active status |
+| created_at | timestamptz | Created time |
+| updated_at | timestamptz | Updated time |
+
+## Relations
+
+- branch belongs to clinic;
+- branch has many clinic_service_prices.
+
+## Indexes
+
+- unique index on `(clinic_id, external_id)` where external_id is not null;
+- index on `clinic_id`;
+- index on `city`;
+- index on `normalized_address`.
+
+# 5. service_categories
+
+## Purpose
+
+Хранит категории услуг.
+
+Examples:
+
+- `МРТ`;
+- `УЗИ`;
+- `Консультация`;
+- `Анализы`;
+- `КТ`.
+
+## Fields
+
+| Field | Type | Description |
+|---|---|---|
+| id | bigserial pk | Primary key |
+| name | varchar(255), unique | Category name |
+| slug | varchar(255), unique | URL slug |
+| normalized_name | varchar(255) | Normalized name |
+| created_at | timestamptz | Created time |
+| updated_at | timestamptz | Updated time |
+
+## Indexes
+
+- unique index on `slug`;
+- unique index on `normalized_name`.
+
+# 6. normalized_services
+
+## Purpose
+
+Хранит нормализованные услуги.
+
+Нужна, чтобы разные названия одной услуги можно было сравнивать как одну услугу.
+
+Example:
+
+```text
+"МРТ головы"
+"МРТ головного мозга"
+"Магнитно-резонансная томография головного мозга"
+```
+
+могут ссылаться на один `normalized_services` record.
+
+## Fields
+
+| Field | Type | Description |
+|---|---|---|
+| id | bigserial pk | Primary key |
+| category_id | bigint fk service_categories.id | Category |
+| name | varchar(255) | Normalized service name |
+| slug | varchar(255), unique | Slug |
+| aliases | jsonb | Alternative names |
+| created_at | timestamptz | Created time |
+| updated_at | timestamptz | Updated time |
+
+## Indexes
+
+- index on `category_id`;
+- unique index on `slug`;
+- GIN index on `aliases`;
+- full-text index on `name`.
+
+# 7. services
+
+## Purpose
+
+Хранит оригинальные услуги из источников.
+
+## Fields
+
+| Field | Type | Description |
+|---|---|---|
+| id | bigserial pk | Primary key |
+| data_source_id | bigint fk data_sources.id | Source |
+| external_id | varchar(255), nullable | External service id |
+| category_id | bigint fk service_categories.id | Category |
+| normalized_service_id | bigint fk normalized_services.id | Normalized service |
+| name | varchar(255) | Original service name |
+| normalized_name | varchar(255) | Normalized original name |
+| description | text, nullable | Description |
+| duration_minutes | integer, nullable | Duration |
+| is_active | boolean | Active status |
+| created_at | timestamptz | Created time |
+| updated_at | timestamptz | Updated time |
+
+## Relations
+
+- service belongs to data_source;
+- service belongs to category;
+- service belongs to normalized_service;
+- service has many clinic_service_prices.
+
+## Indexes
+
+- unique index on `(data_source_id, external_id)` where external_id is not null;
+- index on `category_id`;
+- index on `normalized_service_id`;
+- index on `normalized_name`;
+- full-text index on `name`.
+
+# 8. clinic_service_prices
+
+## Purpose
+
+Хранит актуальные цены услуг в клиниках.
+
+## Fields
+
+| Field | Type | Description |
+|---|---|---|
+| id | bigserial pk | Primary key |
+| clinic_id | bigint fk clinics.id | Clinic |
+| branch_id | bigint fk clinic_branches.id | Branch |
+| service_id | bigint fk services.id | Original service |
+| normalized_service_id | bigint fk normalized_services.id | Normalized service |
+| price | numeric(12, 2) | Current price |
+| currency | varchar(10) | Currency |
+| is_available | boolean | Availability |
+| updated_at | date | Price updated date from source |
+| last_seen_at | timestamptz | Last import time when seen |
+| created_at | timestamptz | Created time |
+| system_updated_at | timestamptz | System update time |
+
+## Relations
+
+- price belongs to clinic;
+- price belongs to branch;
+- price belongs to service;
+- price belongs to normalized_service;
+- price has many price_history.
+
+## Indexes
+
+- unique index on `(clinic_id, branch_id, service_id, currency)`;
+- index on `normalized_service_id`;
+- index on `clinic_id`;
+- index on `branch_id`;
+- index on `price`;
+- index on `currency`;
+- index on `updated_at`.
+
+# 9. price_history
+
+## Purpose
+
+Хранит историю изменения цен.
+
+## Fields
+
+| Field | Type | Description |
+|---|---|---|
+| id | bigserial pk | Primary key |
+| clinic_service_price_id | bigint fk clinic_service_prices.id | Current price reference |
+| clinic_id | bigint fk clinics.id | Clinic |
+| branch_id | bigint fk clinic_branches.id | Branch |
+| service_id | bigint fk services.id | Service |
+| old_price | numeric(12, 2), nullable | Old price |
+| new_price | numeric(12, 2) | New price |
+| currency | varchar(10) | Currency |
+| change_type | varchar(50) | `created`, `updated`, `deactivated` |
+| import_batch_id | bigint fk import_batches.id | Import batch |
+| data_source_id | bigint fk data_sources.id | Source |
+| changed_at | timestamptz | Change time |
+
+## Indexes
+
+- index on `clinic_service_price_id`;
+- index on `clinic_id`;
+- index on `service_id`;
+- index on `changed_at`;
+- index on `import_batch_id`.
+
+# 10. import_batches
+
+## Purpose
+
+Хранит информацию о каждом импорте.
+
+## Fields
+
+| Field | Type | Description |
+|---|---|---|
+| id | bigserial pk | Primary key |
+| data_source_id | bigint fk data_sources.id | Source |
+| source_batch_id | varchar(255), nullable | External batch id |
+| status | varchar(50) | `success`, `partial_success`, `failed` |
+| received_count | integer | Received services count |
+| created_count | integer | Created count |
+| updated_count | integer | Updated count |
+| unchanged_count | integer | Unchanged count |
+| error_count | integer | Error count |
+| raw_payload | jsonb, nullable | Original payload, optional |
+| started_at | timestamptz | Started time |
+| finished_at | timestamptz, nullable | Finished time |
+| created_at | timestamptz | Created time |
+
+## Indexes
+
+- index on `data_source_id`;
+- index on `status`;
+- index on `created_at`;
+- index on `source_batch_id`.
+
+# 11. import_errors
+
+## Purpose
+
+Хранит ошибки импорта.
+
+## Fields
+
+| Field | Type | Description |
+|---|---|---|
+| id | bigserial pk | Primary key |
+| import_batch_id | bigint fk import_batches.id | Import batch |
+| row_index | integer, nullable | Index in services array |
+| external_id | varchar(255), nullable | External service id |
+| code | varchar(100) | Error code |
+| message | text | Error message |
+| field | varchar(255), nullable | Field path |
+| raw_item | jsonb, nullable | Raw service item |
+| created_at | timestamptz | Created time |
+
+## Indexes
+
+- index on `import_batch_id`;
+- index on `code`;
+- index on `created_at`.
+```
+
+# File: docs/codex/09-implementation-plan.md
+
+```md
+# Implementation Plan
+
+## Principle
+
+Codex должен реализовывать проект маленькими шагами.
+
+После каждого этапа:
+
+1. код должен запускаться;
+2. тесты не должны ломаться;
+3. документация в `/summary` должна обновляться;
+4. `TASKS.md` должен обновляться.
+
+# Этап 1: Инициализация проекта
+
+## Tasks
+
+- Создать monorepo structure.
+- Создать `backend/`.
+- Создать `frontend/`.
+- Создать `docs/codex/`.
+- Создать `summary/`.
+- Добавить `README.md`.
+- Добавить `TASKS.md`.
+- Добавить `SUMMARY.md`.
+- Добавить `.env.example`.
+- Добавить `.gitignore`.
+
+## Expected result
+
+Проект имеет базовую структуру и документацию.
+
+# Этап 2: Backend skeleton
+
+## Tasks
+
+- Инициализировать FastAPI app.
+- Добавить `/health`.
+- Настроить config через Pydantic settings.
+- Настроить SQLAlchemy connection.
+- Настроить Alembic.
+- Добавить базовый router `/api/v1`.
+- Добавить error handling.
+- Добавить CORS для frontend.
+
+## Expected result
+
+Backend запускается и отвечает:
+
+```http
+GET /health
+```
+
+# Этап 3: Database models
+
+## Tasks
+
+- Создать SQLAlchemy models:
+  - User;
+  - DataSource;
+  - Clinic;
+  - ClinicBranch;
+  - ServiceCategory;
+  - NormalizedService;
+  - Service;
+  - ClinicServicePrice;
+  - PriceHistory;
+  - ImportBatch;
+  - ImportError.
+- Создать Alembic migration.
+- Добавить indexes.
+- Проверить миграции на пустой БД.
+
+## Expected result
+
+PostgreSQL schema создана через Alembic.
+
+# Этап 4: JSON import
+
+## Tasks
+
+- Создать Pydantic schemas для import payload.
+- Реализовать validation.
+- Реализовать ImportService.
+- Реализовать upsert data_source.
+- Реализовать upsert clinic.
+- Реализовать upsert branch.
+- Реализовать upsert category.
+- Реализовать upsert service.
+- Реализовать upsert price.
+- Реализовать price history.
+- Реализовать import errors.
+- Добавить endpoint:
+
+```http
+POST /api/v1/import/prices
+```
+
+- Добавить API key protection.
+
+## Expected result
+
+Можно отправить JSON и получить import summary.
+
+# Этап 5: Search API
+
+## Tasks
+
+- Реализовать SearchService.
+- Добавить поиск по service name.
+- Добавить поиск по normalized service.
+- Добавить фильтр city.
+- Добавить фильтр category.
+- Добавить фильтр min_price/max_price.
+- Добавить pagination.
+- Добавить endpoint:
+
+```http
+GET /api/v1/services/search
+```
+
+## Expected result
+
+Пользователь может искать услуги через API.
+
+# Этап 6: Comparison API
+
+## Tasks
+
+- Реализовать PriceComparisonService.
+- Поддержать compare by service_id.
+- Поддержать compare by normalized_service_id.
+- Поддержать compare by query.
+- Добавить stats:
+  - min_price;
+  - max_price;
+  - average_price;
+  - count.
+- Добавить sorting.
+- Добавить endpoint:
+
+```http
+GET /api/v1/prices/compare
+```
+
+## Expected result
+
+API возвращает сравнение цен между клиниками.
+
+# Этап 7: Frontend pages
+
+## Tasks
+
+- Инициализировать Next.js + TypeScript.
+- Настроить Tailwind CSS.
+- Подключить shadcn/ui.
+- Создать layout.
+- Создать home page.
+- Создать search page.
+- Создать results components.
+- Создать clinic page.
+- Создать service page.
+- Создать compare page.
+- Создать API client.
+
+## Expected result
+
+Frontend показывает реальные данные из backend API.
+
+# Этап 8: Admin import page
+
+## Tasks
+
+- Создать `/admin/import`.
+- Добавить JSON textarea.
+- Добавить example JSON.
+- Добавить API key input.
+- Добавить import button.
+- Показать response summary.
+- Показать errors.
+
+## Expected result
+
+Можно импортировать JSON через frontend.
+
+# Этап 9: Tests
+
+## Tasks
+
+- Добавить unit tests:
+  - normalization;
+  - deduplication;
+  - price update logic.
+- Добавить API tests:
+  - import;
+  - search;
+  - compare;
+  - clinics.
+- Добавить database integration tests.
+- Добавить frontend smoke tests if setup available.
+- Проверить edge cases.
+
+## Expected result
+
+Основная логика покрыта тестами.
+
+# Этап 10: Docker Compose
+
+## Tasks
+
+- Добавить `docker-compose.yml`.
+- Добавить backend Dockerfile.
+- Добавить frontend Dockerfile.
+- Добавить postgres service.
+- Добавить env variables.
+- Проверить:
+
+```bash
+docker compose up --build
+```
+
+## Expected result
+
+Проект запускается одной командой.
+
+# Этап 11: Cleanup and documentation
+
+## Tasks
+
+- Обновить README.
+- Обновить SUMMARY.md.
+- Обновить `/summary/backend.md`.
+- Обновить `/summary/frontend.md`.
+- Обновить `/summary/database.md`.
+- Обновить `/summary/api.md`.
+- Обновить `/summary/import-system.md`.
+- Обновить TASKS.md.
+- Удалить dead code.
+- Проверить formatting.
+- Проверить tests.
+
+## Expected result
+
+Проект готов к демонстрации MVP.
+```
+
+# File: docs/codex/10-testing-plan.md
+
+```md
+# Testing Plan
+
+## Цель
+
+Проверить, что MVP работает стабильно:
+
+- JSON import;
+- validation;
+- deduplication;
+- price updates;
+- price history;
+- search;
+- comparison;
+- frontend rendering.
+
+## Backend unit tests
+
+## NormalizationService
+
+Проверить:
+
+- lowercase;
+- trim;
+- remove extra spaces;
+- replace `ё` → `е`;
+- normalize common medical terms;
+- same names produce same normalized output.
+
+Examples:
+
+```text
+" МРТ  головы " → "мрт головы"
+"приём терапевта" → "прием терапевта"
+```
+
+## ImportService
+
+Проверить:
+
+- creates data_source;
+- creates clinic;
+- creates branch;
+- creates category;
+- creates service;
+- creates normalized_service;
+- creates price;
+- creates price_history;
+- does not duplicate records on same import.
+
+## Price update logic
+
+Cases:
+
+1. New price → create current price + history.
+2. Same price → update last_seen_at only.
+3. Changed price → update current price + insert history.
+4. Changed currency → create separate current price or reject depending on rule.
+
+## Deduplication tests
+
+Проверить:
+
+- same clinic external_id does not create duplicate;
+- same branch external_id does not create duplicate;
+- same service external_id does not create duplicate;
+- fallback matching works when external_id missing.
+
+## Validation tests
+
+Invalid payload cases:
+
+- missing source;
+- missing clinic;
+- missing clinic name;
+- missing clinic city;
+- empty services;
+- missing service name;
+- missing category;
+- negative price;
+- invalid currency;
+- invalid updated_at.
+
+## API tests
+
+## POST /api/v1/import/prices
+
+Проверить:
+
+- success import;
+- partial success;
+- failed validation;
+- unauthorized without API key;
+- duplicate import;
+- price update import.
+
+## GET /api/v1/services/search
+
+Проверить:
+
+- search by q;
+- filter by city;
+- filter by category;
+- filter by min_price;
+- filter by max_price;
+- pagination;
+- empty result.
+
+## GET /api/v1/services/{id}
+
+Проверить:
+
+- existing service;
+- not found service.
+
+## GET /api/v1/clinics
+
+Проверить:
+
+- list clinics;
+- filter by city;
+- pagination.
+
+## GET /api/v1/clinics/{id}
+
+Проверить:
+
+- clinic details;
+- branches included;
+- prices included;
+- not found clinic.
+
+## GET /api/v1/prices/compare
+
+Проверить:
+
+- compare by service_id;
+- compare by normalized_service_id;
+- compare by q;
+- city filter;
+- stats correctness;
+- sorting by price.
+
+## Database tests
+
+Проверить:
+
+- migrations apply successfully;
+- constraints work;
+- unique indexes prevent duplicates;
+- foreign keys work;
+- price_history references correct records.
+
+## Frontend basic tests
+
+На MVP можно сделать smoke tests:
+
+- home page renders;
+- search page renders;
+- search results display;
+- compare table displays;
+- clinic page displays;
+- service page displays;
+- admin import page displays;
+- import error state displays.
+
+## Import edge cases
+
+Проверить:
+
+1. 100 services in one payload.
+2. Same service name with different external_id.
+3. Same external_id with changed name.
+4. Missing branch.
+5. Missing optional fields.
+6. Price = 0.
+7. Very long service name.
+8. Unknown category.
+9. Multiple imports from same source.
+10. Multiple imports from different sources.
+
+## Search edge cases
+
+Проверить:
+
+1. Query with uppercase.
+2. Query with extra spaces.
+3. Query with Cyrillic.
+4. Query with partial word.
+5. No results.
+6. City with different case.
+7. Category with different case.
+8. Price range with only min.
+9. Price range with only max.
+10. Invalid pagination params.
+
+## Test commands
+
+Backend:
+
+```bash
+cd backend
+pytest
+```
+
+Frontend:
+
+```bash
+cd frontend
+npm run lint
+npm run build
+```
+
+Docker:
+
+```bash
+docker compose up --build
+```
+```
+
+# File: docs/codex/11-acceptance-criteria.md
+
+```md
+# Acceptance Criteria
+
+## MVP готов, если выполнены все критерии ниже.
+
+# 1. JSON import
+
+## Criteria
+
+- `POST /api/v1/import/prices` принимает valid JSON.
+- Endpoint защищен API key.
+- Invalid JSON возвращает понятную ошибку.
+- Partial invalid services сохраняются в `import_errors`.
+- Import batch создается для каждого импорта.
+
+## Проверка
+
+Отправить JSON с clinic и services.
+
+Expected:
+
+- response status 200;
+- `batch_id` returned;
+- `status` is `success` or `partial_success`.
+
+# 2. Database persistence
+
+## Criteria
+
+После импорта данные сохраняются в таблицах:
+
+- data_sources;
+- clinics;
+- clinic_branches;
+- service_categories;
+- normalized_services;
+- services;
+- clinic_service_prices;
+- price_history;
+- import_batches.
+
+# 3. Deduplication
+
+## Criteria
+
+Повторный импорт того же payload:
+
+- не создает duplicate clinic;
+- не создает duplicate branch;
+- не создает duplicate service;
+- не создает duplicate current price;
+- увеличивает `unchanged_count`.
+
+# 4. Price updates
+
+## Criteria
+
+Если импортировать тот же service с новой ценой:
+
+- current price обновляется;
+- old price сохраняется в price_history;
+- import result показывает `updated_count > 0`.
+
+# 5. Price history
+
+## Criteria
+
+`price_history` содержит:
+
+- created record for first price;
+- updated record when price changed;
+- import_batch_id;
+- old_price;
+- new_price.
+
+# 6. Search
+
+## Criteria
+
+`GET /api/v1/services/search?q=...`:
+
+- возвращает услуги;
+- ищет по original service name;
+- ищет по normalized service name;
+- поддерживает city filter;
+- поддерживает category filter;
+- поддерживает price filters;
+- поддерживает pagination.
+
+# 7. Price comparison
+
+## Criteria
+
+`GET /api/v1/prices/compare`:
+
+- возвращает список клиник и цен;
+- считает min_price;
+- считает max_price;
+- считает average_price;
+- поддерживает sort by price;
+- поддерживает filter by city.
+
+# 8. Frontend
+
+## Criteria
+
+Frontend:
+
+- открывает home page;
+- позволяет ввести search query;
+- показывает search results;
+- показывает clinic card;
+- показывает service card;
+- показывает compare table;
+- имеет admin import page;
+- показывает import result.
+
+# 9. Docker Compose
+
+## Criteria
+
+Команда:
+
+```bash
+docker compose up --build
+```
+
+запускает:
+
+- PostgreSQL;
+- backend;
+- frontend.
+
+Backend healthcheck работает:
+
+```http
+GET /health
+```
+
+# 10. README
+
+## Criteria
+
+README содержит:
+
+- описание проекта;
+- stack;
+- local setup;
+- docker setup;
+- API overview;
+- MVP scope;
+- roadmap;
+- project structure.
+
+# 11. Documentation
+
+## Criteria
+
+Codex documentation exists:
+
+```text
+docs/codex/
+```
+
+Root summary exists:
+
+```text
+SUMMARY.md
+```
+
+Summary folder exists:
+
+```text
+summary/
+```
+
+Минимальные файлы:
+
+- summary/project-overview.md;
+- summary/backend.md;
+- summary/frontend.md;
+- summary/database.md;
+- summary/api.md;
+- summary/import-system.md.
+
+# 12. No extra scope
+
+## Criteria
+
+В MVP не добавлены:
+
+- online booking;
+- payments;
+- patient personal account;
+- mobile app;
+- complex ML;
+- Elasticsearch unless needed;
+- reviews;
+- medical diagnosis features.
+```
+
+# File: docs/codex/12-codex-instructions.md
+
+```md
+# Codex Instructions
+
+## Main rule
+
+Before making changes, Codex must read all files in:
+
+```text
+/docs/codex/
+```
+
+These files are the source of truth for product requirements, architecture, API, database, implementation plan and MVP constraints.
+
+## Working style
+
+Codex must:
+
+1. Work in small steps.
+2. Keep the project runnable after each major step.
+3. Avoid large risky rewrites.
+4. Follow the existing architecture.
+5. Not add features outside MVP without explicit instruction.
+6. Write readable code.
+7. Add tests for important logic.
+8. Update documentation after significant changes.
+
+## Required files to maintain
+
+Codex must maintain:
+
+```text
+TASKS.md
+SUMMARY.md
+summary/
+```
+
+## Summary folder rule
+
+Codex must create and maintain the folder:
+
+```text
+summary/
+```
+
+Every significant module, service, subsystem or large task should have a separate Markdown file inside `/summary`.
+
+Examples:
+
+```text
+summary/project-overview.md
+summary/backend.md
+summary/frontend.md
+summary/database.md
+summary/api.md
+summary/import-system.md
+summary/search-system.md
+summary/price-comparison.md
+summary/docker.md
+summary/testing.md
+```
+
+Each summary file should describe:
+
+- purpose;
+- architecture;
+- implemented functionality;
+- dependencies;
+- limitations;
+- current implementation status;
+- known issues;
+- next steps.
+
+## Root SUMMARY.md rule
+
+Root `SUMMARY.md` must be an index and catalog of all files in `/summary`.
+
+It should include:
+
+- short project description;
+- current status;
+- links to summary files;
+- purpose of each summary file;
+- latest changes;
+- navigation guide for developers and Codex.
+
+## TASKS.md rule
+
+Codex must update `TASKS.md` when:
+
+- a task is completed;
+- a new task is discovered;
+- implementation plan changes;
+- a bug is found;
+- scope changes.
+
+## Best-effort rule
+
+If some data is missing, Codex should not stop unnecessarily.
+
+Codex should:
+
+1. make a reasonable best-effort implementation;
+2. clearly document assumptions in the relevant `/summary/*.md` file;
+3. avoid inventing complex functionality outside MVP.
+
+## MVP boundary
+
+Do not implement unless explicitly requested:
+
+- online booking;
+- payments;
+- patient accounts;
+- mobile app;
+- reviews;
+- complex ML;
+- Elasticsearch/OpenSearch;
+- large admin panel;
+- CRM integration.
+
+## Backend rules
+
+Codex must:
+
+- keep routers thin;
+- put business logic into services;
+- use Pydantic schemas for validation;
+- use SQLAlchemy models for database;
+- use Alembic migrations for schema changes;
+- handle errors with consistent JSON format;
+- write tests for import, normalization, search and comparison.
+
+## Frontend rules
+
+Codex must:
+
+- use Next.js + TypeScript;
+- use Tailwind CSS;
+- use shadcn/ui where useful;
+- keep UI minimal and clean;
+- avoid heavy state managers unless needed;
+- fetch data through a central API client;
+- support loading, empty and error states.
+
+## Database rules
+
+Codex must:
+
+- preserve relational integrity;
+- add indexes for search and filters;
+- avoid duplicate records;
+- use migrations for changes;
+- keep price history immutable.
+
+## Import system rules
+
+Codex must:
+
+- validate input JSON;
+- support partial success;
+- save import batches;
+- save import errors;
+- deduplicate clinics, branches, services and prices;
+- update prices correctly;
+- maintain price history.
+
+## Testing rules
+
+Codex must add or update tests when changing:
+
+- import logic;
+- normalization;
+- deduplication;
+- price updates;
+- search;
+- comparison;
+- API contracts.
+
+## Documentation update rule
+
+After each major change, Codex must update:
+
+1. relevant `/summary/*.md`;
+2. root `SUMMARY.md`;
+3. `TASKS.md` if task status changed;
+4. README if setup or public behavior changed.
+```
+
+# File: TASKS.md
+
+```md
+# TASKS
+
+## Status legend
+
+- [ ] Not started
+- [x] Done
+- [~] In progress
+- [!] Blocked
+
+# Phase 1: Project setup
+
+- [ ] Create project structure
+- [ ] Create `backend/`
+- [ ] Create `frontend/`
+- [ ] Create `docs/codex/`
+- [ ] Create `summary/`
+- [ ] Add `.gitignore`
+- [ ] Add `.env.example`
+- [ ] Add root `README.md`
+- [ ] Add root `SUMMARY.md`
+
+# Phase 2: Backend skeleton
+
+- [ ] Initialize FastAPI app
+- [ ] Add `/health`
+- [ ] Add config management
+- [ ] Add database connection
+- [ ] Add API v1 router
+- [ ] Add error response format
+- [ ] Add CORS config
+
+# Phase 3: Database
+
+- [ ] Add SQLAlchemy models
+- [ ] Add Alembic
+- [ ] Create initial migration
+- [ ] Add indexes
+- [ ] Test migration on empty database
+
+# Phase 4: JSON import
+
+- [ ] Add import Pydantic schemas
+- [ ] Add validation rules
+- [ ] Add API key protection
+- [ ] Implement data_source upsert
+- [ ] Implement clinic upsert
+- [ ] Implement branch upsert
+- [ ] Implement category upsert
+- [ ] Implement normalized service upsert
+- [ ] Implement service upsert
+- [ ] Implement price upsert
+- [ ] Implement price history
+- [ ] Implement import batches
+- [ ] Implement import errors
+- [ ] Add `POST /api/v1/import/prices`
+
+# Phase 5: Search
+
+- [ ] Implement SearchService
+- [ ] Add `GET /api/v1/services/search`
+- [ ] Add city filter
+- [ ] Add category filter
+- [ ] Add price filters
+- [ ] Add pagination
+- [ ] Add sorting
+
+# Phase 6: Price comparison
+
+- [ ] Implement PriceComparisonService
+- [ ] Add `GET /api/v1/prices/compare`
+- [ ] Compare by service_id
+- [ ] Compare by normalized_service_id
+- [ ] Compare by query
+- [ ] Add min/max/average stats
+- [ ] Add sorting by price
+
+# Phase 7: Clinics and services API
+
+- [ ] Add `GET /api/v1/clinics`
+- [ ] Add `GET /api/v1/clinics/{id}`
+- [ ] Add `GET /api/v1/services/{id}`
+- [ ] Add `GET /api/v1/categories`
+- [ ] Add `GET /api/v1/cities`
+
+# Phase 8: Frontend
+
+- [ ] Initialize Next.js + TypeScript
+- [ ] Configure Tailwind CSS
+- [ ] Add shadcn/ui
+- [ ] Create layout
+- [ ] Create home page
+- [ ] Create search page
+- [ ] Create comparison page
+- [ ] Create clinic page
+- [ ] Create service page
+- [ ] Create API client
+- [ ] Add loading states
+- [ ] Add empty states
+- [ ] Add error states
+
+# Phase 9: Admin import page
+
+- [ ] Create `/admin/import`
+- [ ] Add JSON textarea
+- [ ] Add example JSON
+- [ ] Add API key input
+- [ ] Call import API
+- [ ] Show import summary
+- [ ] Show import errors
+
+# Phase 10: Tests
+
+- [ ] Add backend unit tests
+- [ ] Add validation tests
+- [ ] Add API tests
+- [ ] Add database tests
+- [ ] Add import edge case tests
+- [ ] Add search edge case tests
+- [ ] Add frontend smoke tests if applicable
+
+# Phase 11: Docker
+
+- [ ] Add backend Dockerfile
+- [ ] Add frontend Dockerfile
+- [ ] Add `docker-compose.yml`
+- [ ] Add postgres service
+- [ ] Verify `docker compose up --build`
+
+# Phase 12: Documentation
+
+- [ ] Update `README.md`
+- [ ] Update `SUMMARY.md`
+- [ ] Update `summary/project-overview.md`
+- [ ] Update `summary/backend.md`
+- [ ] Update `summary/frontend.md`
+- [ ] Update `summary/database.md`
+- [ ] Update `summary/api.md`
+- [ ] Update `summary/import-system.md`
+```
+
+# File: SUMMARY.md
+
+```md
+# Project Summary
+
+## Project
+
+Агрегатор и система сравнения цен на медицинские услуги в Казахстане.
+
+## Short description
+
+Веб-сервис, где пользователь может найти медицинскую услугу, посмотреть список клиник, сравнить цены, выбрать город и открыть карточку клиники или услуги.
+
+Backend принимает данные о клиниках, филиалах, услугах и ценах через REST JSON API. Это позволяет подключать разные источники данных: parser service, clinic partner API, manual upload и внешние интеграции.
+
+## Current status
+
+Status: planning / initial documentation.
+
+Основная техническая документация подготовлена в:
+
+```text
+docs/codex/
+```
+
+## Navigation for Codex
+
+Codex must read these files before implementation:
+
+```text
+docs/codex/00-project-context.md
+docs/codex/01-product-requirements.md
+docs/codex/02-mvp-scope.md
+docs/codex/03-architecture.md
+docs/codex/04-backend-spec.md
+docs/codex/05-frontend-spec.md
+docs/codex/06-api-spec.md
+docs/codex/07-json-integration.md
+docs/codex/08-database-schema.md
+docs/codex/09-implementation-plan.md
+docs/codex/10-testing-plan.md
+docs/codex/11-acceptance-criteria.md
+docs/codex/12-codex-instructions.md
+```
+
+## Summary folder rule
+
+Codex обязан создавать и поддерживать папку:
+
+```text
+summary/
+```
+
+Каждый значимый модуль, сервис, подсистема или крупная задача должны иметь отдельный Markdown-файл внутри `/summary`.
+
+Файлы в `/summary` должны описывать:
+
+- назначение компонента;
+- архитектуру;
+- реализованный функционал;
+- зависимости;
+- ограничения;
+- текущее состояние реализации;
+- known issues;
+- next steps.
+
+При каждом крупном изменении Codex должен:
+
+1. обновить соответствующий файл в `/summary`;
+2. при необходимости добавить новый файл;
+3. обновить root `SUMMARY.md`;
+4. обновить `TASKS.md`.
+
+Root `SUMMARY.md` выступает как индекс и каталог всех файлов из `/summary`.
+
+## Summary files
+
+| File | Purpose |
+|---|---|
+| `summary/project-overview.md` | Общее описание проекта, цели, MVP scope, статус |
+| `summary/backend.md` | Backend architecture, modules, services, current state |
+| `summary/frontend.md` | Frontend pages, components, UX, current state |
+| `summary/database.md` | Database schema, migrations, indexes, current state |
+| `summary/api.md` | REST API overview, endpoints, contracts, current state |
+| `summary/import-system.md` | JSON import, validation, deduplication, price history |
+
+## Latest changes
+
+- Created Codex documentation structure.
+- Defined MVP scope.
+- Defined architecture.
+- Defined REST API contract.
+- Defined JSON integration contract.
+- Defined database schema.
+- Defined implementation plan.
+- Defined testing plan.
+- Defined acceptance criteria.
+- Created initial summary structure.
+
+## Recommended development order
+
+1. Read `/docs/codex`.
+2. Check `TASKS.md`.
+3. Implement backend skeleton.
+4. Implement database schema.
+5. Implement JSON import.
+6. Implement search and comparison API.
+7. Implement frontend.
+8. Add tests.
+9. Add Docker Compose.
+10. Update `/summary` and root `SUMMARY.md`.
+```
+
+# File: summary/project-overview.md
+
+```md
+# Project Overview Summary
+
+## Purpose
+
+Этот файл описывает общее состояние проекта, его цель, MVP scope и ключевые продуктовые решения.
+
+## What to document here
+
+Codex должен документировать:
+
+- краткое описание проекта;
+- целевую аудиторию;
+- основную проблему;
+- MVP scope;
+- after MVP scope;
+- ограничения;
+- важные продуктовые решения;
+- текущий статус реализации.
+
+## Current project idea
+
+Проект — агрегатор и система сравнения цен на медицинские услуги в Казахстане.
+
+Пользователь ищет услугу, например:
+
+- `МРТ головы`;
+- `УЗИ сердца`;
+- `прием терапевта`.
+
+Сервис показывает:
+
+- клиники;
+- цены;
+- город;
+- адрес;
+- контакты;
+- категорию;
+- дату обновления цены.
+
+## Key product focus
+
+1. JSON API для приема данных.
+2. Нормализация услуг.
+3. Поиск услуг.
+4. Сравнение цен.
+5. Удобный frontend.
+6. Возможность позже подключить parser service.
+
+## Current implementation status
+
+Status: not implemented / documentation prepared.
+
+## How Codex must maintain this file
+
+Codex должен обновлять этот файл после:
+
+- изменения MVP scope;
+- изменения продуктовой логики;
+- добавления новых крупных модулей;
+- изменения roadmap;
+- появления важных ограничений.
+```
+
+# File: summary/backend.md
+
+```md
+# Backend Summary
+
+## Purpose
+
+Этот файл описывает backend architecture, реализованные backend modules и текущее состояние backend.
+
+## What to document here
+
+Codex должен документировать:
+
+- FastAPI app structure;
+- routers;
+- services;
+- repositories;
+- Pydantic schemas;
+- validation logic;
+- error handling;
+- authentication/API key logic;
+- known backend issues;
+- backend tests.
+
+## Planned backend stack
+
+- FastAPI
+- Python
+- Pydantic
+- SQLAlchemy
+- Alembic
+- PostgreSQL
+- Pytest
+
+## Planned modules
+
+- ImportService
+- NormalizationService
+- SearchService
+- PriceComparisonService
+- ClinicService
+- ServiceCatalogService
+- PriceService
+
+## Planned endpoints
+
+- `POST /api/v1/import/prices`
+- `GET /api/v1/services/search`
+- `GET /api/v1/services/{id}`
+- `GET /api/v1/clinics`
+- `GET /api/v1/clinics/{id}`
+- `GET /api/v1/prices/compare`
+- `GET /api/v1/categories`
+- `GET /api/v1/cities`
+
+## Current implementation status
+
+Status: not implemented.
+
+## How Codex must maintain this file
+
+Codex должен обновлять этот файл после:
+
+- добавления backend module;
+- изменения API behavior;
+- добавления новой validation logic;
+- изменения error format;
+- изменения authentication;
+- добавления backend tests.
+```
+
+# File: summary/frontend.md
+
+```md
+# Frontend Summary
+
+## Purpose
+
+Этот файл описывает frontend architecture, страницы, компоненты, UX/UI решения и текущее состояние frontend.
+
+## What to document here
+
+Codex должен документировать:
+
+- Next.js routes;
+- components;
+- API client;
+- UI states;
+- search UX;
+- comparison UX;
+- admin import UX;
+- known frontend issues;
+- frontend tests.
+
+## Planned frontend stack
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+
+## Planned pages
+
+- `/`
+- `/search`
+- `/compare`
+- `/clinics/[id]`
+- `/services/[id]`
+- `/admin/import`
+
+## UX/UI style
+
+- white minimalistic interface;
+- clear search;
+- fast filters;
+- clean tables;
+- cards for clinics and services;
+- loading, empty and error states.
+
+## Current implementation status
+
+Status: not implemented.
+
+## How Codex must maintain this file
+
+Codex должен обновлять этот файл после:
+
+- добавления новой страницы;
+- изменения routing;
+- изменения API client;
+- изменения UI/UX logic;
+- добавления frontend tests;
+- появления known issues.
+```
+
+# File: summary/database.md
+
+```md
+# Database Summary
+
+## Purpose
+
+Этот файл описывает database schema, migrations, indexes, relations and current database state.
+
+## What to document here
+
+Codex должен документировать:
+
+- tables;
+- fields;
+- relations;
+- indexes;
+- migrations;
+- constraints;
+- database assumptions;
+- known database issues.
+
+## Planned database
+
+PostgreSQL.
+
+## Planned tables
+
+- users
+- data_sources
+- clinics
+- clinic_branches
+- service_categories
+- normalized_services
+- services
+- clinic_service_prices
+- price_history
+- import_batches
+- import_errors
+
+## Key database rules
+
+- Current prices are stored in `clinic_service_prices`.
+- Historical price changes are stored in `price_history`.
+- Every import creates `import_batches`.
+- Import errors are stored in `import_errors`.
+- Services are connected to `normalized_services`.
+- Clinics can have multiple branches.
+
+## Current implementation status
+
+Status: not implemented.
+
+## How Codex must maintain this file
+
+Codex должен обновлять этот файл после:
+
+- создания или изменения models;
+- создания migrations;
+- изменения indexes;
+- изменения relations;
+- изменения deduplication rules;
+- обнаружения database issues.
+```
+
+# File: summary/api.md
+
+```md
+# API Summary
+
+## Purpose
+
+Этот файл описывает REST API, endpoint contracts and current API state.
+
+## What to document here
+
+Codex должен документировать:
+
+- endpoint list;
+- request examples;
+- response examples;
+- error format;
+- authentication rules;
+- breaking changes;
+- known API issues.
+
+## Planned API base
+
+```text
+/api/v1
+```
+
+## Planned endpoints
+
+```http
+POST /api/v1/import/prices
+GET /api/v1/services/search
+GET /api/v1/services/{id}
+GET /api/v1/clinics
+GET /api/v1/clinics/{id}
+GET /api/v1/prices/compare
+GET /api/v1/categories
+GET /api/v1/cities
+```
+
+## Common error format
+
+```json
+{
+  "error": {
+    "code": "ERROR_CODE",
+    "message": "Human readable message",
+    "details": []
+  }
+}
+```
+
+## Current implementation status
+
+Status: not implemented.
+
+## How Codex must maintain this file
+
+Codex должен обновлять этот файл после:
+
+- добавления endpoint;
+- изменения request/response format;
+- изменения error format;
+- изменения auth;
+- добавления API tests.
+```
+
+# File: summary/import-system.md
+
+```md
+# Import System Summary
+
+## Purpose
+
+Этот файл описывает JSON import system: validation, deduplication, normalization, price updates and import history.
+
+## What to document here
+
+Codex должен документировать:
+
+- JSON contract;
+- validation rules;
+- import flow;
+- deduplication rules;
+- normalization rules;
+- price update rules;
+- price history behavior;
+- import batch behavior;
+- import error behavior;
+- known import issues.
+
+## Main endpoint
+
+```http
+POST /api/v1/import/prices
+```
+
+## Planned import flow
+
+```text
+Receive JSON
+  ↓
+Validate payload
+  ↓
+Create import_batch
+  ↓
+Upsert data_source
+  ↓
+Upsert clinic
+  ↓
+Upsert branch
+  ↓
+For each service:
+    validate service
+    upsert category
+    normalize service name
+    upsert normalized_service
+    upsert service
+    upsert current price
+    write price_history if needed
+  ↓
+Save import errors
+  ↓
+Return import result
+```
+
+## Deduplication rules
+
+- Clinic: `data_source_id + external_id`
+- Branch: `clinic_id + external_id`
+- Service: `data_source_id + external_id`
+- Price: `clinic_id + branch_id + service_id + currency`
+
+Fallback matching can use normalized name/address when external_id is missing.
+
+## Current implementation status
+
+Status: not implemented.
+
+## How Codex must maintain this file
+
+Codex должен обновлять этот файл после:
+
+- изменения JSON contract;
+- изменения validation;
+- изменения import flow;
+- изменения deduplication;
+- изменения price history behavior;
+- добавления import tests;
+- появления import bugs.
+```
+
+# File: README.md
+
+```md
+# Medical Services Price Aggregator Kazakhstan
+
+Агрегатор и система сравнения цен на медицинские услуги в Казахстане.
+
+## Description
+
+Проект помогает пользователю найти медицинскую услугу и сравнить цены между клиниками.
+
+Примеры услуг:
+
+- МРТ головы
+- УЗИ сердца
+- прием терапевта
+- анализ крови
+- КТ грудной клетки
+
+Пользователь может увидеть:
+
+- клинику;
+- цену;
+- город;
+- адрес;
+- контакты;
+- категорию услуги;
+- дату обновления цены.
+
+Backend принимает данные через REST JSON API, чтобы позже можно было подключить:
+
+- parser service;
+- clinic partner API;
+- manual upload;
+- external integrations.
+
+## Features
+
+## MVP features
+
+- Clinics list
+- Services list
+- Medical service search
+- Price comparison
+- City filter
+- Category filter
+- Price filter
+- Clinic details page
+- Service details page
+- JSON import endpoint
+- Minimal admin import page
+- Price history
+- Import batches
+- Import errors
+- Docker Compose setup
+
+## Not in MVP
+
+- Online booking
+- Payments
+- Patient personal account
+- Mobile app
+- Complex ML
+- Elasticsearch/OpenSearch
+- Reviews
+- Medical diagnosis features
+
+## Tech stack
+
+## Frontend
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+
+## Backend
+
+- FastAPI
+- Python
+- Pydantic
+- SQLAlchemy
+- Alembic
+
+## Database
+
+- PostgreSQL
+
+## Search
+
+- PostgreSQL full-text search on MVP
+- Elasticsearch/OpenSearch later if needed
+
+## DevOps
+
+- Docker Compose
+
+## Project structure
+
+```text
+.
+├── backend/
+│   └── app/
+├── frontend/
+├── docs/
+│   └── codex/
+├── summary/
+├── TASKS.md
+├── SUMMARY.md
+├── README.md
+├── docker-compose.yml
+└── .env.example
+```
+
+## Codex documentation
+
+Technical documentation for Codex is located in:
+
+```text
+docs/codex/
+```
+
+Main files:
+
+```text
+00-project-context.md
+01-product-requirements.md
+02-mvp-scope.md
+03-architecture.md
+04-backend-spec.md
+05-frontend-spec.md
+06-api-spec.md
+07-json-integration.md
+08-database-schema.md
+09-implementation-plan.md
+10-testing-plan.md
+11-acceptance-criteria.md
+12-codex-instructions.md
+```
+
+## Summary documentation
+
+Current implementation state is documented in:
+
+```text
+summary/
+```
+
+Root index:
+
+```text
+SUMMARY.md
+```
+
+Codex must update `/summary` and root `SUMMARY.md` after significant changes.
+
+## Local setup
+
+## 1. Clone repository
+
+```bash
+git clone <repository-url>
+cd <repository-name>
+```
+
+## 2. Create environment file
+
+```bash
+cp .env.example .env
+```
+
+## 3. Start with Docker Compose
+
+```bash
+docker compose up --build
+```
+
+## 4. Backend healthcheck
+
+```http
+GET http://localhost:8000/health
+```
+
+## 5. Frontend
+
+```text
+http://localhost:3000
+```
+
+## API overview
+
+Base URL:
+
+```text
+/api/v1
+```
+
+## Main endpoints
+
+```http
+POST /api/v1/import/prices
+GET /api/v1/services/search
+GET /api/v1/services/{id}
+GET /api/v1/clinics
+GET /api/v1/clinics/{id}
+GET /api/v1/prices/compare
+GET /api/v1/categories
+GET /api/v1/cities
+```
+
+## JSON import example
+
+```json
+{
+  "source": "clinic_partner_api",
+  "clinic": {
+    "external_id": "clinic_001",
+    "name": "Example Clinic",
+    "city": "Astana",
+    "address": "Example street 10",
+    "phone": "+77001234567"
+  },
+  "services": [
+    {
+      "external_id": "srv_001",
+      "name": "МРТ головного мозга",
+      "category": "МРТ",
+      "price": 25000,
+      "currency": "KZT",
+      "updated_at": "2026-06-17"
+    }
+  ]
+}
+```
+
+## MVP scope
+
+MVP must prove:
+
+1. JSON import works.
+2. Data is saved in PostgreSQL.
+3. Duplicates are not created.
+4. Prices update correctly.
+5. Price history is stored.
+6. Search works.
+7. Price comparison works.
+8. Frontend displays real API data.
+9. Project runs with Docker Compose.
+
+## Roadmap
+
+## MVP
+
+- Backend skeleton
+- Database schema
+- JSON import
+- Search API
+- Price comparison API
+- Clinics API
+- Frontend pages
+- Admin import page
+- Tests
+- Docker Compose
+
+## After MVP
+
+- Parser service for PDF/XLSX/HTML price lists
+- Partner API keys
+- Full admin panel
+- Background jobs
+- Elasticsearch/OpenSearch
+- Better normalization
+- Clinic ratings
+- Reviews
+- Maps
+- Online booking
+- CRM integrations
+
+## Development rules
+
+Before development, read:
+
+```text
+docs/codex/12-codex-instructions.md
+```
+
+Main rules:
+
+- work in small steps;
+- keep MVP scope;
+- update `TASKS.md`;
+- update `SUMMARY.md`;
+- update `/summary`;
+- add tests;
+- do not add unnecessary features outside MVP.
+```
+

@@ -1,0 +1,954 @@
+{
+  "contract_version": "case1.scraped_price_list.v1",
+  "source": {
+    "id": "bmcudp_functional_diagnostics_seed",
+    "name": "Medical Centre Hospital Functional Diagnostics Price Page",
+    "type": "public_price_list",
+    "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864",
+    "retrieved_at": "2026-06-26T08:00:00Z",
+    "parsed_at": "2026-06-26T08:02:00Z",
+    "robots": {
+      "checked_at": "2026-06-26T07:55:00Z",
+      "allowed": true,
+      "crawl_delay_seconds": 5,
+      "notes": "Public BMCUDP price page. Robots.txt reviewed; deterministic fixture mode performs no live requests."
+    },
+    "adapter": {
+      "name": "bmcudp_seed_importer",
+      "version": "0.1.0",
+      "mode": "deterministic_fixture"
+    }
+  },
+  "clinic": {
+    "external_id": "bmcudp_medical_centre_hospital",
+    "name": "Medical Centre Hospital of the President's Affairs Administration",
+    "legal_name": null,
+    "city": "Astana",
+    "address": "E495 building No. 2",
+    "phone": "+77172708090",
+    "website": "https://bmcudp.kz",
+    "working_hours": "Mon-Fri 08:00-18:00, Sat 09:00-14:00"
+  },
+  "branches": [
+    {
+      "external_id": "bmcudp_astana_main",
+      "name": "Main branch",
+      "city": "Astana",
+      "address": "E495 building No. 2",
+      "phone": "+77172708090",
+      "working_hours": "Mon-Fri 08:00-18:00, Sat 09:00-14:00"
+    }
+  ],
+  "rows": [
+    {
+      "row_id": "source_1_row_001",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-001",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "ECG resting interpretation",
+      "service_category_raw": "Cardiology",
+      "price_raw": "5 250 KZT",
+      "price": 5250,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 30,
+      "duration_days": null,
+      "duration_raw": "30 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 1,
+        "cells": [
+          "Cardiology",
+          "ECG resting interpretation",
+          "5 250 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_002",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-002",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Holter ECG monitoring 24 hours",
+      "service_category_raw": "Cardiology",
+      "price_raw": "19 950 KZT",
+      "price": 19950,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 30,
+      "duration_days": null,
+      "duration_raw": "30 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 2,
+        "cells": [
+          "Cardiology",
+          "Holter ECG monitoring 24 hours",
+          "19 950 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_003",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-003",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Echocardiography with Doppler",
+      "service_category_raw": "Ultrasound",
+      "price_raw": "18 400 KZT",
+      "price": 18400,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 25,
+      "duration_days": null,
+      "duration_raw": "25 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 3,
+        "cells": [
+          "Ultrasound",
+          "Echocardiography with Doppler",
+          "18 400 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_004",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-004",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Spirometry with bronchodilator test",
+      "service_category_raw": "Functional diagnostics",
+      "price_raw": "9 800 KZT",
+      "price": 9800,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 20,
+      "duration_days": null,
+      "duration_raw": "20 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 4,
+        "cells": [
+          "Functional diagnostics",
+          "Spirometry with bronchodilator test",
+          "9 800 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_005",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-005",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Electroencephalography adult",
+      "service_category_raw": "Functional diagnostics",
+      "price_raw": "17 200 KZT",
+      "price": 17200,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 40,
+      "duration_days": null,
+      "duration_raw": "40 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 5,
+        "cells": [
+          "Functional diagnostics",
+          "Electroencephalography adult",
+          "17 200 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_006",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-006",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Vascular doppler ultrasound neck vessels",
+      "service_category_raw": "Functional diagnostics",
+      "price_raw": "16 400 KZT",
+      "price": 16400,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 30,
+      "duration_days": null,
+      "duration_raw": "30 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 6,
+        "cells": [
+          "Functional diagnostics",
+          "Vascular doppler ultrasound neck vessels",
+          "16 400 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_007",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-007",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Treadmill stress test",
+      "service_category_raw": "Functional diagnostics",
+      "price_raw": "22 100 KZT",
+      "price": 22100,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 45,
+      "duration_days": null,
+      "duration_raw": "45 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 7,
+        "cells": [
+          "Functional diagnostics",
+          "Treadmill stress test",
+          "22 100 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_008",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-008",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Blood pressure monitoring 24 hours",
+      "service_category_raw": "Cardiology",
+      "price_raw": "14 400 KZT",
+      "price": 14400,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 20,
+      "duration_days": null,
+      "duration_raw": "20 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 8,
+        "cells": [
+          "Cardiology",
+          "Blood pressure monitoring 24 hours",
+          "14 400 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_009",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-009",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Ultrasound abdomen complex",
+      "service_category_raw": "Ultrasound",
+      "price_raw": "15 800 KZT",
+      "price": 15800,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 20,
+      "duration_days": null,
+      "duration_raw": "20 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 9,
+        "cells": [
+          "Ultrasound",
+          "Ultrasound abdomen complex",
+          "15 800 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_010",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-010",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Ultrasound thyroid gland",
+      "service_category_raw": "Ultrasound",
+      "price_raw": "9 500 KZT",
+      "price": 9500,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 15,
+      "duration_days": null,
+      "duration_raw": "15 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 10,
+        "cells": [
+          "Ultrasound",
+          "Ultrasound thyroid gland",
+          "9 500 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_011",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-011",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "X-ray chest one projection",
+      "service_category_raw": "Radiology",
+      "price_raw": "6 200 KZT",
+      "price": 6200,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 10,
+      "duration_days": null,
+      "duration_raw": "10 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 11,
+        "cells": [
+          "Radiology",
+          "X-ray chest one projection",
+          "6 200 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_012",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-012",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "X-ray chest two projections",
+      "service_category_raw": "Radiology",
+      "price_raw": "9 100 KZT",
+      "price": 9100,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 10,
+      "duration_days": null,
+      "duration_raw": "10 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 12,
+        "cells": [
+          "Radiology",
+          "X-ray chest two projections",
+          "9 100 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_013",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-013",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Electroneuromyography upper limbs",
+      "service_category_raw": "Neurology",
+      "price_raw": "26 300 KZT",
+      "price": 26300,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 45,
+      "duration_days": null,
+      "duration_raw": "45 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 13,
+        "cells": [
+          "Neurology",
+          "Electroneuromyography upper limbs",
+          "26 300 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_014",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-014",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Electroneuromyography lower limbs",
+      "service_category_raw": "Neurology",
+      "price_raw": "27 400 KZT",
+      "price": 27400,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 45,
+      "duration_days": null,
+      "duration_raw": "45 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 14,
+        "cells": [
+          "Neurology",
+          "Electroneuromyography lower limbs",
+          "27 400 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_015",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-015",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Visual acuity test",
+      "service_category_raw": "Ophthalmology",
+      "price_raw": "4 300 KZT",
+      "price": 4300,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 10,
+      "duration_days": null,
+      "duration_raw": "10 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 15,
+        "cells": [
+          "Ophthalmology",
+          "Visual acuity test",
+          "4 300 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_016",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-016",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Intraocular pressure measurement",
+      "service_category_raw": "Ophthalmology",
+      "price_raw": "5 200 KZT",
+      "price": 5200,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 10,
+      "duration_days": null,
+      "duration_raw": "10 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 16,
+        "cells": [
+          "Ophthalmology",
+          "Intraocular pressure measurement",
+          "5 200 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_017",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-017",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Gastroscopy diagnostic",
+      "service_category_raw": "Endoscopy",
+      "price_raw": "28 500 KZT",
+      "price": 28500,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 30,
+      "duration_days": null,
+      "duration_raw": "30 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 17,
+        "cells": [
+          "Endoscopy",
+          "Gastroscopy diagnostic",
+          "28 500 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_018",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-018",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Colonoscopy diagnostic",
+      "service_category_raw": "Endoscopy",
+      "price_raw": "42 600 KZT",
+      "price": 42600,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 45,
+      "duration_days": null,
+      "duration_raw": "45 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 18,
+        "cells": [
+          "Endoscopy",
+          "Colonoscopy diagnostic",
+          "42 600 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_019",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-019",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Cardiologist consultation initial",
+      "service_category_raw": "Cardiology",
+      "price_raw": "15 000 KZT",
+      "price": 15000,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 30,
+      "duration_days": null,
+      "duration_raw": "30 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 19,
+        "cells": [
+          "Cardiology",
+          "Cardiologist consultation initial",
+          "15 000 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_020",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-020",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Cardiologist consultation repeat",
+      "service_category_raw": "Cardiology",
+      "price_raw": "10 500 KZT",
+      "price": 10500,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 20,
+      "duration_days": null,
+      "duration_raw": "20 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 20,
+        "cells": [
+          "Cardiology",
+          "Cardiologist consultation repeat",
+          "10 500 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_021",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-021",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Therapist consultation initial",
+      "service_category_raw": "Therapy",
+      "price_raw": "12 000 KZT",
+      "price": 12000,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 30,
+      "duration_days": null,
+      "duration_raw": "30 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 21,
+        "cells": [
+          "Therapy",
+          "Therapist consultation initial",
+          "12 000 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_022",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-022",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Therapist consultation repeat",
+      "service_category_raw": "Therapy",
+      "price_raw": "8 500 KZT",
+      "price": 8500,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 20,
+      "duration_days": null,
+      "duration_raw": "20 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 22,
+        "cells": [
+          "Therapy",
+          "Therapist consultation repeat",
+          "8 500 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_023",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-023",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Complete blood count",
+      "service_category_raw": "Laboratory",
+      "price_raw": "3 200 KZT",
+      "price": 3200,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 23,
+        "cells": [
+          "Laboratory",
+          "Complete blood count",
+          "3 200 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_024",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-024",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Glucose blood test",
+      "service_category_raw": "Laboratory",
+      "price_raw": "1 500 KZT",
+      "price": 1500,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 24,
+        "cells": [
+          "Laboratory",
+          "Glucose blood test",
+          "1 500 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_025",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-025",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Ferritin blood test",
+      "service_category_raw": "Laboratory",
+      "price_raw": "4 900 KZT",
+      "price": 4900,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 25,
+        "cells": [
+          "Laboratory",
+          "Ferritin blood test",
+          "4 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_026",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-026",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "C-reactive protein",
+      "service_category_raw": "Laboratory",
+      "price_raw": "3 800 KZT",
+      "price": 3800,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 26,
+        "cells": [
+          "Laboratory",
+          "C-reactive protein",
+          "3 800 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_027",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-027",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "ALT blood test",
+      "service_category_raw": "Laboratory",
+      "price_raw": "1 700 KZT",
+      "price": 1700,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 27,
+        "cells": [
+          "Laboratory",
+          "ALT blood test",
+          "1 700 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_028",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-028",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "AST blood test",
+      "service_category_raw": "Laboratory",
+      "price_raw": "1 700 KZT",
+      "price": 1700,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 28,
+        "cells": [
+          "Laboratory",
+          "AST blood test",
+          "1 700 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_029",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-029",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Creatinine blood test",
+      "service_category_raw": "Laboratory",
+      "price_raw": "1 800 KZT",
+      "price": 1800,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 29,
+        "cells": [
+          "Laboratory",
+          "Creatinine blood test",
+          "1 800 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_030",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-030",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Total cholesterol",
+      "service_category_raw": "Laboratory",
+      "price_raw": "1 900 KZT",
+      "price": 1900,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 30,
+        "cells": [
+          "Laboratory",
+          "Total cholesterol",
+          "1 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_031",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-031",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Ultrasound kidneys",
+      "service_category_raw": "Ultrasound",
+      "price_raw": "11 200 KZT",
+      "price": 11200,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 20,
+      "duration_days": null,
+      "duration_raw": "20 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 31,
+        "cells": [
+          "Ultrasound",
+          "Ultrasound kidneys",
+          "11 200 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_032",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-032",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Ultrasound pelvic organs",
+      "service_category_raw": "Ultrasound",
+      "price_raw": "13 200 KZT",
+      "price": 13200,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 20,
+      "duration_days": null,
+      "duration_raw": "20 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 32,
+        "cells": [
+          "Ultrasound",
+          "Ultrasound pelvic organs",
+          "13 200 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_033",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-033",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Mammography both sides",
+      "service_category_raw": "Radiology",
+      "price_raw": "17 600 KZT",
+      "price": 17600,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 20,
+      "duration_days": null,
+      "duration_raw": "20 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 33,
+        "cells": [
+          "Radiology",
+          "Mammography both sides",
+          "17 600 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_034",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-034",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Peak flowmetry",
+      "service_category_raw": "Functional diagnostics",
+      "price_raw": "4 100 KZT",
+      "price": 4100,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 10,
+      "duration_days": null,
+      "duration_raw": "10 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 34,
+        "cells": [
+          "Functional diagnostics",
+          "Peak flowmetry",
+          "4 100 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_1_row_035",
+      "branch_external_id": "bmcudp_astana_main",
+      "source_url": "https://bmcudp.kz/en/services/tsena-dlya-grazhdan-respubliki-kazakhstan/functional-diagnostics/12864#fixture-row-035",
+      "parsed_at": "2026-06-26T08:02:00Z",
+      "service_name_raw": "Audiometry screening",
+      "service_category_raw": "Functional diagnostics",
+      "price_raw": "7 800 KZT",
+      "price": 7800,
+      "currency": "KZT",
+      "updated_at": "2026-06-26",
+      "duration_minutes": 20,
+      "duration_days": null,
+      "duration_raw": "20 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 35,
+        "cells": [
+          "Functional diagnostics",
+          "Audiometry screening",
+          "7 800 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    }
+  ]
+}

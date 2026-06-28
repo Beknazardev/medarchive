@@ -1,0 +1,442 @@
+[
+  {
+    "canonical_key": "cbc",
+    "name_ru": "Общий анализ крови",
+    "name_kk": "Жалпы қан талдауы",
+    "name_en": "Complete blood count",
+    "category_ru": "Лабораторные исследования",
+    "category_kk": "Зертханалық зерттеулер",
+    "category_en": "Laboratory",
+    "aliases": ["оак", "cbc", "клинический анализ крови", "общий клинический анализ крови", "жалпы қан талдауы", "complete blood count"]
+  },
+  {
+    "canonical_key": "urinalysis",
+    "name_ru": "Общий анализ мочи",
+    "name_kk": "Жалпы зәр талдауы",
+    "name_en": "Urinalysis",
+    "category_ru": "Лабораторные исследования",
+    "category_kk": "Зертханалық зерттеулер",
+    "category_en": "Laboratory",
+    "aliases": ["оам", "urinalysis", "общий клинический анализ мочи", "жалпы зәр талдауы", "urine test"]
+  },
+  {
+    "canonical_key": "glucose",
+    "name_ru": "Глюкоза крови",
+    "name_kk": "Қант құрамы",
+    "name_en": "Blood glucose",
+    "category_ru": "Биохимия",
+    "category_kk": "Биохимия",
+    "category_en": "Biochemistry",
+    "aliases": ["глюкоза", "glucose", "сахар крови", "қант құрамы", "glucose blood test"]
+  },
+  {
+    "canonical_key": "cholesterol",
+    "name_ru": "Холестерин общий",
+    "name_kk": "Жалпы холестерин",
+    "name_en": "Total cholesterol",
+    "category_ru": "Биохимия",
+    "category_kk": "Биохимия",
+    "category_en": "Biochemistry",
+    "aliases": ["холестерин", "cholesterol", "холестерин крови", "жалпы холестерин", "total cholesterol"]
+  },
+  {
+    "canonical_key": "creatinine",
+    "name_ru": "Креатинин",
+    "name_kk": "Креатинин",
+    "name_en": "Creatinine",
+    "category_ru": "Биохимия",
+    "category_kk": "Биохимия",
+    "category_en": "Biochemistry",
+    "aliases": ["creatinine", "креатинин крови", "creatinine blood test"]
+  },
+  {
+    "canonical_key": "urea",
+    "name_ru": "Мочевина",
+    "name_kk": "Мочевина",
+    "name_en": "Urea",
+    "category_ru": "Биохимия",
+    "category_kk": "Биохимия",
+    "category_en": "Biochemistry",
+    "aliases": ["urea", "мочевина крови", "urea blood test"]
+  },
+  {
+    "canonical_key": "bilirubin",
+    "name_ru": "Билирубин общий",
+    "name_kk": "Жалпы билирубин",
+    "name_en": "Total bilirubin",
+    "category_ru": "Биохимия",
+    "category_kk": "Биохимия",
+    "category_en": "Biochemistry",
+    "aliases": ["билирубин", "bilirubin", "билирубин крови", "жалпы билирубин", "total bilirubin"]
+  },
+  {
+    "canonical_key": "alt",
+    "name_ru": "АЛТ",
+    "name_kk": "АЛТ",
+    "name_en": "ALT",
+    "category_ru": "Биохимия",
+    "category_kk": "Биохимия",
+    "category_en": "Biochemistry",
+    "aliases": ["аланинаминотрансфераза", "alt", "алат", "alt blood test"]
+  },
+  {
+    "canonical_key": "ast",
+    "name_ru": "АСТ",
+    "name_kk": "АСТ",
+    "name_en": "AST",
+    "category_ru": "Биохимия",
+    "category_kk": "Биохимия",
+    "category_en": "Biochemistry",
+    "aliases": ["аспартатаминотрансфераза", "ast", "асат", "ast blood test"]
+  },
+  {
+    "canonical_key": "tsh",
+    "name_ru": "ТТГ",
+    "name_kk": "ТТГ",
+    "name_en": "TSH",
+    "category_ru": "Гормоны",
+    "category_kk": "Гормондар",
+    "category_en": "Hormones",
+    "aliases": ["тиреотропный гормон", "tsh", "тиреотропин"]
+  },
+  {
+    "canonical_key": "free_t3",
+    "name_ru": "Т3 свободный",
+    "name_kk": "Т3 бос",
+    "name_en": "Free T3",
+    "category_ru": "Гормоны",
+    "category_kk": "Гормондар",
+    "category_en": "Hormones",
+    "aliases": ["трийодтиронин свободный", "free t3", "т3св"]
+  },
+  {
+    "canonical_key": "free_t4",
+    "name_ru": "Т4 свободный",
+    "name_kk": "Т4 бос",
+    "name_en": "Free T4",
+    "category_ru": "Гормоны",
+    "category_kk": "Гормондар",
+    "category_en": "Hormones",
+    "aliases": ["тироксин свободный", "free t4", "т4св"]
+  },
+  {
+    "canonical_key": "ferritin",
+    "name_ru": "Ферритин",
+    "name_kk": "Ферритин",
+    "name_en": "Ferritin",
+    "category_ru": "Гормоны",
+    "category_kk": "Гормондар",
+    "category_en": "Hormones",
+    "aliases": ["ferritin"]
+  },
+  {
+    "canonical_key": "vitamin_d",
+    "name_ru": "Витамин D",
+    "name_kk": "D дәрумені",
+    "name_en": "Vitamin D",
+    "category_ru": "Витамины",
+    "category_kk": "Дәрумендер",
+    "category_en": "Vitamins",
+    "aliases": ["vitamin d", "25-oh vitamin d", "кальцидиол", "d дәрумені"]
+  },
+  {
+    "canonical_key": "crp",
+    "name_ru": "С-реактивный белок",
+    "name_kk": "С-реактивті ақуыз",
+    "name_en": "C-reactive protein",
+    "category_ru": "Иммунология",
+    "category_kk": "Иммунология",
+    "category_en": "Immunology",
+    "aliases": ["срб", "crp", "c-reactive protein", "с-реактивті ақуыз"]
+  },
+  {
+    "canonical_key": "coagulogram",
+    "name_ru": "Коагулограмма",
+    "name_kk": "Коагулограмма",
+    "name_en": "Coagulogram",
+    "category_ru": "Коагулограмма",
+    "category_kk": "Коагулограмма",
+    "category_en": "Coagulogram",
+    "aliases": ["коагулограмма", "коагулограмма крови", "коагул"]
+  },
+  {
+    "canonical_key": "esr",
+    "name_ru": "СОЭ",
+    "name_kk": "ШОӘК",
+    "name_en": "ESR",
+    "category_ru": "Лабораторные исследования",
+    "category_kk": "Зертханалық зерттеулер",
+    "category_en": "Laboratory",
+    "aliases": ["соэ", "esr", "шоәк", "эритроцитарная оседаемость"]
+  },
+  {
+    "canonical_key": "mri_brain",
+    "name_ru": "МРТ головного мозга",
+    "name_kk": "Бас миының МРТ",
+    "name_en": "MRI brain",
+    "category_ru": "МРТ",
+    "category_kk": "МРТ",
+    "category_en": "MRI",
+    "aliases": ["мрт головы", "мрт головного мозга", "mri brain", "бас миының мрт"]
+  },
+  {
+    "canonical_key": "mri_spine",
+    "name_ru": "МРТ позвоночника",
+    "name_kk": "Омыртқаның МРТ",
+    "name_en": "MRI spine",
+    "category_ru": "МРТ",
+    "category_kk": "МРТ",
+    "category_en": "MRI",
+    "aliases": ["мрт позвоночника", "mri spine", "омыртқаның мрт"]
+  },
+  {
+    "canonical_key": "ct_brain",
+    "name_ru": "КТ головного мозга",
+    "name_kk": "Бас миының КТ",
+    "name_en": "CT brain",
+    "category_ru": "КТ",
+    "category_kk": "КТ",
+    "category_en": "CT",
+    "aliases": ["кт головы", "кт головного мозга", "ct brain", "бас миының кт"]
+  },
+  {
+    "canonical_key": "ct_chest",
+    "name_ru": "КТ грудной клетки",
+    "name_kk": "Кеуде қуысының КТ",
+    "name_en": "CT chest",
+    "category_ru": "КТ",
+    "category_kk": "КТ",
+    "category_en": "CT",
+    "aliases": ["кт огк", "кт грудной клетки", "ct chest", "кеуде қуысының кт"]
+  },
+  {
+    "canonical_key": "us_abdomen",
+    "name_ru": "УЗИ органов брюшной полости",
+    "name_kk": "Іш қуысы мүшелерінің УДЗ",
+    "name_en": "Abdominal ultrasound",
+    "category_ru": "УЗИ",
+    "category_kk": "УДЗ",
+    "category_en": "Ultrasound",
+    "aliases": ["узи брюшной полости", "узи оebp", "ultrasound abdomen", "іш қуысы мүшелерінің удз"]
+  },
+  {
+    "canonical_key": "us_kidneys",
+    "name_ru": "УЗИ почек",
+    "name_kk": "Бүйректердің УДЗ",
+    "name_en": "Kidney ultrasound",
+    "category_ru": "УЗИ",
+    "category_kk": "УДЗ",
+    "category_en": "Ultrasound",
+    "aliases": ["узи почек", "ультразвуковое исследование почек", "ultrasound kidneys", "бүйректердің удз"]
+  },
+  {
+    "canonical_key": "us_thyroid",
+    "name_ru": "УЗИ щитовидной железы",
+    "name_kk": "Қалқанша безінің УДЗ",
+    "name_en": "Thyroid ultrasound",
+    "category_ru": "УЗИ",
+    "category_kk": "УДЗ",
+    "category_en": "Ultrasound",
+    "aliases": ["узи щитовидной железы", "узи щитовидки", "ultrasound thyroid", "қалқанша безінің удз"]
+  },
+  {
+    "canonical_key": "us_heart",
+    "name_ru": "УЗИ сердца (ЭхоКГ)",
+    "name_kk": "Жүректің УДЗ (ЭхоКГ)",
+    "name_en": "Echocardiography",
+    "category_ru": "УЗИ",
+    "category_kk": "УДЗ",
+    "category_en": "Ultrasound",
+    "aliases": ["узи сердца", "эхокг", "echocg", "echocardiography", "жүректің удз"]
+  },
+  {
+    "canonical_key": "ecg",
+    "name_ru": "ЭКГ",
+    "name_kk": "ЭКГ",
+    "name_en": "ECG",
+    "category_ru": "Функциональная диагностика",
+    "category_kk": "Функционалдық диагностика",
+    "category_en": "Functional diagnostics",
+    "aliases": ["экг", "ecg", "электрокардиография", "электрокардиограмма", "ecg resting interpretation", "ecg monitoring"]
+  },
+  {
+    "canonical_key": "xray_chest",
+    "name_ru": "Рентген грудной клетки",
+    "name_kk": "Кеуде қуысының рентгені",
+    "name_en": "Chest X-ray",
+    "category_ru": "Рентген",
+    "category_kk": "Рентген",
+    "category_en": "X-ray",
+    "aliases": ["рентген грудной клетки", "рентген огк", "x-ray chest", "кеуде қуысының рентгені"]
+  },
+  {
+    "canonical_key": "fluorography",
+    "name_ru": "Флюорография",
+    "name_kk": "Флюорография",
+    "name_en": "Fluorography",
+    "category_ru": "Рентген",
+    "category_kk": "Рентген",
+    "category_en": "X-ray",
+    "aliases": ["фг", "fluorography", "флюорографический снимок"]
+  },
+  {
+    "canonical_key": "therapist",
+    "name_ru": "Приём терапевта",
+    "name_kk": "Терапевт қабылдауы",
+    "name_en": "Therapist consultation",
+    "category_ru": "Консультации",
+    "category_kk": "Кеңес беру",
+    "category_en": "Consultations",
+    "aliases": ["терапевт", "прием терапевта", "консультация терапевта", "терапевт қабылдауы", "дәрігер қабылдауы", "therapist consultation", "therapist consultation initial", "therapist consultation repeat"]
+  },
+  {
+    "canonical_key": "surgeon",
+    "name_ru": "Приём хирурга",
+    "name_kk": "Хирург қабылдауы",
+    "name_en": "Surgeon consultation",
+    "category_ru": "Консультации",
+    "category_kk": "Кеңес беру",
+    "category_en": "Consultations",
+    "aliases": ["хирург", "прием хирурга", "консультация хирурга", "хирург қабылдауы"]
+  },
+  {
+    "canonical_key": "cardiologist",
+    "name_ru": "Приём кардиолога",
+    "name_kk": "Кардиолог қабылдауы",
+    "name_en": "Cardiologist consultation",
+    "category_ru": "Консультации",
+    "category_kk": "Кеңес беру",
+    "category_en": "Consultations",
+    "aliases": ["кардиолог", "прием кардиолога", "консультация кардиолога", "кардиолог қабылдауы", "cardiologist consultation"]
+  },
+  {
+    "canonical_key": "neurologist",
+    "name_ru": "Приём невролога",
+    "name_kk": "Невролог қабылдауы",
+    "name_en": "Neurologist consultation",
+    "category_ru": "Консультации",
+    "category_kk": "Кеңес беру",
+    "category_en": "Consultations",
+    "aliases": ["невролог", "прием невролога", "консультация невролога", "невропатолог", "невролог қабылдауы"]
+  },
+  {
+    "canonical_key": "gynecologist",
+    "name_ru": "Приём гинеколога",
+    "name_kk": "Гинеколог қабылдауы",
+    "name_en": "Gynecologist consultation",
+    "category_ru": "Консультации",
+    "category_kk": "Кеңес беру",
+    "category_en": "Consultations",
+    "aliases": ["гинеколог", "прием гинеколога", "консультация гинеколога", "гинеколог қабылдауы"]
+  },
+  {
+    "canonical_key": "urologist",
+    "name_ru": "Приём уролога",
+    "name_kk": "Уролог қабылдауы",
+    "name_en": "Urologist consultation",
+    "category_ru": "Консультации",
+    "category_kk": "Кеңес беру",
+    "category_en": "Consultations",
+    "aliases": ["уролог", "прием уролога", "консультация уролога", "уролог қабылдауы"]
+  },
+  {
+    "canonical_key": "endocrinologist",
+    "name_ru": "Приём эндокринолога",
+    "name_kk": "Эндокринолог қабылдауы",
+    "name_en": "Endocrinologist consultation",
+    "category_ru": "Консультации",
+    "category_kk": "Кеңес беру",
+    "category_en": "Consultations",
+    "aliases": ["эндокринолог", "прием эндокринолога", "консультация эндокринолога", "эндокринолог қабылдауы"]
+  },
+  {
+    "canonical_key": "pediatrician",
+    "name_ru": "Приём педиатра",
+    "name_kk": "Педиатр қабылдауы",
+    "name_en": "Pediatrician consultation",
+    "category_ru": "Консультации",
+    "category_kk": "Кеңес беру",
+    "category_en": "Consultations",
+    "aliases": ["педиатр", "прием педиатра", "консультация педиатра", "педиатр қабылдауы"]
+  },
+  {
+    "canonical_key": "ophthalmologist",
+    "name_ru": "Приём офтальмолога",
+    "name_kk": "Офтальмолог қабылдауы",
+    "name_en": "Ophthalmologist consultation",
+    "category_ru": "Консультации",
+    "category_kk": "Кеңес беру",
+    "category_en": "Consultations",
+    "aliases": ["офтальмолог", "прием офтальмолога", "консультация офтальмолога", "глазной врач", "офтальмолог қабылдауы"]
+  },
+  {
+    "canonical_key": "ent",
+    "name_ru": "Приём ЛОР",
+    "name_kk": "ЛОР қабылдауы",
+    "name_en": "ENT consultation",
+    "category_ru": "Консультации",
+    "category_kk": "Кеңес беру",
+    "category_en": "Consultations",
+    "aliases": ["лор", "прием лора", "отоларинголог", "otorhinolaryngology", "лор қабылдауы"]
+  },
+  {
+    "canonical_key": "im_injection",
+    "name_ru": "Внутримышечная инъекция",
+    "name_kk": "Бұлшықет ішіне егу",
+    "name_en": "IM injection",
+    "category_ru": "Процедуры",
+    "category_kk": "Рәсімдер",
+    "category_en": "Procedures",
+    "aliases": ["в/м инъекция", "внутримышечно", "im injection", "бұлшықет ішіне егу"]
+  },
+  {
+    "canonical_key": "iv_injection",
+    "name_ru": "Внутривенная инъекция",
+    "name_kk": "Көк тамыр ішіне егу",
+    "name_en": "IV injection",
+    "category_ru": "Процедуры",
+    "category_kk": "Рәсімдер",
+    "category_en": "Procedures",
+    "aliases": ["в/в инъекция", "внутривенно", "iv injection", "көк тамыр ішіне егу"]
+  },
+  {
+    "canonical_key": "iv_infusion",
+    "name_ru": "Капельница",
+    "name_kk": "Капельница",
+    "name_en": "IV infusion",
+    "category_ru": "Процедуры",
+    "category_kk": "Рәсімдер",
+    "category_en": "Procedures",
+    "aliases": ["внутривенное вливание", "infusion", "drop", "капельница"]
+  },
+  {
+    "canonical_key": "bandage",
+    "name_ru": "Перевязка",
+    "name_kk": "Таңу",
+    "name_en": "Bandage",
+    "category_ru": "Процедуры",
+    "category_kk": "Рәсімдер",
+    "category_en": "Procedures",
+    "aliases": ["bandage", "перевязка раны", "таңу"]
+  },
+  {
+    "canonical_key": "pcr_covid",
+    "name_ru": "ПЦР COVID-19",
+    "name_kk": "ПТР COVID-19",
+    "name_en": "PCR COVID-19",
+    "category_ru": "ПЦР",
+    "category_kk": "ПТР",
+    "category_en": "PCR",
+    "aliases": ["пцр covid", "пцр covid-19", "pcr covid", "ptr covid", "птр covid-19"]
+  },
+  {
+    "canonical_key": "pcr_flu",
+    "name_ru": "ПЦР грипп A/B",
+    "name_kk": "ПТР тұмау A/B",
+    "name_en": "PCR influenza A/B",
+    "category_ru": "ПЦР",
+    "category_kk": "ПТР",
+    "category_en": "PCR",
+    "aliases": ["пцр грипп", "пцр грипп a/b", "pcr influenza", "ptr тұмау", "тұмау птр"]
+  }
+]

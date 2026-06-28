@@ -1,0 +1,954 @@
+{
+  "contract_version": "case1.scraped_price_list.v1",
+  "source": {
+    "id": "kncdiz_price_list_seed",
+    "name": "Kazakh Scientific Center of Dermatology and Infectious Diseases Price List",
+    "type": "public_price_list",
+    "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/",
+    "retrieved_at": "2026-06-26T08:10:00Z",
+    "parsed_at": "2026-06-26T08:12:00Z",
+    "robots": {
+      "checked_at": "2026-06-26T08:05:00Z",
+      "allowed": true,
+      "crawl_delay_seconds": 10,
+      "notes": "Public KSCDID medical services price list. Robots.txt allows the site root; deterministic fixture mode performs no live requests."
+    },
+    "adapter": {
+      "name": "kncdiz_seed_importer",
+      "version": "0.1.0",
+      "mode": "deterministic_fixture"
+    }
+  },
+  "clinic": {
+    "external_id": "kncdiz_center",
+    "name": "Kazakh Scientific Center of Dermatology and Infectious Diseases",
+    "legal_name": null,
+    "city": "Almaty",
+    "address": null,
+    "phone": null,
+    "website": "https://kncdiz.kz",
+    "working_hours": "Daily 07:30-16:00"
+  },
+  "branches": [
+    {
+      "external_id": "kncdiz_center_main",
+      "name": "Central collection point",
+      "city": "Almaty",
+      "address": "Public center branch",
+      "phone": null,
+      "working_hours": "Daily 07:30-16:00"
+    }
+  ],
+  "rows": [
+    {
+      "row_id": "source_2_row_001",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-001",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Complete blood count 5 diff",
+      "service_category_raw": "Hematology",
+      "price_raw": "3 200 KZT",
+      "price": 3200,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 1,
+        "cells": [
+          "Hematology",
+          "Complete blood count 5 diff",
+          "3 200 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_002",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-002",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Glucose serum",
+      "service_category_raw": "Biochemistry",
+      "price_raw": "1 500 KZT",
+      "price": 1500,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 2,
+        "cells": [
+          "Biochemistry",
+          "Glucose serum",
+          "1 500 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_003",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-003",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Ferritin serum",
+      "service_category_raw": "Biochemistry",
+      "price_raw": "4 900 KZT",
+      "price": 4900,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 3,
+        "cells": [
+          "Biochemistry",
+          "Ferritin serum",
+          "4 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_004",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-004",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "ALT serum",
+      "service_category_raw": "Biochemistry",
+      "price_raw": "1 700 KZT",
+      "price": 1700,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 4,
+        "cells": [
+          "Biochemistry",
+          "ALT serum",
+          "1 700 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_005",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-005",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "AST serum",
+      "service_category_raw": "Biochemistry",
+      "price_raw": "1 700 KZT",
+      "price": 1700,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 5,
+        "cells": [
+          "Biochemistry",
+          "AST serum",
+          "1 700 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_006",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-006",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Bilirubin total",
+      "service_category_raw": "Biochemistry",
+      "price_raw": "1 800 KZT",
+      "price": 1800,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 6,
+        "cells": [
+          "Biochemistry",
+          "Bilirubin total",
+          "1 800 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_007",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-007",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Creatinine serum",
+      "service_category_raw": "Biochemistry",
+      "price_raw": "1 800 KZT",
+      "price": 1800,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 7,
+        "cells": [
+          "Biochemistry",
+          "Creatinine serum",
+          "1 800 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_008",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-008",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Urea serum",
+      "service_category_raw": "Biochemistry",
+      "price_raw": "1 700 KZT",
+      "price": 1700,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 8,
+        "cells": [
+          "Biochemistry",
+          "Urea serum",
+          "1 700 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_009",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-009",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Total protein serum",
+      "service_category_raw": "Biochemistry",
+      "price_raw": "1 600 KZT",
+      "price": 1600,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 9,
+        "cells": [
+          "Biochemistry",
+          "Total protein serum",
+          "1 600 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_010",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-010",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "C-reactive protein quantitative",
+      "service_category_raw": "Biochemistry",
+      "price_raw": "3 800 KZT",
+      "price": 3800,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 10,
+        "cells": [
+          "Biochemistry",
+          "C-reactive protein quantitative",
+          "3 800 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_011",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-011",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "HIV 1 2 antibody antigen test",
+      "service_category_raw": "Immunology",
+      "price_raw": "4 200 KZT",
+      "price": 4200,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 11,
+        "cells": [
+          "Immunology",
+          "HIV 1 2 antibody antigen test",
+          "4 200 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_012",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-012",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "HBsAg hepatitis B screening",
+      "service_category_raw": "Immunology",
+      "price_raw": "3 300 KZT",
+      "price": 3300,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 12,
+        "cells": [
+          "Immunology",
+          "HBsAg hepatitis B screening",
+          "3 300 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_013",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-013",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Anti HCV hepatitis C screening",
+      "service_category_raw": "Immunology",
+      "price_raw": "3 400 KZT",
+      "price": 3400,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 13,
+        "cells": [
+          "Immunology",
+          "Anti HCV hepatitis C screening",
+          "3 400 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_014",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-014",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Syphilis RPR test",
+      "service_category_raw": "Immunology",
+      "price_raw": "2 800 KZT",
+      "price": 2800,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 14,
+        "cells": [
+          "Immunology",
+          "Syphilis RPR test",
+          "2 800 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_015",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-015",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Bacterial culture skin swab",
+      "service_category_raw": "Microbiology",
+      "price_raw": "6 200 KZT",
+      "price": 6200,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 15,
+        "cells": [
+          "Microbiology",
+          "Bacterial culture skin swab",
+          "6 200 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_016",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-016",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Fungal microscopy skin scraping",
+      "service_category_raw": "Microbiology",
+      "price_raw": "3 600 KZT",
+      "price": 3600,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 16,
+        "cells": [
+          "Microbiology",
+          "Fungal microscopy skin scraping",
+          "3 600 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_017",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-017",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Antibiotic sensitivity panel",
+      "service_category_raw": "Microbiology",
+      "price_raw": "7 500 KZT",
+      "price": 7500,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 17,
+        "cells": [
+          "Microbiology",
+          "Antibiotic sensitivity panel",
+          "7 500 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_018",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-018",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "PCR chlamydia trachomatis",
+      "service_category_raw": "PCR diagnostics",
+      "price_raw": "6 500 KZT",
+      "price": 6500,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 18,
+        "cells": [
+          "PCR diagnostics",
+          "PCR chlamydia trachomatis",
+          "6 500 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_019",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-019",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "PCR gonorrhea",
+      "service_category_raw": "PCR diagnostics",
+      "price_raw": "6 500 KZT",
+      "price": 6500,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 19,
+        "cells": [
+          "PCR diagnostics",
+          "PCR gonorrhea",
+          "6 500 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_020",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-020",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "PCR mycoplasma genitalium",
+      "service_category_raw": "PCR diagnostics",
+      "price_raw": "6 900 KZT",
+      "price": 6900,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 20,
+        "cells": [
+          "PCR diagnostics",
+          "PCR mycoplasma genitalium",
+          "6 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_021",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-021",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "PCR ureaplasma urealyticum",
+      "service_category_raw": "PCR diagnostics",
+      "price_raw": "6 900 KZT",
+      "price": 6900,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 21,
+        "cells": [
+          "PCR diagnostics",
+          "PCR ureaplasma urealyticum",
+          "6 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_022",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-022",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Dermatologist consultation initial",
+      "service_category_raw": "Dermatology",
+      "price_raw": "10 000 KZT",
+      "price": 10000,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": 30,
+      "duration_days": null,
+      "duration_raw": "30 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 22,
+        "cells": [
+          "Dermatology",
+          "Dermatologist consultation initial",
+          "10 000 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_023",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-023",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Dermatologist consultation repeat",
+      "service_category_raw": "Dermatology",
+      "price_raw": "7 000 KZT",
+      "price": 7000,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": 20,
+      "duration_days": null,
+      "duration_raw": "20 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 23,
+        "cells": [
+          "Dermatology",
+          "Dermatologist consultation repeat",
+          "7 000 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_024",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-024",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Dermoscopy one lesion",
+      "service_category_raw": "Dermatology",
+      "price_raw": "5 000 KZT",
+      "price": 5000,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": 15,
+      "duration_days": null,
+      "duration_raw": "15 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 24,
+        "cells": [
+          "Dermatology",
+          "Dermoscopy one lesion",
+          "5 000 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_025",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-025",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Cryodestruction skin lesion",
+      "service_category_raw": "Dermatology",
+      "price_raw": "8 500 KZT",
+      "price": 8500,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": 20,
+      "duration_days": null,
+      "duration_raw": "20 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 25,
+        "cells": [
+          "Dermatology",
+          "Cryodestruction skin lesion",
+          "8 500 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_026",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-026",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Wart removal small",
+      "service_category_raw": "Dermatology",
+      "price_raw": "9 000 KZT",
+      "price": 9000,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": 20,
+      "duration_days": null,
+      "duration_raw": "20 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 26,
+        "cells": [
+          "Dermatology",
+          "Wart removal small",
+          "9 000 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_027",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-027",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Intramuscular injection",
+      "service_category_raw": "Nursing",
+      "price_raw": "1 200 KZT",
+      "price": 1200,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": 10,
+      "duration_days": null,
+      "duration_raw": "10 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 27,
+        "cells": [
+          "Nursing",
+          "Intramuscular injection",
+          "1 200 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_028",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-028",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Intravenous injection",
+      "service_category_raw": "Nursing",
+      "price_raw": "1 800 KZT",
+      "price": 1800,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": 10,
+      "duration_days": null,
+      "duration_raw": "10 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 28,
+        "cells": [
+          "Nursing",
+          "Intravenous injection",
+          "1 800 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_029",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-029",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Blood collection from vein",
+      "service_category_raw": "Nursing",
+      "price_raw": "900 KZT",
+      "price": 900,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": 10,
+      "duration_days": null,
+      "duration_raw": "10 minutes",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 29,
+        "cells": [
+          "Nursing",
+          "Blood collection from vein",
+          "900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_030",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-030",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "ESR blood test",
+      "service_category_raw": "Hematology",
+      "price_raw": "1 100 KZT",
+      "price": 1100,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 30,
+        "cells": [
+          "Hematology",
+          "ESR blood test",
+          "1 100 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_031",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-031",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Reticulocyte count",
+      "service_category_raw": "Hematology",
+      "price_raw": "2 100 KZT",
+      "price": 2100,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 31,
+        "cells": [
+          "Hematology",
+          "Reticulocyte count",
+          "2 100 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_032",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-032",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Lipid profile",
+      "service_category_raw": "Biochemistry",
+      "price_raw": "6 200 KZT",
+      "price": 6200,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 32,
+        "cells": [
+          "Biochemistry",
+          "Lipid profile",
+          "6 200 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_033",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-033",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Alkaline phosphatase",
+      "service_category_raw": "Biochemistry",
+      "price_raw": "1 900 KZT",
+      "price": 1900,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 33,
+        "cells": [
+          "Biochemistry",
+          "Alkaline phosphatase",
+          "1 900 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_034",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-034",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "Gamma GT",
+      "service_category_raw": "Biochemistry",
+      "price_raw": "2 100 KZT",
+      "price": 2100,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 34,
+        "cells": [
+          "Biochemistry",
+          "Gamma GT",
+          "2 100 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    },
+    {
+      "row_id": "source_2_row_035",
+      "branch_external_id": "kncdiz_center_main",
+      "source_url": "https://kncdiz.kz/en/uslugi/preiskuran_medicinskih_uslug/#fixture-row-035",
+      "parsed_at": "2026-06-26T08:12:00Z",
+      "service_name_raw": "IgE total",
+      "service_category_raw": "Immunology",
+      "price_raw": "5 200 KZT",
+      "price": 5200,
+      "currency": "KZT",
+      "updated_at": "2026-06-25",
+      "duration_minutes": null,
+      "duration_days": 1,
+      "duration_raw": "result time varies",
+      "is_available": true,
+      "raw": {
+        "table": "phase-j-demo-dataset",
+        "row_number": 35,
+        "cells": [
+          "Immunology",
+          "IgE total",
+          "5 200 KZT",
+          "deterministic demo fixture"
+        ]
+      }
+    }
+  ]
+}

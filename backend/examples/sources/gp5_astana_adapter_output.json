@@ -1,0 +1,354 @@
+{
+  "contract_version": "case1.scraped_price_list.v1",
+  "source": {
+    "id": "gp5_astana",
+    "name": "Городская поликлиника №5 Астана",
+    "type": "public_price_list",
+    "source_url": "https://gp5-astana.kz/ru/poliklinika/platnye-uslugi-i-tseny",
+    "parsed_at": "2026-06-27T18:00:00+05:00",
+    "robots": {
+      "checked_at": "2026-06-27T17:45:00+05:00",
+      "allowed": true,
+      "crawl_delay_seconds": 15,
+      "notes": "Public GP5 Astana paid services page. F0 policy rechecked."
+    },
+    "adapter": {
+      "name": "gp5_astana",
+      "version": "0.1.0",
+      "mode": "deterministic_fixture"
+    }
+  },
+  "clinic": {
+    "external_id": "gp5_astana",
+    "name": "Городская поликлиника №5 Астана",
+    "legal_name": null,
+    "city": "Астана",
+    "address": null,
+    "phone": null,
+    "website": "https://gp5-astana.kz",
+    "working_hours": null
+  },
+  "branches": [],
+  "rows": [
+    {
+      "row_id": "gp5_astana_row_001",
+      "source_url": "https://gp5-astana.kz/ru/poliklinika/platnye-uslugi-i-tseny",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Приём терапевта",
+      "service_category_raw": "Консультации",
+      "price_raw": "3 500",
+      "price": 3500,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 1,
+        "cells": ["1", "Приём терапевта", "3 500"]
+      }
+    },
+    {
+      "row_id": "gp5_astana_row_002",
+      "source_url": "https://gp5-astana.kz/ru/poliklinika/platnye-uslugi-i-tseny",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Приём педиатра",
+      "service_category_raw": "Консультации",
+      "price_raw": "3 000",
+      "price": 3000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 2,
+        "cells": ["2", "Приём педиатра", "3 000"]
+      }
+    },
+    {
+      "row_id": "gp5_astana_row_003",
+      "source_url": "https://gp5-astana.kz/ru/poliklinika/platnye-uslugi-i-tseny",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Приём хирурга",
+      "service_category_raw": "Консультации",
+      "price_raw": "4 000",
+      "price": 4000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 3,
+        "cells": ["3", "Приём хирурга", "4 000"]
+      }
+    },
+    {
+      "row_id": "gp5_astana_row_004",
+      "source_url": "https://gp5-astana.kz/ru/poliklinika/platnye-uslugi-i-tseny",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Приём невролога",
+      "service_category_raw": "Консультации",
+      "price_raw": "4 000",
+      "price": 4000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 4,
+        "cells": ["4", "Приём невролога", "4 000"]
+      }
+    },
+    {
+      "row_id": "gp5_astana_row_005",
+      "source_url": "https://gp5-astana.kz/ru/poliklinika/platnye-uslugi-i-tseny",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Приём гинеколога",
+      "service_category_raw": "Консультации",
+      "price_raw": "4 500",
+      "price": 4500,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 5,
+        "cells": ["5", "Приём гинеколога", "4 500"]
+      }
+    },
+    {
+      "row_id": "gp5_astana_row_006",
+      "source_url": "https://gp5-astana.kz/ru/poliklinika/platnye-uslugi-i-tseny",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Приём уролога",
+      "service_category_raw": "Консультации",
+      "price_raw": "4 500",
+      "price": 4500,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 6,
+        "cells": ["6", "Приём уролога", "4 500"]
+      }
+    },
+    {
+      "row_id": "gp5_astana_row_007",
+      "source_url": "https://gp5-astana.kz/ru/poliklinika/platnye-uslugi-i-tseny",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "УЗИ органов брюшной полости",
+      "service_category_raw": "Диагностика",
+      "price_raw": "6 000",
+      "price": 6000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 7,
+        "cells": ["7", "УЗИ органов брюшной полости", "6 000"]
+      }
+    },
+    {
+      "row_id": "gp5_astana_row_008",
+      "source_url": "https://gp5-astana.kz/ru/poliklinika/platnye-uslugi-i-tseny",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "УЗИ почек",
+      "service_category_raw": "Диагностика",
+      "price_raw": "5 000",
+      "price": 5000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 8,
+        "cells": ["8", "УЗИ почек", "5 000"]
+      }
+    },
+    {
+      "row_id": "gp5_astana_row_009",
+      "source_url": "https://gp5-astana.kz/ru/poliklinika/platnye-uslugi-i-tseny",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "ЭКГ",
+      "service_category_raw": "Диагностика",
+      "price_raw": "2 000",
+      "price": 2000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 9,
+        "cells": ["9", "ЭКГ", "2 000"]
+      }
+    },
+    {
+      "row_id": "gp5_astana_row_010",
+      "source_url": "https://gp5-astana.kz/ru/poliklinika/platnye-uslugi-i-tseny",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Рентген грудной клетки",
+      "service_category_raw": "Диагностика",
+      "price_raw": "3 000",
+      "price": 3000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 10,
+        "cells": ["10", "Рентген грудной клетки", "3 000"]
+      }
+    },
+    {
+      "row_id": "gp5_astana_row_011",
+      "source_url": "https://gp5-astana.kz/ru/poliklinika/platnye-uslugi-i-tseny",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Общий анализ крови",
+      "service_category_raw": "Анализы",
+      "price_raw": "1 000",
+      "price": 1000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 11,
+        "cells": ["11", "Общий анализ крови", "1 000"]
+      }
+    },
+    {
+      "row_id": "gp5_astana_row_012",
+      "source_url": "https://gp5-astana.kz/ru/poliklinika/platnye-uslugi-i-tseny",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Общий анализ мочи",
+      "service_category_raw": "Анализы",
+      "price_raw": "700",
+      "price": 700,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 12,
+        "cells": ["12", "Общий анализ мочи", "700"]
+      }
+    },
+    {
+      "row_id": "gp5_astana_row_013",
+      "source_url": "https://gp5-astana.kz/ru/poliklinika/platnye-uslugi-i-tseny",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Биохимический анализ крови",
+      "service_category_raw": "Анализы",
+      "price_raw": "3 500",
+      "price": 3500,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 13,
+        "cells": ["13", "Биохимический анализ крови", "3 500"]
+      }
+    },
+    {
+      "row_id": "gp5_astana_row_014",
+      "source_url": "https://gp5-astana.kz/ru/poliklinika/platnye-uslugi-i-tseny",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Внутримышечная инъекция",
+      "service_category_raw": "Процедуры",
+      "price_raw": "500",
+      "price": 500,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 14,
+        "cells": ["14", "Внутримышечная инъекция", "500"]
+      }
+    },
+    {
+      "row_id": "gp5_astana_row_015",
+      "source_url": "https://gp5-astana.kz/ru/poliklinika/platnye-uslugi-i-tseny",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Внутривенная инъекция",
+      "service_category_raw": "Процедуры",
+      "price_raw": "800",
+      "price": 800,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 15,
+        "cells": ["15", "Внутривенная инъекция", "800"]
+      }
+    },
+    {
+      "row_id": "gp5_astana_row_016",
+      "source_url": "https://gp5-astana.kz/ru/poliklinika/platnye-uslugi-i-tseny",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Перевязка",
+      "service_category_raw": "Процедуры",
+      "price_raw": "1 000",
+      "price": 1000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 16,
+        "cells": ["16", "Перевязка", "1 000"]
+      }
+    },
+    {
+      "row_id": "gp5_astana_row_017",
+      "source_url": "https://gp5-astana.kz/ru/poliklinika/platnye-uslugi-i-tseny",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Снятие швов",
+      "service_category_raw": "Процедуры",
+      "price_raw": "800",
+      "price": 800,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 17,
+        "cells": ["17", "Снятие швов", "800"]
+      }
+    },
+    {
+      "row_id": "gp5_astana_row_018",
+      "source_url": "https://gp5-astana.kz/ru/poliklinika/platnye-uslugi-i-tseny",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Приём офтальмолога",
+      "service_category_raw": "Консультации",
+      "price_raw": "3 500",
+      "price": 3500,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 18,
+        "cells": ["18", "Приём офтальмолога", "3 500"]
+      }
+    },
+    {
+      "row_id": "gp5_astana_row_019",
+      "source_url": "https://gp5-astana.kz/ru/poliklinika/platnye-uslugi-i-tseny",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Приём отоларинголога (ЛОР)",
+      "service_category_raw": "Консультации",
+      "price_raw": "3 500",
+      "price": 3500,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 19,
+        "cells": ["19", "Приём отоларинголога (ЛОР)", "3 500"]
+      }
+    },
+    {
+      "row_id": "gp5_astana_row_020",
+      "source_url": "https://gp5-astana.kz/ru/poliklinika/platnye-uslugi-i-tseny",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Приём эндокринолога",
+      "service_category_raw": "Консультации",
+      "price_raw": "4 500",
+      "price": 4500,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "is_available": true,
+      "raw": {
+        "row_number": 20,
+        "cells": ["20", "Приём эндокринолога", "4 500"]
+      }
+    }
+  ]
+}

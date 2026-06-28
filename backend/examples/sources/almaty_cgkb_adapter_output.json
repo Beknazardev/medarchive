@@ -1,0 +1,82 @@
+{
+  "contract_version": "case1.scraped_price_list.v1",
+  "source": {
+    "id": "almaty_cgkb",
+    "name": "ЦГКБ Алматы",
+    "type": "public_price_list",
+    "source_url": "https://almaty-cgkb.kz/kz/prajs-parak/",
+    "parsed_at": "2026-06-27T18:00:00+05:00",
+    "robots": {
+      "checked_at": "2026-06-27T17:45:00+05:00",
+      "allowed": true,
+      "crawl_delay_seconds": 15,
+      "notes": "Public Almaty CGKB price page. F0 policy rechecked."
+    },
+    "adapter": {
+      "name": "almaty_cgkb",
+      "version": "0.1.0",
+      "mode": "deterministic_fixture"
+    }
+  },
+  "clinic": {
+    "external_id": "almaty_cgkb",
+    "name": "ЦГКБ Алматы",
+    "legal_name": "Центральная городская клиническая больница г. Алматы",
+    "city": "Алматы",
+    "address": null,
+    "phone": null,
+    "website": "https://almaty-cgkb.kz",
+    "working_hours": null
+  },
+  "branches": [],
+  "rows": [
+    {
+      "row_id": "almaty_cgkb_row_002",
+      "source_url": "https://almaty-cgkb.kz/kz/prajs-parak/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Прием (осмотр, консультация) врача-терапевта первичный",
+      "service_category_raw": "Консультативное отделение",
+      "price_raw": "5 000",
+      "price": 5000,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "row_code": "1",
+      "unit": "1 визит",
+      "section": "Консультативное отделение",
+      "tariff_audience": "almaty_residents",
+      "is_available": true,
+      "raw": {
+        "row_number": 2,
+        "row_code": "1",
+        "unit": "1 визит",
+        "section": "Консультативное отделение",
+        "tariff_audience": "almaty_residents",
+        "cells": ["1", "Прием (осмотр, консультация) врача-терапевта первичный", "1 визит", "5 000"]
+      }
+    },
+    {
+      "row_id": "almaty_cgkb_row_006",
+      "source_url": "https://almaty-cgkb.kz/kz/prajs-parak/",
+      "parsed_at": "2026-06-27T18:00:00+05:00",
+      "service_name_raw": "Общий анализ крови",
+      "service_category_raw": "Лабораторная диагностика",
+      "price_raw": "1 200",
+      "price": 1200,
+      "currency": "KZT",
+      "updated_at": "2026-06-27",
+      "row_code": "4",
+      "unit": "1 исследование",
+      "section": "Лабораторная диагностика",
+      "tariff_audience": "almaty_residents",
+      "is_available": true,
+      "raw": {
+        "row_number": 6,
+        "row_code": "4",
+        "unit": "1 исследование",
+        "section": "Лабораторная диагностика",
+        "tariff_audience": "almaty_residents",
+        "cells": ["4", "Общий анализ крови", "1 исследование", "1 200"]
+      }
+    }
+  ]
+}
